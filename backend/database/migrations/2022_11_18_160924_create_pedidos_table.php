@@ -29,7 +29,7 @@ return new class extends Migration
             $table->integer('unidades');
             $table->string('observaciones')->nullable();
             $table->timestamp('fecha_pedido');
-            $table->date('fecha_terminacion')->nullable();
+            $table->string('estado')->default('En Curso');
         });
     }
 

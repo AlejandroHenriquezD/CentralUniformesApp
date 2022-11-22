@@ -15,6 +15,8 @@ return new class extends Migration
     {
         Schema::create('clientes', function (Blueprint $table) {
             $table->id();
+            $table->string('usuario');
+            $table->string('contraseña');
             $table->string('cif_nif');
             $table->string('razon_social')->nullable();
             $table->string('nombre_comercial')->nullable();
@@ -25,6 +27,7 @@ return new class extends Migration
             $table->string('municipio');
             $table->string('provincia');
             $table->string('observaciones')->nullable();
+            $table->timestamps();
         });
     }
 
