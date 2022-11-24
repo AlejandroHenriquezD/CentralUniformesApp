@@ -24,7 +24,7 @@ const ShowClients = () => {
     return (
         <div>
             <div className='d-grip gap-2'>
-                <Link to="/create" className='btn btn-success btn-lg mt-2 mb-2 text-white'>Create</Link>
+                <Link to="/create_client" className='btn btn-success btn-lg mt-2 mb-2 text-white'>Create</Link>
             </div>
 
             <table className='table table-striped'>
@@ -43,7 +43,7 @@ const ShowClients = () => {
                             <td> {client.email} </td>
                             <td> {client.direccion} </td>
                             <td>
-                                <Link to={`/edit/${client.id}`} className='btn btn-warning'>Edit</Link>
+                                <Link to={`/edit_client/${client.id}`} className='btn btn-warning'>Edit</Link>
                                 <button onClick={ ()=>deleteClient(client.id)} className='btn btn-danger'>Delete</button>
                             </td>
                         </tr>

@@ -21,6 +21,7 @@ return new class extends Migration
             $table->float('precio');
             $table->integer('stock');
             $table->string('descripcion')->nullable();
+            $table->timestamps();
         });
     }
 

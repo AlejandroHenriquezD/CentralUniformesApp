@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('usuario');
             $table->string('password');
             $table->string('puesto');
+            $table->timestamps();
         });
     }
 

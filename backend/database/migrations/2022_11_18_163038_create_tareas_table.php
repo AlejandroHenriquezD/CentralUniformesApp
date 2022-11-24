@@ -30,6 +30,7 @@ return new class extends Migration
                 ->references('id')
                 ->on('tipos_trabajo')
                 ->onDelete('cascade');
+                $table->timestamps();
         });
     }
 

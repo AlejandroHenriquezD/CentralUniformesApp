@@ -5,8 +5,8 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Articulo extends Model
+class Imagen extends Model
 {
     use HasFactory;
-    protected $fillable = ['nombre', 'talla', 'color', 'precio', 'stock', 'descripcion'];
-}   
+    protected $fillable = ['id_articulo', 'imagen'];
+}

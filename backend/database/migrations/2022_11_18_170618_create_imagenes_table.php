@@ -13,7 +13,7 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('imagenes', function (Blueprint $table) {
+        Schema::create('imagens', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('id_articulo');
             $table->foreign('id_articulo')
@@ -21,6 +21,7 @@ return new class extends Migration
                 ->on('articulos')
                 ->onDelete('cascade');
             $table->string('imagen');
+            $table->timestamps();
         });
     }
 
