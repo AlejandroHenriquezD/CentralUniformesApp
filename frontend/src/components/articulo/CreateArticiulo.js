@@ -1,6 +1,7 @@
 import React, {useState} from 'react'
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
+import '../form.css'
 
 
 const endpoint = 'http://localhost:8000/api/articulo'
@@ -31,7 +32,7 @@ const CreateArticulo = () => {
 
     return (
         <div>
-            <h3>Create Articulo</h3>
+            <h3>Crear Artículo</h3>
             <form onSubmit={store}>
                 <div className='mb-3'>
                     <label className='form-label'>Nombre</label>
@@ -39,7 +40,7 @@ const CreateArticulo = () => {
                         value={nombre}
                         onChange= { (e)=> setNombre(e.target.value)}
                         type='text'
-                        className='form-control'
+                        className='form'    
                     />
                 </div>
                 <div className='mb-3'>
@@ -48,7 +49,7 @@ const CreateArticulo = () => {
                         value={talla}
                         onChange= { (e)=> setTalla(e.target.value)}
                         type='text'
-                        className='form-control'
+                        className='form'
                     />
                 </div>
                 <div className='mb-3'>
@@ -57,7 +58,7 @@ const CreateArticulo = () => {
                         value={color}
                         onChange= { (e)=> setColor(e.target.value)}
                         type='text'
-                        className='form-control'
+                        className='form'
                     />
                 </div>
                 <div className='mb-3'>
@@ -66,7 +67,7 @@ const CreateArticulo = () => {
                         value={precio}
                         onChange= { (e)=> setPrecio(e.target.value)}
                         type='number'
-                        className='form-control'
+                        className='form'
                     />
                 </div>
                 <div className='mb-3'>
@@ -75,7 +76,7 @@ const CreateArticulo = () => {
                         value={stock} 
                         onChange= { (e)=> setStock(e.target.value)}
                         type='number'
-                        className='form-control'
+                        className='form'
                     />
                 </div>
                 <div className='mb-3'>
@@ -84,10 +85,10 @@ const CreateArticulo = () => {
                         value={descripcion}
                         onChange= { (e)=> setDescripcion(e.target.value)}
                         type='text'
-                        className='form-control'
+                        className='form'
                     />
                 </div>
-                <button type='submit' className='btn btn-primary'>Update</button>
+                <button type='submit' className='btn btn-primary'>Crear</button>
             </form>
         </div>
 

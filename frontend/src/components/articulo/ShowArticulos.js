@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from 'react'
 import axios from 'axios'
+import logo_pequeño from '../logo_pequeño.png';
 
 import {Link} from 'react-router-dom'
 
@@ -22,13 +23,14 @@ const ShowArticulos = () => {
     }
 
     return (
-        <div>
+        <div className='back'>
             <div className='d-grip gap-2'>
-                <Link to="/create_articulo" className='btn btn-success btn-lg mt-2 mb-2 text-white'>Create</Link>
+                <Link to="/create_articulo" className='btn btn-danger btn-lg mt-2 mb-2 text-white'>Crear</Link>
             </div>
+            <img className='lg mt-2 mb-2 ' src={logo_pequeño} alt="Logo" />
 
             <table className='table table-striped'>
-                <thead className='bg-primary text-white'>
+                <thead className='bg-success text-white'>
                     <tr>
                         <td>Nombre</td>
                         <td>Talla</td>
@@ -43,8 +45,8 @@ const ShowArticulos = () => {
                             <td> {articulo.talla} </td>
                             <td> {articulo.color} </td>
                             <td>
-                                <Link to={`/edit_articulo/${articulo.id}`} className='btn btn-warning'>Edit</Link>
-                                <button onClick={ ()=>deleteArticulo(articulo.id)} className='btn btn-danger'>Delete</button>
+                                <Link to={`/edit_articulo/${articulo.id}`} className='btn btn-primary'>Editar</Link>
+                                <button onClick={ ()=>deleteArticulo(articulo.id)} className='boton danger'>Eliminar</button>
                             </td>
                         </tr>
                     )) }

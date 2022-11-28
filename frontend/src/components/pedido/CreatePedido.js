@@ -1,6 +1,7 @@
 import React, {useState} from 'react'
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
+import '../form.css'
 
 
 const endpoint = 'http://localhost:8000/api/pedido'
@@ -29,7 +30,7 @@ const CreatePedido = () => {
 
     return (
         <div>
-            <h3>Create Pedido</h3>
+            <h3>Crear Pedido</h3>
             <form onSubmit={store}>
                 <div className='mb-3'>
                     <label className='form-label'>Numero Pedido</label>
@@ -37,7 +38,7 @@ const CreatePedido = () => {
                         value={id_pedido}
                         onChange= { (e)=> setId_Pedido(e.target.value)}
                         type='number'
-                        className='form-control'
+                        className='form'
                     />
                 </div>
                 <div className='mb-3'>
@@ -46,7 +47,7 @@ const CreatePedido = () => {
                         value={id_cliente}
                         onChange= { (e)=> setId_Cliente(e.target.value)}
                         type='number'
-                        className='form-control'
+                        className='form'
                     />
                 </div>
                 <div className='mb-3'>
@@ -55,7 +56,7 @@ const CreatePedido = () => {
                         value={id_articulo}
                         onChange= { (e)=> setId_Articulo(e.target.value)}
                         type='number'
-                        className='form-control'
+                        className='form'
                     />
                 </div>
                 <div className='mb-3'>
@@ -64,7 +65,7 @@ const CreatePedido = () => {
                         value={unidades}
                         onChange= { (e)=> setUnidades(e.target.value)}
                         type='number'
-                        className='form-control'
+                        className='form'
                     />
                 </div>
                 <div className='mb-3'>
@@ -73,10 +74,10 @@ const CreatePedido = () => {
                         value={observaciones} 
                         onChange= { (e)=> setObservaciones(e.target.value)}
                         type='text'
-                        className='form-control'
+                        className='form'
                     />
                 </div>
-                <button type='submit' className='btn btn-primary'>Create</button>
+                <button type='submit' className='btn btn-primary'>Crear</button>
             </form>
         </div>
 

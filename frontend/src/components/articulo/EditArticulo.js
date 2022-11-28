@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react'
 import axios from 'axios'
 import {useNavigate, useParams} from 'react-router-dom'
+import '../form.css'
 
 const endpoint = 'http://localhost:8000/api/articulo/'
 
@@ -44,7 +45,7 @@ const EditArticulo = () => {
 
     return (
         <div>
-            <h3>Edit Articulo</h3>
+            <h3>Editar Artículo</h3>
             <form onSubmit={update}>
                 <div className='mb-3'>
                     <label className='form-label'>Nombre</label>
@@ -52,7 +53,7 @@ const EditArticulo = () => {
                         value={nombre}
                         onChange= { (e)=> setNombre(e.target.value)}
                         type='text'
-                        className='form-control'
+                        className='form'
                     />
                 </div>
                 <div className='mb-3'>
@@ -61,7 +62,7 @@ const EditArticulo = () => {
                         value={talla}
                         onChange= { (e)=> setTalla(e.target.value)}
                         type='text'
-                        className='form-control'
+                        className='form'
                     />
                 </div>
                 <div className='mb-3'>
@@ -70,7 +71,7 @@ const EditArticulo = () => {
                         value={color}
                         onChange= { (e)=> setColor(e.target.value)}
                         type='text'
-                        className='form-control'
+                        className='form'
                     />
                 </div>
                 <div className='mb-3'>
@@ -79,7 +80,7 @@ const EditArticulo = () => {
                         value={precio}
                         onChange= { (e)=> setPrecio(e.target.value)}
                         type='number'
-                        className='form-control'
+                        className='form'
                     />
                 </div>
                 <div className='mb-3'>
@@ -88,7 +89,7 @@ const EditArticulo = () => {
                         value={stock} 
                         onChange= { (e)=> setStock(e.target.value)}
                         type='number'
-                        className='form-control'
+                        className='form'
                     />
                 </div>
                 <div className='mb-3'>
@@ -97,10 +98,10 @@ const EditArticulo = () => {
                         value={descripcion}
                         onChange= { (e)=> setDescripcion(e.target.value)}
                         type='text'
-                        className='form-control'
+                        className='form'
                     />
                 </div>
-                <button type='submit' className='btn btn-primary'>Update</button>
+                <button type='submit' className='btn btn-primary'>Actualizar</button>
             </form>
         </div>
     )

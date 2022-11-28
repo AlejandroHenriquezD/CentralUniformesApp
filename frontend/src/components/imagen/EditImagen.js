@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react'
 import axios from 'axios'
 import {useNavigate, useParams} from 'react-router-dom'
+import '../form.css'
 
 const endpoint = 'http://localhost:8000/api/imagen/'
 
@@ -33,7 +34,7 @@ const EditImagen = () => {
 
     return (
         <div>
-            <h3>Edit Imagen</h3>
+            <h3>Editar Imagen</h3>
             <form onSubmit={update}>
                 <div className='mb-3'>
                     <label className='form-label'>Identificador Articulo</label>
@@ -41,7 +42,7 @@ const EditImagen = () => {
                         value={id_articulo}
                         onChange= { (e)=> setId_Articulo(e.target.value)}
                         type='number'
-                        className='form-control'
+                        className='form'
                     />
                 </div>
                 <div className='mb-3'>
@@ -50,10 +51,10 @@ const EditImagen = () => {
                         value={imagen}
                         onChange= { (e)=> setImagen(e.target.value)}
                         type='text'
-                        className='form-control'
+                        className='form'
                     />
                 </div>
-                <button type='submit' className='btn btn-primary'>Edit</button>
+                <button type='submit' className='btn btn-primary'>Actualizar</button>
             </form>
         </div>
     )

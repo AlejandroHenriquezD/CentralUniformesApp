@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react'
 import axios from 'axios'
-
+import logo_pequeño from '../logo_pequeño.png';
 import {Link} from 'react-router-dom'
 
 const endpoint = 'http://localhost:8000/api'
@@ -24,11 +24,12 @@ const ShowPedidos = () => {
     return (
         <div>
             <div className='d-grip gap-2'>
-                <Link to="/create_pedido" className='btn btn-success btn-lg mt-2 mb-2 text-white'>Create</Link>
+                <Link to="/create_pedido" className='btn btn-danger btn-lg mt-2 mb-2 text-white'>Crear</Link>
             </div>
+            <img className='lg mt-2 mb-2 ' src={logo_pequeño} alt="Logo" />
 
             <table className='table table-striped'>
-                <thead className='bg-primary text-white'>
+                <thead className='bg-success text-white'>
                     <tr>
                         <td>Articulo</td>
                         <td>Unidades</td>
@@ -43,8 +44,8 @@ const ShowPedidos = () => {
                             <td> {pedido.unidades} </td>
                             <td> {pedido.observaciones} </td>
                             <td>
-                                <Link to={`/edit_pedido/${pedido.id}`} className='btn btn-warning'>Edit</Link>
-                                <button onClick={ ()=>deletePedido(pedido.id)} className='btn btn-danger'>Delete</button>
+                                <Link to={`/edit_pedido/${pedido.id}`} className='btn btn-primary'>Editar</Link>
+                                <button onClick={ ()=>deletePedido(pedido.id)} className='boton danger'>Eliminar</button>
                             </td>
                         </tr>
                     )) }

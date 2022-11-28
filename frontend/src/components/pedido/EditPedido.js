@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react'
 import axios from 'axios'
 import {useNavigate, useParams} from 'react-router-dom'
+import '../form.css'
 
 const endpoint = 'http://localhost:8000/api/pedido/'
 
@@ -41,7 +42,7 @@ const EditPedido = () => {
 
     return (
         <div>
-            <h3>Edit Pedido</h3>
+            <h3>Editar Pedido</h3>
             <form onSubmit={update}>
                 <div className='mb-3'>
                     <label className='form-label'>Numero Pedido</label>
@@ -49,7 +50,7 @@ const EditPedido = () => {
                         value={id_pedido}
                         onChange= { (e)=> setId_Pedido(e.target.value)}
                         type='number'
-                        className='form-control'
+                        className='form'
                     />
                 </div>
                 <div className='mb-3'>
@@ -58,7 +59,7 @@ const EditPedido = () => {
                         value={id_cliente}
                         onChange= { (e)=> setId_Cliente(e.target.value)}
                         type='number'
-                        className='form-control'
+                        className='form'
                     />
                 </div>
                 <div className='mb-3'>
@@ -67,7 +68,7 @@ const EditPedido = () => {
                         value={id_articulo}
                         onChange= { (e)=> setId_Articulo(e.target.value)}
                         type='number'
-                        className='form-control'
+                        className='form'
                     />
                 </div>
                 <div className='mb-3'>
@@ -76,7 +77,7 @@ const EditPedido = () => {
                         value={unidades}
                         onChange= { (e)=> setUnidades(e.target.value)}
                         type='number'
-                        className='form-control'
+                        className='form'
                     />
                 </div>
                 <div className='mb-3'>
@@ -85,10 +86,10 @@ const EditPedido = () => {
                         value={observaciones} 
                         onChange= { (e)=> setObservaciones(e.target.value)}
                         type='text'
-                        className='form-control'
+                        className='form'
                     />
                 </div>
-                <button type='submit' className='btn btn-primary'>Update</button>
+                <button type='submit' className='btn btn-primary'>Actualizar</button>
             </form>
         </div>
     )

@@ -1,6 +1,7 @@
 import React, {useState} from 'react'
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
+import '../form.css'
 
 
 const endpoint = 'http://localhost:8000/api/cliente'
@@ -42,7 +43,7 @@ const CreateClient = () => {
 
     return (
         <div>
-            <h3>Create Client</h3>
+            <h3>Crear Cliente</h3>
             <form onSubmit={store}>
                 <div className='mb-3'>
                     <label className='form-label'>Usuario</label>
@@ -50,7 +51,7 @@ const CreateClient = () => {
                         value={usuario}
                         onChange= { (e)=> setUsuario(e.target.value)}
                         type='text'
-                        className='form-control'
+                        className='form'
                     />
                 </div>
                 <div className='mb-3'>
@@ -59,7 +60,7 @@ const CreateClient = () => {
                         value={contraseña}
                         onChange= { (e)=> setContraseña(e.target.value)}
                         type='text'
-                        className='form-control'
+                        className='form'
                     />
                 </div>
                 <div className='mb-3'>
@@ -68,7 +69,7 @@ const CreateClient = () => {
                         value={cif_nif}
                         onChange= { (e)=> setCif_nif(e.target.value)}
                         type='text'
-                        className='form-control'
+                        className='form'
                     />
                 </div>
                 <div className='mb-3'>
@@ -77,7 +78,7 @@ const CreateClient = () => {
                         value={razon_social}
                         onChange= { (e)=> setRazon_social(e.target.value)}
                         type='text'
-                        className='form-control'
+                        className='form'
                     />
                 </div>
                 <div className='mb-3'>
@@ -86,7 +87,7 @@ const CreateClient = () => {
                         value={nombre_comercial}
                         onChange= { (e)=> setNombre_comercial(e.target.value)}
                         type='text'
-                        className='form-control'
+                        className='form'
                     />
                 </div>
                 <div className='mb-3'>
@@ -95,7 +96,7 @@ const CreateClient = () => {
                         value={telefono}
                         onChange= { (e)=> setTelefono(e.target.value)}
                         type='text'
-                        className='form-control'
+                        className='form'
                     />
                 </div>
                 <div className='mb-3'>
@@ -104,7 +105,7 @@ const CreateClient = () => {
                         value={email}
                         onChange= { (e)=> setEmail(e.target.value)}
                         type='text'
-                        className='form-control'
+                        className='form'
                     />
                 </div>
                 <div className='mb-3'>
@@ -113,7 +114,7 @@ const CreateClient = () => {
                         value={direccion}
                         onChange= { (e)=> setDireccion(e.target.value)}
                         type='text'
-                        className='form-control'
+                        className='form'
                     />
                 </div>
                 <div className='mb-3'>
@@ -122,7 +123,7 @@ const CreateClient = () => {
                         value={codigo_postal}
                         onChange= { (e)=> setCodigo_postal(e.target.value)}
                         type='text'
-                        className='form-control'
+                        className='form'
                     />
                 </div>
                 <div className='mb-3'>
@@ -131,7 +132,7 @@ const CreateClient = () => {
                         value={municipio}
                         onChange= { (e)=> setMunicipio(e.target.value)}
                         type='text'
-                        className='form-control'
+                        className='form'
                     />
                 </div>
                 <div className='mb-3'>
@@ -140,7 +141,7 @@ const CreateClient = () => {
                         value={provincia}
                         onChange= { (e)=> setProvincia(e.target.value)}
                         type='text'
-                        className='form-control'
+                        className='form'
                     />
                 </div>
                 <div className='mb-3'>
@@ -149,10 +150,10 @@ const CreateClient = () => {
                         value={observaciones}
                         onChange= { (e)=> setObservaciones(e.target.value)}
                         type='text'
-                        className='form-control'
+                        className='form'
                     />
                 </div>
-                <button type='submit' className='btn btn-primary'>Store</button>
+                <button type='submit' className='btn btn-primary'>Crear</button>
             </form>
         </div>
 

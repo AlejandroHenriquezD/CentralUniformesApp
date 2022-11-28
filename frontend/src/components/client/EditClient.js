@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react'
 import axios from 'axios'
 import {useNavigate, useParams} from 'react-router-dom'
+import '../form.css'
 
 const endpoint = 'http://localhost:8000/api/cliente/'
 
@@ -62,7 +63,7 @@ const EditClient = () => {
 
     return (
         <div>
-            <h3>Edit Client</h3>
+            <h3>Editar Cliente</h3>
             <form onSubmit={update}>
                 <div className='mb-3'>
                     <label className='form-label'>Usuario</label>
@@ -70,7 +71,7 @@ const EditClient = () => {
                         value={usuario}
                         onChange= { (e)=> setUsuario(e.target.value)}
                         type='text'
-                        className='form-control'
+                        className='form'
                     />
                 </div>
                 <div className='mb-3'>
@@ -79,7 +80,7 @@ const EditClient = () => {
                         value={contraseña}
                         onChange= { (e)=> setContraseña(e.target.value)}
                         type='text'
-                        className='form-control'
+                        className='form'
                     />
                 </div>
                 <div className='mb-3'>
@@ -88,7 +89,7 @@ const EditClient = () => {
                         value={cif_nif}
                         onChange= { (e)=> setCif_nif(e.target.value)}
                         type='text'
-                        className='form-control'
+                        className='form'
                     />
                 </div>
                 <div className='mb-3'>
@@ -97,7 +98,7 @@ const EditClient = () => {
                         value={razon_social}
                         onChange= { (e)=> setRazon_social(e.target.value)}
                         type='text'
-                        className='form-control'
+                        className='form'
                     />
                 </div>
                 <div className='mb-3'>
@@ -106,7 +107,7 @@ const EditClient = () => {
                         value={nombre_comercial}
                         onChange= { (e)=> setNombre_comercial(e.target.value)}
                         type='text'
-                        className='form-control'
+                        className='form'
                     />
                 </div>
                 <div className='mb-3'>
@@ -115,7 +116,7 @@ const EditClient = () => {
                         value={telefono}
                         onChange= { (e)=> setTelefono(e.target.value)}
                         type='text'
-                        className='form-control'
+                        className='form'
                     />
                 </div>
                 <div className='mb-3'>
@@ -124,7 +125,7 @@ const EditClient = () => {
                         value={email}
                         onChange= { (e)=> setEmail(e.target.value)}
                         type='text'
-                        className='form-control'
+                        className='form'
                     />
                 </div>
                 <div className='mb-3'>
@@ -133,7 +134,7 @@ const EditClient = () => {
                         value={direccion}
                         onChange= { (e)=> setDireccion(e.target.value)}
                         type='text'
-                        className='form-control'
+                        className='form'
                     />
                 </div>
                 <div className='mb-3'>
@@ -142,7 +143,7 @@ const EditClient = () => {
                         value={codigo_postal}
                         onChange= { (e)=> setCodigo_postal(e.target.value)}
                         type='text'
-                        className='form-control'
+                        className='form'
                     />
                 </div>
                 <div className='mb-3'>
@@ -151,7 +152,7 @@ const EditClient = () => {
                         value={municipio}
                         onChange= { (e)=> setMunicipio(e.target.value)}
                         type='text'
-                        className='form-control'
+                        className='form'
                     />
                 </div>
                 <div className='mb-3'>
@@ -160,7 +161,7 @@ const EditClient = () => {
                         value={provincia}
                         onChange= { (e)=> setProvincia(e.target.value)}
                         type='text'
-                        className='form-control'
+                        className='form'
                     />
                 </div>
                 <div className='mb-3'>
@@ -169,10 +170,10 @@ const EditClient = () => {
                         value={observaciones}
                         onChange= { (e)=> setObservaciones(e.target.value)}
                         type='text'
-                        className='form-control'
+                        className='form'
                     />
                 </div>
-                <button type='submit' className='btn btn-primary'>Update</button>
+                <button type='submit' className='btn btn-primary'>Actualizar</button>
             </form>
         </div>
     )

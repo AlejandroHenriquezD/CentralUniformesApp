@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
-
+import '../form.css'
 
 const endpoint = 'http://localhost:8000/api/imagen'
 
@@ -23,7 +23,7 @@ const CreateImagen = () => {
 
     return (
         <div>
-            <h3>Create Imagen</h3>
+            <h3>Crear Imagen</h3>
             <form onSubmit={store}>
                 <div className='mb-3'>
                     <label className='form-label'>Identificador Articulo</label>
@@ -31,7 +31,7 @@ const CreateImagen = () => {
                         value={id_articulo}
                         onChange= { (e)=> setId_Articulo(e.target.value)}
                         type='number'
-                        className='form-control'
+                        className='form'
                     />
                 </div>
                 <div className='mb-3'>
@@ -40,10 +40,10 @@ const CreateImagen = () => {
                         value={imagen}
                         onChange= { (e)=> setImagen(e.target.value)}
                         type='text'
-                        className='form-control'
+                        className='form'
                     />
                 </div>
-                <button type='submit' className='btn btn-primary'>Create</button>
+                <button type='submit' className='btn btn-primary'>Crear</button>
             </form>
         </div>
 
