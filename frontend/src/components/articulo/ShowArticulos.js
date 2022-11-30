@@ -7,6 +7,7 @@ import {Link} from 'react-router-dom'
 const endpoint = 'http://localhost:8000/api'
 const ShowArticulos = () => {
     const [articulos, setArticulos] = useState([])
+    
     useEffect ( ()=> {
         getAllArticulos() 
     }, [])

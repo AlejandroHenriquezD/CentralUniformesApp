@@ -3,7 +3,6 @@ import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
 import '../form.css'
 
-
 const endpoint = 'http://localhost:8000/api/cliente'
 
 const CreateClient = () => {
@@ -59,7 +58,7 @@ const CreateClient = () => {
                     <input
                         value={contraseña}
                         onChange= { (e)=> setContraseña(e.target.value)}
-                        type='text'
+                        type='password'
                         className='form'
                     />
                 </div>
@@ -153,7 +152,7 @@ const CreateClient = () => {
                         className='form'
                     />
                 </div>
-                <button type='submit' className='btn btn-primary'>Crear</button>
+                <button type='submit' className='btn btn-danger'>Crear</button>
             </form>
         </div>
 

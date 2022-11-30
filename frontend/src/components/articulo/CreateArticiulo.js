@@ -88,7 +88,7 @@ const CreateArticulo = () => {
                         className='form'
                     />
                 </div>
-                <button type='submit' className='btn btn-primary'>Crear</button>
+                <button type='submit' className='btn btn-danger'>Crear</button>
             </form>
         </div>
 
