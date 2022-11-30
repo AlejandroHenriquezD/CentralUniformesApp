@@ -173,7 +173,7 @@ const EditClient = () => {
                         className='form'
                     />
                 </div>
-                <button type='submit' className='btn btn-primary'>Actualizar</button>
+                <button type='submit' className='btn btn-danger'>Actualizar</button>
             </form>
         </div>
     )
