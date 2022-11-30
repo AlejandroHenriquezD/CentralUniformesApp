@@ -40,7 +40,7 @@ const ShowPedidos = () => {
                 <tbody>
                     {pedidos.map( (pedido) => (
                         <tr key={pedido.id}>
-                            <td> {pedido.id_articulo} </td>
+                            <td> {pedido.articulo.nombre} </td>
                             <td> {pedido.unidades} </td>
                             <td> {pedido.observaciones} </td>
                             <td>

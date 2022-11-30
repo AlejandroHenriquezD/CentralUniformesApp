@@ -41,7 +41,7 @@ const ShowImagenes = () => {
                 <tbody>
                     {imagenes.map( (imagen) => (
                         <tr key={imagen.id}>
-                            <td> {imagen.id_articulo} </td>
+                            <td> {imagen.articulo.nombre} {imagen.articulo.color} </td>
                             <td> {imagen.imagen} </td>
                             <td>
                                 <Link to={`/edit_imagen/${imagen.id}`} className='btn btn-primary'>Editar</Link>
