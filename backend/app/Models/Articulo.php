@@ -9,4 +9,8 @@ class Articulo extends Model
 {
     use HasFactory;
     protected $fillable = ['nombre', 'talla', 'color', 'precio', 'stock', 'descripcion'];
+    
+    public function imagen(){
+        return $this->hasMany('App\Models\Imagen', 'id_articulo');
+    }
 }   
