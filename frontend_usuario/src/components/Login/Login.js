@@ -4,9 +4,12 @@ import { useNavigate } from 'react-router-dom'
 const Login = () => {
 
     const navigate = useNavigate()
+    
     const login = async (e) => {
+
         e.preventDefault()
-        navigate('/home')
+        
+        navigate('/incio')
     }
 
     const navigateToRegister = () => {
@@ -16,8 +19,8 @@ const Login = () => {
     var rootStyle = {
         backgroundColor : '#7A7777',
         color : 'white',
-        height : '100vh',
-        position: 'absolute',
+        position: 'absolute', //fixed para el register
+        padding: '3%',
         top: 0,
         left: 0,
         right: 0,

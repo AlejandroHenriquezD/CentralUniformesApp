@@ -4,6 +4,7 @@ import {useNavigate, useParams} from 'react-router-dom'
 import '../form.css'
 
 const endpoint = 'http://localhost:8000/api/pedido/'
+const endpoint2 = 'http://localhost:8000/api'
 
 const EditPedido = () => {
 
@@ -14,6 +15,9 @@ const EditPedido = () => {
     const [observaciones, setObservaciones] = useState('')
     const navigate = useNavigate()
     const {id} = useParams()
+
+    const [articulos, setId_Articulos] = useState([])
+    const [clientes, setId_Clientes] = useState([])
 
 
     const update = async (e) =>{
@@ -35,7 +39,14 @@ const EditPedido = () => {
             setId_Articulo(response.data.id_articulo)
             setUnidades(response.data.unidades)
             setObservaciones(response.data.observaciones)
+            getAll()
         }
+        const getAll = async () => {
+            const response = await axios.get(`${endpoint2}/articulos`);
+            const response2 = await axios.get(`${endpoint2}/clientes`);
+            setId_Articulos(response.data);
+            setId_Clientes(response2.data);
+          };
         getPedidoById()
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [] )
@@ -54,22 +65,34 @@ const EditPedido = () => {
                     />
                 </div>
                 <div className='mb-3'>
-                    <label className='form-label'>Numero Cliente</label>
-                    <input
+                    <label className='form-label'>Cliente</label>
+                    <select
                         value={id_cliente}
-                        onChange= { (e)=> setId_Cliente(e.target.value)}
-                        type='number'
+                        onChange={(e) => {
+                            setId_Cliente(e.target.value);
+                        }}
                         className='form'
-                    />
+                    >
+                        <option value="" />
+                        {clientes.map((cliente) => (
+                            <option value={`${cliente.id}`}>{cliente.usuario}</option>
+                        ))}
+                    </select>
                 </div>
                 <div className='mb-3'>
-                    <label className='form-label'>Identificador Articulo</label>
-                    <input
+                    <label className='form-label'>Articulo</label>
+                    <select
                         value={id_articulo}
-                        onChange= { (e)=> setId_Articulo(e.target.value)}
-                        type='number'
+                        onChange={(e) => {
+                            setId_Articulo(e.target.value);
+                        }}
                         className='form'
-                    />
+                    >
+                        <option value="" />
+                        {articulos.map((articulo) => (
+                            <option value={`${articulo.id}`}>{articulo.nombre} {articulo.talla} {articulo.color}</option>
+                        ))}
+                    </select>
                 </div>
                 <div className='mb-3'>
                     <label className='form-label'>Unidades</label>
@@ -89,7 +112,7 @@ const EditPedido = () => {
                         className='form'
                     />
                 </div>
-                <button type='submit' className='btn btn-primary'>Actualizar</button>
+                <button type='submit' className='btn btn-danger'>Actualizar</button>
             </form>
         </div>
     )

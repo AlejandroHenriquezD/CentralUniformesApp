@@ -4,6 +4,7 @@ import {useNavigate, useParams} from 'react-router-dom'
 import '../form.css'
 
 const endpoint = 'http://localhost:8000/api/imagen/'
+const endpoint2 = 'http://localhost:8000/api'
 
 const EditImagen = () => {
 
@@ -11,6 +12,8 @@ const EditImagen = () => {
     const [imagen, setImagen] = useState('')
     const navigate = useNavigate()
     const {id} = useParams()
+
+    const [articulos, setId_Articulos] = useState([])
 
 
     const update = async (e) =>{
@@ -26,8 +29,12 @@ const EditImagen = () => {
             const response = await axios.get(`${endpoint}${id}`)
             setId_Articulo(response.data.id_articulo)
             setImagen(response.data.imagen)
-
+            getAll()
         }
+        const getAll = async () => {
+            const response = await axios.get(`${endpoint2}/articulos`);
+            setId_Articulos(response.data);
+          };
         getPedidoById()
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [] )
@@ -36,14 +43,20 @@ const EditImagen = () => {
         <div>
             <h3>Editar Imagen</h3>
             <form onSubmit={update}>
-                <div className='mb-3'>
-                    <label className='form-label'>Identificador Articulo</label>
-                    <input
+            <div className='mb-3'>
+                    <label className='form-label'>Articulo</label>
+                    <select
                         value={id_articulo}
-                        onChange= { (e)=> setId_Articulo(e.target.value)}
-                        type='number'
+                        onChange={(e) => {
+                            setId_Articulo(e.target.value);
+                        }}
                         className='form'
-                    />
+                    >
+                        <option value="" />
+                        {articulos.map((articulo) => (
+                            <option value={`${articulo.id}`}>{articulo.nombre} {articulo.color}</option>
+                        ))}
+                    </select>
                 </div>
                 <div className='mb-3'>
                     <label className='form-label'>Imagen</label>
@@ -54,7 +67,7 @@ const EditImagen = () => {
                         className='form'
                     />
                 </div>
-                <button type='submit' className='btn btn-primary'>Actualizar</button>
+                <button type='submit' className='btn btn-danger'>Actualizar</button>
             </form>
         </div>
     )
