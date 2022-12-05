@@ -32,6 +32,7 @@ const ShowClients = () => {
             <table className='table table-striped'>
                 <thead className='bg-success text-white'>
                     <tr>
+                        <td>Usuario</td>
                         <td>Teléfono</td>
                         <td>Email</td>
                         <td>Dirección</td>
@@ -41,6 +42,7 @@ const ShowClients = () => {
                 <tbody>
                     {clients.map( (client) => (
                         <tr key={client.id}>
+                            <td> {client.usuario} </td>
                             <td> {client.telefono} </td>
                             <td> {client.email} </td>
                             <td> {client.direccion} </td>

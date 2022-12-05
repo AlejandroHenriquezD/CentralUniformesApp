@@ -9,7 +9,7 @@ const Login = () => {
 
         e.preventDefault()
         
-        navigate('/incio')
+        navigate('/inicio')
     }
 
     const navigateToRegister = () => {

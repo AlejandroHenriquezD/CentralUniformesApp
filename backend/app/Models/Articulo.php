@@ -13,4 +13,7 @@ class Articulo extends Model
     public function imagen(){
         return $this->hasMany('App\Models\Imagen', 'id_articulo');
     }
+    public function pedido(){
+        return $this->hasMany('App\Models\Pedido', 'id_articulo');
+    }
 }   

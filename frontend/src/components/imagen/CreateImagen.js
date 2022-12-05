@@ -8,19 +8,27 @@ const endpoint2 = 'http://localhost:8000/api'
 
 const CreateImagen = () => {
 
+    
+
     const [id_articulo, setId_Articulo] = useState(0)
     const [imagen, setImagen] = useState('')
     const navigate = useNavigate()
+
+    const handleChange = (file) => {
+        setImagen(file[0]);
+    };
 
     const [articulos, setId_Articulos] = useState([])
 
 
     const store = async (e) => {
         e.preventDefault()
-        await axios.post(endpoint, {
-            id_articulo: id_articulo,
-            imagen: imagen
-        })
+        const fData = new FormData();
+
+        fData.append("imagen", imagen)
+        fData.append("id_articulo", id_articulo)
+
+        axios.post(endpoint,fData)
         navigate('/show_imagenes')
     }
 
@@ -37,7 +45,7 @@ const CreateImagen = () => {
     return (
         <div>
             <h3>Crear Imagen</h3>
-            <form onSubmit={store}>
+            <form onSubmit={store} encType="multipart/form-data">
                 <div className='mb-3'>
                     <label className='form-label'>Articulo</label>
                     <select
@@ -54,15 +62,16 @@ const CreateImagen = () => {
                     </select>
                 </div>
                 <div className='mb-3'>
-                    <label className='form-label'>Imagen</label>
-                    <input
-                        value={imagen}
-                        onChange={(e) => setImagen(e.target.value)}
-                        type='text'
+                    <label htmlFor="imagen" className='form-label'>Imagen</label>
+                    <input 
+                        name="imagen"
+                        id="imagen"
+                        type='file'
                         className='form'
+                        onChange={(e) => handleChange(e.target.files)}
                     />
                 </div>
-                <button type='submit' className='btn btn-danger'>Crear</button>
+                <button type='submit' onClick={store} className='btn btn-danger'>Crear</button>
             </form>
         </div>
 

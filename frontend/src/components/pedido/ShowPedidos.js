@@ -31,6 +31,7 @@ const ShowPedidos = () => {
             <table className='table table-striped'>
                 <thead className='bg-success text-white'>
                     <tr>
+                        <td>Número Pedido</td>
                         <td>Articulo</td>
                         <td>Unidades</td>
                         <td>Observaciones</td>
@@ -40,7 +41,9 @@ const ShowPedidos = () => {
                 <tbody>
                     {pedidos.map( (pedido) => (
                         <tr key={pedido.id}>
-                            <td> {pedido.articulo.nombre} </td>
+                            <td> {pedido.id_pedido}</td>
+                            <td> 
+                                {pedido.articulo.nombre} {pedido.articulo.talla} {pedido.articulo.color} </td>
                             <td> {pedido.unidades} </td>
                             <td> {pedido.observaciones} </td>
                             <td>

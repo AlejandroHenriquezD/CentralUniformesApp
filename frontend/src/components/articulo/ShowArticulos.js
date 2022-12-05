@@ -36,6 +36,7 @@ const ShowArticulos = () => {
                         <td>Nombre</td>
                         <td>Talla</td>
                         <td>Color</td>
+                        <td>Stock</td>
                         <td>Acciones</td>
                     </tr>
                 </thead>
@@ -45,6 +46,7 @@ const ShowArticulos = () => {
                             <td> {articulo.nombre} </td>
                             <td> {articulo.talla} </td>
                             <td> {articulo.color} </td>
+                            <td> {articulo.stock} </td>
                             <td>
                                 <Link to={`/edit_articulo/${articulo.id}`} className='btn btn-primary'>Editar</Link>
                                 <button onClick={ ()=>deleteArticulo(articulo.id)} className='boton danger'>Eliminar</button>
