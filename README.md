@@ -21,7 +21,6 @@ Una vez esté todo hecho estará listo para ponerlo en marcha siempre que queram
 
 El primer paso será arrancar nuestros servidores en XAMPP (Apache y MySQL)
 
-![screenshots](https://github.com/AlejandroHenriquezD/CentralUniformes/blob/master/screenshots/xampp.png)
 
 Lo siguiente será arrancar nuestro backend en laravel para ello entramos a la carpeta backend y ejecutamos el siguiente comando
 
