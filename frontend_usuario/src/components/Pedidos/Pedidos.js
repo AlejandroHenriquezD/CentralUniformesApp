@@ -27,7 +27,7 @@ const Pedidos = () => {
                     <div className='pedido'>
                         <p>{pedido.fecha_pedido}</p>
                         <p>{pedido.articulo.nombre} {pedido.articulo.talla} {pedido.articulo.color}</p>
-                        <p>{pedido.unidades}</p>
+                        <p>{pedido.unidades} unidad/es</p>
                         <p>{pedido.articulo.precio}€/unidad</p>
                     </div>
             ))}

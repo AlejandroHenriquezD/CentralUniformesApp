@@ -19,10 +19,21 @@ const Register = () => {
     const [municipio, setMunicipio] = useState('')
     const [provincia, setProvincia] = useState('')
     const [observaciones, setObservaciones] = useState('')
+
+    const [error, setError] = useState('')
+
     const navigate = useNavigate()
 
     const register = async (e) => {
         e.preventDefault()
+    // eslint-disable-next-line
+        if (usuario.length == 0) {
+        
+            setError(true)
+        }
+
+
+
         await axios.post(endpoint, {
             usuario: usuario,
             contraseña: contraseña,
@@ -41,7 +52,7 @@ const Register = () => {
     }
     const navigateToLogin = () => {
         navigate('/login');
-      };
+    };
 
 
     var rootStyle = {
@@ -62,26 +73,31 @@ const Register = () => {
 
             <form class="form" onSubmit={register}>
 
-                <label className='form-label'>Usuario</label>
-                <div className='mb-3'>
+                <label className='form-label'>Usuario *</label>
+                <div className>
                     <input
                         value={usuario}
                         onChange={(e) => setUsuario(e.target.value)}
                         type='text'
                         class='input1' />
+                    {error&&usuario.length<=0?
+                    <div className='lab'>
+                        <label><b>Usuario no puede estar vacio</b></label>
+                    </div>:""}
                 </div>
 
-                <label className='form-label'>Contraseña</label>
-                <div className='mb-3'>
+
+                <label className='form-label'>Contraseña *</label>
+                <div className='mb-1'>
                     <input
                         value={contraseña}
                         onChange={(e) => setContraseña(e.target.value)}
                         type='password'
                         className='input1'
                     />
-                </div>
 
-                <label className='form-label'>CIF / NIF</label>
+                </div>
+                <label className='form-label'>CIF / NIF *</label>
                 <div className='mb-3'>
                     <input
                         value={cif_nif}
@@ -111,7 +127,7 @@ const Register = () => {
                     />
                 </div>
 
-                <label className='form-label'>Teléfono</label>
+                <label className='form-label'>Teléfono *</label>
                 <div className='mb-3'>
                     <input
                         value={telefono}
@@ -121,7 +137,7 @@ const Register = () => {
                     />
                 </div>
 
-                <label className='form-label'>Email</label>
+                <label className='form-label'>Email *</label>
                 <div className='mb-3'>
                     <input
                         value={email}
@@ -131,7 +147,7 @@ const Register = () => {
                     />
                 </div>
 
-                <label className='form-label'>Dirección</label>
+                <label className='form-label'>Dirección *</label>
                 <div className='mb-3'>
                     <input
                         value={direccion}
@@ -141,7 +157,7 @@ const Register = () => {
                     />
                 </div>
 
-                <label className='form-label'>Código Postal</label>
+                <label className='form-label'>Código Postal *</label>
                 <div className='mb-3'>
                     <input
                         value={codigo_postal}
@@ -151,7 +167,7 @@ const Register = () => {
                     />
                 </div>
 
-                <label className='form-label'>Municipio</label>
+                <label className='form-label'>Municipio *</label>
                 <div className='mb-3'>
                     <input
                         value={municipio}
@@ -161,7 +177,7 @@ const Register = () => {
                     />
                 </div>
 
-                <label className='form-label'>Provincia</label>
+                <label className='form-label'>Provincia *</label>
                 <div className='mb-3'>
                     <input
                         value={provincia}

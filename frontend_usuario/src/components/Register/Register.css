@@ -13,7 +13,6 @@
 .input1 {
     border: 2px solid #D6D6D6;
     border-radius: 25px;
-    margin-bottom: 7%;
     width: 75%;
     font-family: Verdana;
     box-shadow: 5px 5px 10px black;
@@ -28,4 +27,9 @@
     color: white;
     font-family: Verdana;
     box-shadow: 5px 5px 10px black;
+}
+
+.lab {
+    margin-bottom: 7%;
+    color: #FA6660;
 }

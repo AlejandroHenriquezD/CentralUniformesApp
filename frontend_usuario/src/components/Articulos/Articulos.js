@@ -19,7 +19,7 @@ const Articulos = () => {
 
 
     const getAllArticulos = async () => {
-        const response = await axios.get(`${endpoint}/imagenes`)
+        const response = await axios.get(`${endpoint}/articulos`)
         setArticulos(response.data)
     }
     // const navigate = useNavigate()
@@ -37,12 +37,12 @@ const Articulos = () => {
             {articulos.map((articulo) => (
                     <div className='articulo'>
                         <img className='img1' src={ logo } alt="Foto"></img>
-                        <p>{articulo.articulo.nombre}</p>
-                        <p>{articulo.articulo.precio} €</p>
-                        <p>Talla {articulo.articulo.talla}</p>
-                        <p>Color {articulo.articulo.color} </p>
+                        <p>{articulo.nombre}</p>
+                        <p>{articulo.precio} €</p>
+                        <p>Talla {articulo.talla}</p>
+                        <p>Color {articulo.color} </p>
                         <button  className='boton10'>
-                            <Link to={`/add_articulo/${articulo.articulo.id}`} className='lin'>Añadir</Link>
+                            <Link to={`/add_articulo/${articulo.id}`} className='lin'>Añadir</Link>
                         </button>
                         
                         <p></p>

@@ -19,7 +19,7 @@ const Login = () => {
     var rootStyle = {
         backgroundColor : '#7A7777',
         color : 'white',
-        position: 'absolute', //fixed para el register
+        position: 'absolute',
         padding: '3%',
         top: 0,
         left: 0,
