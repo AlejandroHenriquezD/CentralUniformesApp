@@ -79,7 +79,7 @@ const EditClient = () => {
                     <input
                         value={contraseña}
                         onChange= { (e)=> setContraseña(e.target.value)}
-                        type='text'
+                        type='password'
                         className='form'
                     />
                 </div>

@@ -21,6 +21,8 @@ Una vez esté todo hecho estará listo para ponerlo en marcha siempre que queram
 
 El primer paso será arrancar nuestros servidores en XAMPP (Apache y MySQL)
 
+![screenshots](https://github.com/tcrurav/ReactExpressGoogleLogin/blob/master/screenshots/xampp.png)
+
 Lo siguiente será arrancar nuestro backend en laravel para ello entramos a la carpeta backend y ejecutamos el siguiente comando
 
 `php artisan serve`
@@ -159,7 +161,10 @@ Foto
 
 La planificación que he llevado a cabo ha sido con la ayuda de github, usando su función de proyectos en la cual puedes asignar tareas e ir cambiando su estado en una vista tablero muy cómoda.
 
+[Mi Tablero](https://github.com/users/AlejandroHenriquezD/projects/1/views/1)
+
 Para organizarme mejor he dividido el proyecto en pequeños objetivos para poder tener más claro que quiero hacer cada dia. Mi metodología de trabajo se basa en entender lo que quiero hacer y buscar un ejemplo de como hacerlo, preferiblemente un video, seguir el ejemplo del video y una vez hecho hacer lo mismo pero para mi caso personal.
+
 
 # Referencias Externas
 

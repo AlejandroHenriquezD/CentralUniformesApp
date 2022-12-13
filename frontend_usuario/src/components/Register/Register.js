@@ -27,7 +27,7 @@ const Register = () => {
     const register = async (e) => {
         e.preventDefault()
     // eslint-disable-next-line
-        if (usuario.length == 0) {
+        if (usuario.length == 0||contraseña.length == 0||cif_nif.length == 0||telefono.length == 0|| email.length == 0|| direccion.length == 0|| codigo_postal.length == 0|| municipio.length == 0|| provincia.length == 0) {
         
             setError(true)
         }
@@ -95,7 +95,10 @@ const Register = () => {
                         type='password'
                         className='input1'
                     />
-
+                    {error&&contraseña.length<=0?
+                    <div className='lab'>
+                        <label><b>Contraseña no puede estar vacia</b></label>
+                    </div>:""}
                 </div>
                 <label className='form-label'>CIF / NIF *</label>
                 <div className='mb-3'>
@@ -105,6 +108,10 @@ const Register = () => {
                         type='text'
                         className='input1'
                     />
+                    {error&&cif_nif.length<=0?
+                    <div className='lab'>
+                        <label><b>Cif / Nif no puede estar vacio</b></label>
+                    </div>:""}
                 </div>
 
                 <label className='form-label'>Razon Social</label>
@@ -135,6 +142,10 @@ const Register = () => {
                         type='text'
                         className='input1'
                     />
+                    {error&&telefono.length<=0?
+                    <div className='lab'>
+                        <label><b>Teléfono no puede estar vacio</b></label>
+                    </div>:""}                    
                 </div>
 
                 <label className='form-label'>Email *</label>
@@ -145,6 +156,10 @@ const Register = () => {
                         type='text'
                         className='input1'
                     />
+                    {error&&email.length<=0?
+                    <div className='lab'>
+                        <label><b>Email no puede estar vacio</b></label>
+                    </div>:""}                
                 </div>
 
                 <label className='form-label'>Dirección *</label>
@@ -155,6 +170,10 @@ const Register = () => {
                         type='text'
                         className='input1'
                     />
+                    {error&&direccion.length<=0?
+                    <div className='lab'>
+                        <label><b>Dirección no puede estar vacio</b></label>
+                    </div>:""}                
                 </div>
 
                 <label className='form-label'>Código Postal *</label>
@@ -165,6 +184,10 @@ const Register = () => {
                         type='text'
                         className='input1'
                     />
+                    {error&&codigo_postal.length<=0?
+                    <div className='lab'>
+                        <label><b>Código Postal no puede estar vacio</b></label>
+                    </div>:""}                    
                 </div>
 
                 <label className='form-label'>Municipio *</label>
@@ -175,6 +198,10 @@ const Register = () => {
                         type='text'
                         className='input1'
                     />
+                    {error&&municipio.length<=0?
+                    <div className='lab'>
+                        <label><b>Municipio no puede estar vacio</b></label>
+                    </div>:""}                    
                 </div>
 
                 <label className='form-label'>Provincia *</label>
@@ -185,6 +212,10 @@ const Register = () => {
                         type='text'
                         className='input1'
                     />
+                    {error&&provincia.length<=0?
+                    <div className='lab'>
+                        <label><b>Provincia no puede estar vacia</b></label>
+                    </div>:""}                    
                 </div>
 
                 <label className='form-label'>Observaciones</label>

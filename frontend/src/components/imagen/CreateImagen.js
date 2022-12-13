@@ -57,7 +57,7 @@ const CreateImagen = () => {
                     >
                         <option value="" />
                         {articulos.map((articulo) => (
-                            <option value={`${articulo.id}`}>{articulo.nombre} {articulo.color}</option>
+                            <option value={`${articulo.id}`}>{articulo.nombre} {articulo.color} {articulo.talla}</option>
                         ))}
                     </select>
                 </div>

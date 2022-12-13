@@ -34,7 +34,6 @@ const ShowPedidos = () => {
                         <td>Número Pedido</td>
                         <td>Articulo</td>
                         <td>Unidades</td>
-                        <td>Observaciones</td>
                         <td>Acciones</td>
                     </tr>
                 </thead>
@@ -45,7 +44,6 @@ const ShowPedidos = () => {
                             <td> 
                                 {pedido.articulo.nombre} {pedido.articulo.talla} {pedido.articulo.color} </td>
                             <td> {pedido.unidades} </td>
-                            <td> {pedido.observaciones} </td>
                             <td>
                                 <Link to={`/edit_pedido/${pedido.id}`} className='btn btn-primary'>Editar</Link>
                                 <button onClick={ ()=>deletePedido(pedido.id)} className='boton danger'>Eliminar</button>
