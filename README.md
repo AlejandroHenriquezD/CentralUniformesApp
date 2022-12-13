@@ -21,7 +21,7 @@ Una vez esté todo hecho estará listo para ponerlo en marcha siempre que queram
 
 El primer paso será arrancar nuestros servidores en XAMPP (Apache y MySQL)
 
-![screenshots](https://github.com/tcrurav/ReactExpressGoogleLogin/blob/master/screenshots/xampp.png)
+![screenshots](https://github.com/AlejandroHenriquezD/CentralUniformes/blob/master/screenshots/xampp.png)
 
 Lo siguiente será arrancar nuestro backend en laravel para ello entramos a la carpeta backend y ejecutamos el siguiente comando
 
@@ -45,17 +45,17 @@ La idea surge por la necesidad de un sistema para realizar pedidos de ropa. La a
 # Diagramas
 
 ## Diagrama Entidad Relación
-Foto
+![screenshots](https://github.com/AlejandroHenriquezD/CentralUniformes/blob/master/screenshots/er.png)
 
 ## Diagrama UML
-Foto
+![screenshots](https://github.com/AlejandroHenriquezD/CentralUniformes/blob/master/screenshots/uml.png)
 ## Casos de Uso
-Foto
+![screenshots](https://github.com/AlejandroHenriquezD/CentralUniformes/blob/master/screenshots/casosdeuso.png)
 
 El administrador de almacén que gestione la aplicación podrá realizar estas tareas las cuales son básicamente lo que conocemos como un CRUD (Create Read Update Delete) y el cliente podrá hacer pedidos ver artículos y registrarse
 
 ## Modelo Relacional
-Foto
+![screenshots](https://github.com/AlejandroHenriquezD/CentralUniformes/blob/master/screenshots/modelorelacional.png)
 
 El modelo de datos se compone de 4 tablas las dos más importantes son clientes y artículos, la primera se almacenará toda la información de los usuarios en la segunda todos los artículos (entendiendo como artículo un modelo de algo Ej: Camisa Básica Blanca Talla L), la entidad imagenes es un apoyo a la tabla articulos y en la entidad pedidos se guardaran los pedidos de cada cliente. La tabla pedidos tendrá dos claves foráneas (id_articulo y id_cliente) al igual que la tabla Imagenes tendrá una clave foránea de la tabla articulos.
 
@@ -141,21 +141,21 @@ Tras implementar la aplicación procedemos a estudiar los aspectos de usabilidad
 
 Respecto a los colores hemos optado por usar principalmente los colores insignia de la empresa
 
-Foto
+![screenshots](https://github.com/AlejandroHenriquezD/CentralUniformes/blob/master/screenshots/colores.png)
 
 Al hacer esto usamos la marca de la empresa y usamos los huecos en blanco para no sobrecargar la pantalla
 
-Foto
+![screenshots](https://github.com/AlejandroHenriquezD/CentralUniformes/blob/master/screenshots/inicio.png)
 
 En cuantos a las fuentes hemos optado por hacer toda la página en Verdana, elegimos esta fuente debido a que es una fuente muy completa, tiene un tamaño adecuado, es fácil de leer 
 
 Respecto a los iconos hemos optado por una librería de react la cual nos ofrece unos iconos muy elegante e intuitivos para nuestro menú
 
-Foto
+![screenshots](https://github.com/AlejandroHenriquezD/CentralUniformes/blob/master/screenshots/menu1.png)
 
 Para evitar la posible duda del usuario de si su pedido ha sido enviado una alerta emergente aparecerá si el pedido se registra correctamente
 
-Foto
+![screenshots](https://github.com/AlejandroHenriquezD/CentralUniformes/blob/master/screenshots/alerta.png)
 
 # Planificación
 
