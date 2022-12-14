@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Api\ArticuloController;
+use App\Http\Controllers\API\AuthController;
 use App\Http\Controllers\Api\ClienteController;
 use App\Http\Controllers\Api\ImagenController;
 use App\Http\Controllers\Api\PedidoController;
@@ -9,9 +10,7 @@ use Illuminate\Support\Facades\Route;
 
 
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
-});
+
 
 Route::controller(ClienteController::class)->group(function (){
     Route::get('/clientes', 'index');
@@ -43,4 +42,11 @@ Route::controller(ImagenController::class)->group(function (){
     Route::get('/imagen/{id}', 'show');
     Route::put('/imagen/{id}', 'update');
     Route::delete('/imagen/{id}', 'destroy');
+});
+
+Route::post('login', [AuthController::class, 'signin']);
+Route::post('register', [AuthController::class, 'signup']);
+     
+Route::middleware('auth:sanctum')->group( function () {
+    Route::resource('blogs', BlogController::class);
 });
