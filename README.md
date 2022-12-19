@@ -156,6 +156,17 @@ Para evitar la posible duda del usuario de si su pedido ha sido enviado una aler
 
 ![screenshots](https://github.com/AlejandroHenriquezD/CentralUniformes/blob/master/screenshots/alerta.png)
 
+Ademas todos los formularios de la app estan validados para evitar que el usuario pueda cometer errores al introducir información
+
+Es una aplicación facil de usar ya que tiene funcionalidades muy definidas y simples haciendo que incluso una persona que no este familiarizada con las nuevas tecnologias sean capaces de usar la app
+
+En cuanto a la cantidad de información en pantalla hemos optado por mostrar lo estrictamente necesario para que no puedas perderte usando la app
+
+Los formularios no solo estan validados si no que ademas nos mostrara un mensaje de error en caso de que esten vacios. Ya que para crear un usuario se deben rellenar muchos campos es probable saltarse alguno, con esta medida evitamos la frustación del usuario. Ademas de que no todos los campos son obligatorios por ello hemos señalado los obligatorios con un "*"
+
+Respecto a los elementos multimedia hemos optado por que no sean muy abdantes para no sobrecargar en exceso la interfaz
+
+
 # Planificación
 
 La planificación que he llevado a cabo ha sido con la ayuda de github, usando su función de proyectos en la cual puedes asignar tareas e ir cambiando su estado en una vista tablero muy cómoda.
@@ -164,6 +175,18 @@ La planificación que he llevado a cabo ha sido con la ayuda de github, usando s
 
 Para organizarme mejor he dividido el proyecto en pequeños objetivos para poder tener más claro que quiero hacer cada dia. Mi metodología de trabajo se basa en entender lo que quiero hacer y buscar un ejemplo de como hacerlo, preferiblemente un video, seguir el ejemplo del video y una vez hecho hacer lo mismo pero para mi caso personal.
 
+
+# Conclusión
+
+Como conclusión de este proyecto puedo sacar muchas cosas en claro, despues de mes y medio de trabajo me he dado cuenta de lo complicado que puede resultar adapatarte a una nueva pila tecnologica, aunque todas siguen una misma estructura es dficil aprender un entorno nuevo bajo la presion de la entrega del proyecto.
+
+Pero aun asi creo que he sabdio llevar el projecto a buen puerto y estoy orgulloso de mi trabajo, he conseguido cumplir todos los objetivos que me marque y aunque no sea un proyecto profesional creo que el trabajo esta cumplido.
+
+He tenido dias buenos y dias malos pero al final lograba dar con la solucion a los problemas que iban surgiendo gracias a compañeros y profesores. 
+
+Se que no me he esforzado al 100%, pero el tiempo dedicado ha sido aprovechado al máximo.
+
+Y para terminar queria decir que proyecto de integración temprana ayuda mucho a hacerte una idea de lo que es trabajar de verdad para una empresa
 
 # Referencias Externas
 
