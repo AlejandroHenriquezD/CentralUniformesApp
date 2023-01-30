@@ -22,12 +22,13 @@ const Login = () => {
         
             setError(true)
         }else{
+            await axios.post(endpoint, {
+                email: email,
+                password: password
+            })
             navigate('/inicio')
         }
-        await axios.post(endpoint, {
-            email: email,
-            password: password
-        })
+
         
 
         
@@ -55,7 +56,7 @@ const Login = () => {
 
             <form class="form" onSubmit={login}>
 
-                <label className='form-label'>Usuario</label>
+                <label className='form-label'>Email</label>
                 <div className='mb-3'>
                     <input 
                         value={email}
@@ -64,7 +65,7 @@ const Login = () => {
                         type='text'/>
                     {error&&email.length<=0?
                     <div className='lab'>
-                        <label><b>Usuario no puede estar vacio</b></label>
+                        <label><b>Email no puede estar vacio</b></label>
                     </div>:""}
                 </div>
 

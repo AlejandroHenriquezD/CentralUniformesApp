@@ -26,7 +26,7 @@ const ShowArticulos = () => {
     return (
         <div className='back'>
             <div className='d-grip gap-2'>
-                <Link to="/create_articulo" className='btn btn-danger btn-lg mt-2 mb-2 text-white'>Crear</Link>
+                <Link to="/create_articulo" className='btn btn-danger btn-lg mt-2 mb-2 text-white'  >Crear</Link>
             </div>
             <img className='lg mt-2 mb-2 ' src={logo_pequeño} alt="Logo" />
 

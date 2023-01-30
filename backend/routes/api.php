@@ -26,6 +26,8 @@ Route::controller(ArticuloController::class)->group(function (){
     Route::get('/articulo/{id}', 'show');
     Route::put('/articulo/{id}', 'update');
     Route::delete('/articulo/{id}', 'destroy');
+    Route::get("json", 'indexPdf');
+    Route::get("/count", 'count');
 });
 
 Route::controller(PedidoController::class)->group(function (){
@@ -50,3 +52,4 @@ Route::post('register', [AuthController::class, 'signup']);
 Route::middleware('auth:sanctum')->group( function () {
     Route::resource('blogs', BlogController::class);
 });
+

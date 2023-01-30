@@ -5,10 +5,29 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use App\Models\Articulo;
 use Illuminate\Http\Request;
-
+use Barryvdh\DomPDF\Facade\pdf;
+use Illuminate\Support\Facades\DB;
 
 class ArticuloController extends Controller
 {
+    public function count()
+    {
+        $count = DB::table('articulos')->count();
+        return $count;
+    }
+    
+    public function indexPdf()
+    {
+        $articulos = Articulo::all();
+
+        $data = ['articulos'=>$articulos];
+        return response()->json($data,200, []);
+
+        // $articulos = DB::table('articulos')->get();
+        // $pdf = PDF::loadview('articulos',['articulos'=> $articulos]);
+        // return $pdf->stream();
+    }
+
     public function index()
     {
         $articulos = Articulo::all();
