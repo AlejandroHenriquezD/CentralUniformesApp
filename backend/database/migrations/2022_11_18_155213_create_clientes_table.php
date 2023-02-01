@@ -15,13 +15,16 @@ return new class extends Migration
     {
         Schema::create('clientes', function (Blueprint $table) {
             $table->id();
-            $table->string('usuario');
-            $table->string('contraseña');
-            $table->string('cif_nif');
-            $table->string('razon_social')->nullable();
+
+            $table->unsignedBigInteger('id_usuario');
+            $table->foreign('id_usuario')
+                ->references('id')
+                ->on('users')
+                ->onDelete('cascade');
+
             $table->string('nombre_comercial')->nullable();
+            $table->string('razon_social')->nullable();
             $table->string('telefono');
-            $table->string('email')->nullable();
             $table->string('direccion');
             $table->string('codigo_postal');
             $table->string('municipio');

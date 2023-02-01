@@ -15,17 +15,31 @@ return new class extends Migration
     {
         Schema::create('pedidos', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('id_pedido');
+
             $table->unsignedBigInteger('id_cliente');
             $table->foreign('id_cliente')
                 ->references('id')
-                ->on('clientes')
+                ->on('users')
                 ->onDelete('cascade');
-            $table->unsignedBigInteger('id_articulo');
-            $table->foreign('id_articulo')
+
+            $table->unsignedBigInteger('id_empleado')->nullable();
+            $table->foreign('id_empleado')
                 ->references('id')
-                ->on('articulos')
+                ->on('users')
                 ->onDelete('cascade');
+            
+            $table->unsignedBigInteger('id_diseño');
+            $table->foreign('id_diseño')
+                ->references('id')
+                ->on('diseños')
+                ->onDelete('cascade');
+
+            $table->unsignedBigInteger('id_trabajo');
+            $table->foreign('id_trabajo')
+                ->references('id')
+                ->on('trabajos')
+                ->onDelete('cascade');
+
             $table->integer('unidades');
             $table->string('observaciones')->nullable();
             $table->timestamp('fecha_pedido');
