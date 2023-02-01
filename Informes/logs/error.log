@@ -1,0 +1,28 @@
+2023-01-31T16:37:11.853Z - error: Report render failed
+(because) error when evaluating custom script /samples/Invoice/test
+connect ECONNREFUSED 127.0.0.1:8000
+Error: connect ECONNREFUSED 127.0.0.1:8000
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1247:16)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17) rootId=qu6rkh82j09lwq2, id=qu6rkh82j09lwq2
+2023-01-31T16:37:12.201Z - error: Report render failed
+(because) error when evaluating custom script /samples/Invoice/test
+connect ECONNREFUSED 127.0.0.1:8000
+Error: connect ECONNREFUSED 127.0.0.1:8000
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1247:16)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17) rootId=8f4uuylzsz7lna6, id=8f4uuylzsz7lna6
+2023-01-31T16:37:12.204Z - error: Error during processing request at http://localhost:5488/templates/rkJTnK2ce, details: Error when evaluating custom script /samples/Invoice/test
+connect ECONNREFUSED 127.0.0.1:8000
+Error: connect ECONNREFUSED 127.0.0.1:8000
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1247:16)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
+2023-01-31T16:37:45.494Z - error: Report render failed
+(because) error when evaluating custom script /samples/Invoice/test
+connect ECONNREFUSED 127.0.0.1:8000
+Error: connect ECONNREFUSED 127.0.0.1:8000
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1247:16)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17) rootId=gzgsy8dx9yteg8i, id=gzgsy8dx9yteg8i
+2023-01-31T16:37:45.496Z - error: Error during processing request at http://localhost:5488/templates/rkJTnK2ce, details: Error when evaluating custom script /samples/Invoice/test
+connect ECONNREFUSED 127.0.0.1:8000
+Error: connect ECONNREFUSED 127.0.0.1:8000
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1247:16)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17)
