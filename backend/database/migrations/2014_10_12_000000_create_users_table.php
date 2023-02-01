@@ -22,12 +22,6 @@ return new class extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->char('rol');
 
-            $table->unsignedBigInteger('id_cliente')->nullable();
-            $table->foreign('id_cliente')
-                ->references('id')
-                ->on('clientes')
-                ->onDelete('cascade');
-
             $table->rememberToken();
             $table->timestamps();
         });
