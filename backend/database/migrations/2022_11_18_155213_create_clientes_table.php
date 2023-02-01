@@ -22,7 +22,6 @@ return new class extends Migration
                 ->on('users')
                 ->onDelete('cascade');
 
-            
             $table->string('razon_social')->nullable();
             $table->string('telefono');
             $table->string('direccion');
