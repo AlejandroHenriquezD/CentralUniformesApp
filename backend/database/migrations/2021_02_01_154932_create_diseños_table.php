@@ -15,26 +15,26 @@ return new class extends Migration
     {
         Schema::create('diseños', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
+            $table->string('nombre');
             $table->string('img');
-            $table->string('position');
-            $table->integer('size');
-            $table->boolean('favourite');
-            $table->unsignedBigInteger('user_id');
-            $table->unsignedBigInteger('logo_id')->nullable();
-            $table->unsignedBigInteger('articulo_id');
+            $table->string('posicion');
+            $table->integer('tamaño');
+            $table->boolean('favorito');
+            $table->unsignedBigInteger('id_user');
+            $table->unsignedBigInteger('id_logo')->nullable();
+            $table->unsignedBigInteger('id_articulo');
 
-            $table->foreign('user_id')
+            $table->foreign('id_user')
                 ->references('id')
                 ->on('users')
                 ->onDelete('cascade');
 
-            $table->foreign('logo_id')
+            $table->foreign('id_logo')
                 ->references('id')
                 ->on('logos')
                 ->onDelete('cascade');
             
-            $table->foreign('articulo_id')
+            $table->foreign('id_articulos')
                 ->references('id')
                 ->on('articulos')
                 ->onDelete('cascade');

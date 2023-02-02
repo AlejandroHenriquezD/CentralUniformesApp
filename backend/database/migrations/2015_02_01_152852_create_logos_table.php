@@ -15,12 +15,12 @@ return new class extends Migration
     {
         Schema::create('logos', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
+            $table->string('nombre');
             $table->string('img');
-            $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('id_user');
             $table->timestamps();
             
-            $table->foreign('user_id')
+            $table->foreign('id_user')
                 ->references('id')
                 ->on('users')
                 ->onDelete('cascade');

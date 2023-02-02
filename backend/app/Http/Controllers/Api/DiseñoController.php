@@ -14,12 +14,14 @@ class DiseñoController extends Controller
         return $design;
     }
 
-    public function showByUserId($id) {
-        $designs = Diseño::where('user_id',$id)->get();
+    public function showByUserId($id)
+    {
+        $designs = Diseño::where('id_user', $id)->get();
         return $designs;
     }
 
-    public function countByUserId($id) {
+    public function countByUserId($id)
+    {
         return $this->showByUserId($id)->count();
         // return $counter;
     }
@@ -28,7 +30,7 @@ class DiseñoController extends Controller
     {
         $design = new Diseño();
 
-        if( $request->hasFile('img') ) {
+        if ($request->hasFile('img')) {
             $file = $request->file('img');
             $destinationPath = 'images/diseñoTable/';
             $filename = time() . '-' . $file->getClientOriginalName();
@@ -36,13 +38,13 @@ class DiseñoController extends Controller
             $design->img = $destinationPath . $filename;
         }
 
-        $design->name = $request->name;
-        $design->position = $request->position;
-        $design->size = $request->size;
-        $design->favourite = $request->favourite;
-        $design->logo_id = $request->logo_id;
-        $design->articulo_id = $request->articulo_id;
-        $design->user_id = $request->user_id;
+        $design->nombre = $request->nombre;
+        $design->posicion = $request->posicion;
+        $design->tamaño = $request->tamaño;
+        $design->favorito = $request->favorito;
+        $design->id_logo = $request->id_logo;
+        $design->id_articulo = $request->id_articulo;
+        $design->id_user = $request->id_user;
         $design->img = $request->img;
 
         $design->save();
@@ -63,13 +65,13 @@ class DiseñoController extends Controller
     public function update(Request $request, $id)
     {
         $design = Diseño::findOrFail($request->id);
-        $design->name = $request->name;
-        $design->position = $request->position;
-        $design->size = $request->size;
-        $design->favourite = $request->favourite;
-        $design->logo_id = $request->logo_id;
-        $design->articulo_id = $request->articulo_id;
-        $design->user_id = $request->user_id;
+        $design->nombre = $request->nombre;
+        $design->posicion = $request->posicion;
+        $design->tamaño = $request->tamaño;
+        $design->favorito = $request->favorito;
+        $design->id_logo = $request->id_logo;
+        $design->id_articulo = $request->id_articulo;
+        $design->id_user = $request->id_user;
         $design->img = $request->img;
 
         $design->save();

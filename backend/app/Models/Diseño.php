@@ -9,27 +9,27 @@ class Diseño extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'name',
+        'nombre',
         'img',
-        'position',
-        'size',
-        'favourite',
-        'user_id',
-        'logo_id',
-        'articulo_id'
+        'posicion',
+        'tamaño',
+        'favorito',
+        'id_user',
+        'id_logo',
+        'id_articulo'
     ];
 
     public function logo()
     {
-        return $this->belongsTo('App\Models\Logo', 'logo_id', 'id');
+        return $this->belongsTo('App\Models\Logo', 'id_logo', 'id');
     }
     public function articulo()
     {
-        return $this->belongsTo('App\Models\Articulo', 'articulo_id', 'id');
+        return $this->belongsTo('App\Models\Articulo', 'id_articulo', 'id');
     }
     public function user()
     {
-        return $this->belongsTo('App\Models\User', 'user_id', 'id');
+        return $this->belongsTo('App\Models\User', 'id_user', 'id');
     }
     public function pedidos()
     {

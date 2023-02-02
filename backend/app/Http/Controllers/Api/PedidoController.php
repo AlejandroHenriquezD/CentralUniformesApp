@@ -19,12 +19,12 @@ class PedidoController extends Controller
     {
         $pedido = new Pedido();
         $pedido->fecha_pedido = $request->fecha_pedido;
-        $pedido->cliente_id = $request->cliente_id;
-        $pedido->empleado_id = $request->empleado_id;
+        $pedido->id_cliente = $request->id_cliente;
+        $pedido->id_empleado = $request->id_empleado;
         $pedido->unidades = $request->unidades;
         $pedido->observaciones = $request->observaciones;
-        $pedido->trabajo_id = $request->trabajo_id;
-        $pedido->diseño_id = $request->diseño_id;
+        $pedido->id_trabajo = $request->id_trabajo;
+        $pedido->id_diseño = $request->id_diseño;
 
         $pedido->save();
     }
@@ -39,12 +39,12 @@ class PedidoController extends Controller
     {
         $pedido = Pedido::findOrFail($id);
         $pedido->fecha_pedido = $request->fecha_pedido;
-        $pedido->cliente_id = $request->cliente_id;
-        $pedido->empleado_id = $request->empleado_id;
+        $pedido->id_cliente = $request->id_cliente;
+        $pedido->id_empleado = $request->id_empleado;
         $pedido->unidades = $request->unidades;
         $pedido->observaciones = $request->observaciones;
-        $pedido->trabajo_id = $request->trabajo_id;
-        $pedido->diseño_id = $request->diseño_id;
+        $pedido->id_trabajo = $request->id_trabajo;
+        $pedido->id_diseño = $request->id_diseño;
 
         $pedido->save();
         return $pedido;

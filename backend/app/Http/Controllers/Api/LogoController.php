@@ -15,7 +15,7 @@ class LogoController extends Controller
     }
 
     public function showByUserId($id) {
-        $logos = Logo::where('user_id',$id)->get();
+        $logos = Logo::where('id_user',$id)->get();
         return $logos;
     }
     
@@ -31,8 +31,8 @@ class LogoController extends Controller
             $logo->img = $destinationPath . $filename;
         }
 
-        $logo->name = $request->name;
-        $logo->user_id = $request->user_id;
+        $logo->nombre = $request->nombre;
+        $logo->id_user = $request->id_user;
 
         $logo->save();
 
