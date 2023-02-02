@@ -19,7 +19,7 @@ class AuthController extends BaseController
         if(Auth::attempt(['email' => $request->email, 'password' => $request->password])){ 
             $authUser = Auth::user(); 
             $success['token'] =  $authUser->createToken('MyAuthApp')->plainTextToken; 
-            $success['name'] =  $authUser->name;
+            $success['id'] =  $authUser->id;
    
             return $this->sendResponse($success, 'User signed in');
         } 
@@ -30,9 +30,11 @@ class AuthController extends BaseController
     public function signup(Request $request)
     {
         $validator = Validator::make($request->all(), [
+            'dni' => 'required',
             'name' => 'required',
             'email' => 'required|email',
             'password' => 'required',
+            'rol' => 'required',
             'confirm_password' => 'required|same:password',
         ]);
    
@@ -44,9 +46,25 @@ class AuthController extends BaseController
         $input['password'] = bcrypt($input['password']);
         $user = User::create($input);
         $success['token'] =  $user->createToken('MyAuthApp')->plainTextToken;
-        $success['name'] =  $user->name;
+        $success['id'] =  $user->id;
    
         return $this->sendResponse($success, 'User created successfully.');
     }
-   
+    
+    public function userProfile() {
+        return response()->json([
+            "status" => 0,
+            "msg" => "Acerca del perfil de usuario",
+            "data" => auth()->user()
+        ]);
+    }
+
+    public function logout() {
+        auth()->user()->tokens()->delete();
+
+        return response()->json([
+            "status" => 1,
+            "msg" => "Cierre de sesión"
+        ]);
+    }
 }

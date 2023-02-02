@@ -16,13 +16,12 @@ return new class extends Migration
         Schema::create('clientes', function (Blueprint $table) {
             $table->id();
 
-            $table->unsignedBigInteger('id_usuario');
-            $table->foreign('id_usuario')
+            $table->unsignedBigInteger('id_user');
+            $table->foreign('id_users')
                 ->references('id')
                 ->on('users')
                 ->onDelete('cascade');
 
-            $table->string('razon_social')->nullable();
             $table->string('telefono');
             $table->string('direccion');
             $table->string('codigo_postal');
