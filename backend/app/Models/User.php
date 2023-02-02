@@ -1,5 +1,7 @@
 <?php
+
 namespace App\Models;
+
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -16,9 +18,11 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
+        'dni',
         'name',
-        'email',
         'password',
+        'email',
+        'rol'
     ];
     /**
      * The attributes that should be hidden for arrays.
@@ -37,4 +41,29 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function cliente_pedido()
+    {
+        return $this->hasMany('App\Models\Pedido');
+    }
+
+    public function empleado_pedido()
+    {
+        return $this->hasMany('App\Models\Pedido');
+    }
+
+    public function diseños()
+    {
+        return $this->hasMany('App\Models\Diseño');
+    }
+
+    public function logos()
+    {
+        return $this->hasMany('App\Models\Logo');
+    }
+
+    public function rol()
+    {
+        return $this->hasOne('App\Models\Cliente');
+    }
 }

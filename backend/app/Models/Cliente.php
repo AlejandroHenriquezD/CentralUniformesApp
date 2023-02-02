@@ -12,6 +12,10 @@ class Cliente extends Model
 
 
     use HasFactory;
-    protected $fillable = ['usuario', 'contraseña', 'cif_nif', 'razon_social', 'nombre_comercial', 'telefono', 'email', 'direccion', 'codigo_postal', 'municipio', 'provincia', 'observaciones'];
-    
+    protected $fillable = ['provincia', 'codigo_postal', 'municipio', 'direccion', 'telefono', 'observaciones', 'id_user'];
+
+    public function usuario()
+    {
+        return $this->belongsTo('App\Models\User', 'id_user', 'id');
+    }
 }
