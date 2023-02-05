@@ -8,15 +8,15 @@ import EditClient from './components/client/EditClient';
 
 import ShowArticulos from './components/articulo/ShowArticulos';
 import EditArticulo from './components/articulo/EditArticulo';
-import CreateArticulo from './components/articulo/CreateArticiulo';
+import CreateArticulo from './components/articulo/CreateArticulo';
 
 import ShowPedidos from './components/pedido/ShowPedidos';
 import CreatePedido from './components/pedido/CreatePedido';
 import EditPedido from './components/pedido/EditPedido';
 
-import ShowImagenes from './components/imagen/ShowImagenes';
-import CreateImagen from './components/imagen/CreateImagen';
-import EditImagen from './components/imagen/EditImagen';
+import ShowImagenes from './components/logo/ShowLogos';
+import CreateLogo from './components/logo/CreateLogo';
+import EditImagen from './components/logo/EditLogo';
 
 
 function App() {
@@ -40,7 +40,7 @@ function App() {
             <Route path='/edit_pedido/:id' element={ <EditPedido/>} />
 
             <Route path='/show_imagenes' element={ <ShowImagenes/>} />
-            <Route path='/create_imagen' element={ <CreateImagen/>} />
+            <Route path='/create_imagen' element={ <CreateLogo/>} />
             <Route path='/edit_imagen/:id' element={ <EditImagen/>} />
           </Routes>  
         </BrowserRouter>

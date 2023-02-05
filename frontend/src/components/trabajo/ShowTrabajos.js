@@ -5,28 +5,27 @@ import { Link } from "react-router-dom";
 
 const endpoint = "http://localhost:8000/api";
 
-const ShowArticulos = () => {
-  const [articulos, setArticulos] = useState([]);
+const ShowTrabajos = () => {
+  const [trabajos, setTrabajos] = useState([]);
 
   useEffect(() => {
-    getAllArticulos();
+    getAllTrabajos();
   }, []);
 
-  const getAllArticulos = async () => {
-    const response = await axios.get(`${endpoint}/articulos`);
-    setArticulos(response.data);
+  const getAllTrabajos = async () => {
+    const response = await axios.get(`${endpoint}/trabajos`);
+    setTrabajos(response.data);
   };
 
-  const deleteArticulo = async (id) => {
-    await axios.delete(`${endpoint}/articulo/${id}`);
-    getAllArticulos();
+  const deleteTrabajo = async (id) => {
+    await axios.delete(`${endpoint}/trabajo/${id}`);
+    getAllTrabajos();
   };
-
   return (
-    <div className="back">
+    <div>
       <div className="d-grip gap-2">
         <Link
-          to="/create_articulo"
+          to="/create_trabajo"
           className="btn btn-danger btn-lg mt-2 mb-2 text-white"
         >
           Crear
@@ -39,33 +38,27 @@ const ShowArticulos = () => {
           <tr>
             <td>Nombre</td>
             <td>Descripción</td>
-            <td>Imagen</td>
-            <td>Precio</td>
-            <td>Color</td>
-            <td>Talla</td>
-            <td>Stock</td>
-            <td>Acciones</td>
+            <th>Accion</th>
           </tr>
         </thead>
         <tbody>
-          {articulos.map((articulo) => (
-            <tr key={articulo.id}>
-              <td> {articulo.nombre} </td>
-              <td> {articulo.descripcion} </td>
-              <td> {articulo.img} </td>
-              <td> {articulo.precio} </td>
-              <td> {articulo.color} </td>
-              <td> {articulo.talla} </td>
-              <td> {articulo.stock} </td>
+          {trabajos.map((trabajo) => (
+            <tr key={trabajo.id}>
+              <td> {trabajo.observaciones}</td>
+              <td>{trabajo.unidades}</td>
+              <td> {trabajo.id_cliente.name}</td>
+              <td> {trabajo.id_empleado.name}</td>
+              <td> {trabajo.id_trabajo.nombre}</td>
+              <td> {trabajo.id_diseño.nombre}</td>
               <td>
                 <Link
-                  to={`/edit_articulo/${articulo.id}`}
+                  to={`/edit_trabajo/${trabajo.id}`}
                   className="btn btn-primary"
                 >
                   Editar
                 </Link>
                 <button
-                  onClick={() => deleteArticulo(articulo.id)}
+                  onClick={() => deleteTrabajo(trabajo.id)}
                   className="boton danger"
                 >
                   Eliminar
@@ -79,4 +72,4 @@ const ShowArticulos = () => {
   );
 };
 
-export default ShowArticulos;
+export default ShowTrabajos;

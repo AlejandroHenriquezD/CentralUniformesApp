@@ -1,11 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import axios from "axios";
-import { useNavigate, useParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import "../form.css";
 
-const endpoint = "http://localhost:8000/api/articulo/";
+const endpoint = "http://localhost:8000/api/articulo";
 
-const EditArticulo = () => {
+const CreateArticulo = () => {
   const [nombre, setNombre] = useState("");
   const [descripcion, setDescripcion] = useState("");
   const [img, setImg] = useState("");
@@ -14,11 +14,10 @@ const EditArticulo = () => {
   const [talla, setTalla] = useState("");
   const [stock, setStock] = useState(0);
   const navigate = useNavigate();
-  const { id } = useParams();
 
-  const update = async (e) => {
+  const store = async (e) => {
     e.preventDefault();
-    await axios.put(`${endpoint}${id}`, {
+    await axios.post(endpoint, {
       nombre: nombre,
       descripcion: descripcion,
       img: img,
@@ -29,25 +28,11 @@ const EditArticulo = () => {
     });
     navigate("/show_articulos");
   };
-  useEffect(() => {
-    const getArticuloById = async () => {
-      const response = await axios.get(`${endpoint}${id}`);
-      setNombre(response.data.nombre);
-      setDescripcion(response.data.descripcion);
-      setImg(response.data.img);
-      setPrecio(response.data.precio);
-      setColor(response.data.color);
-      setTalla(response.data.talla);
-      setStock(response.data.stock);
-    };
-    getArticuloById();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
 
   return (
     <div>
-      <h3>Editar Artículo</h3>
-      <form onSubmit={update}>
+      <h3>Crear Artículo</h3>
+      <form onSubmit={store}>
         <div className="mb-3">
           <label className="form-label">Nombre</label>
           <input
@@ -112,11 +97,11 @@ const EditArticulo = () => {
           />
         </div>
         <button type="submit" className="btn btn-danger">
-          Actualizar
+          Crear
         </button>
       </form>
     </div>
   );
 };
 
-export default EditArticulo;
+export default CreateArticulo;
