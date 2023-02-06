@@ -34,7 +34,7 @@ return new class extends Migration
                 ->on('logos')
                 ->onDelete('cascade');
             
-            $table->foreign('id_articulos')
+            $table->foreign('id_articulo')
                 ->references('id')
                 ->on('articulos')
                 ->onDelete('cascade');

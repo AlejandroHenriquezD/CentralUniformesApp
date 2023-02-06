@@ -1,49 +1,70 @@
+import "./App.css";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-import './App.css';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import ShowArticulos from "./page/articulo/ShowArticulos";
+import EditArticulo from "./page/articulo/EditArticulo";
+import CreateArticulo from "./page/articulo/CreateArticulo";
 
-import ShowClients from './components/client/ShowClients';
-import CreateClient from './components/client/CreateClient';
-import EditClient from './components/client/EditClient';
+import ShowClientes from "./page/cliente/ShowClientes";
+import CreateCliente from "./page/cliente/CreateCliente";
+import EditCliente from "./page/cliente/EditCliente";
 
-import ShowArticulos from './components/articulo/ShowArticulos';
-import EditArticulo from './components/articulo/EditArticulo';
-import CreateArticulo from './components/articulo/CreateArticiulo';
+import ShowDiseños from "./page/diseño/ShowDiseños";
+import EditDiseño from "./page/diseño/EditDiseño";
+import CreateDiseño from "./page/diseño/CreateDiseño";
 
-import ShowPedidos from './components/pedido/ShowPedidos';
-import CreatePedido from './components/pedido/CreatePedido';
-import EditPedido from './components/pedido/EditPedido';
+import ShowLogos from "./page/logo/ShowLogos";
+import EditLogo from "./page/logo/EditLogo";
+import CreateLogo from "./page/logo/CreateLogo";
 
-import ShowImagenes from './components/imagen/ShowImagenes';
-import CreateImagen from './components/imagen/CreateImagen';
-import EditImagen from './components/imagen/EditImagen';
+import ShowPedidos from "./page/pedido/ShowPedidos";
+import CreatePedido from "./page/pedido/CreatePedido";
+import EditPedido from "./page/pedido/EditPedido";
 
+import ShowTrabajos from "./page/trabajo/ShowTrabajos";
+import CreateTrabajo from "./page/trabajo/CreateTrabajo";
+import EditTrabajo from "./page/trabajo/EditTrabajo";
+
+import ShowUsuarios from "./page/usuario/ShowUsuarios";
+import CreateUsuario from "./page/usuario/CreateUsuario";
+import EditUsuario from "./page/usuario/EditUsuario";
 
 function App() {
   return (
     <div className="App">
-      
-        <BrowserRouter>
-          <Routes>
-            <Route path='/' element={ <ShowClients/>} />
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<ShowClientes />} />
 
-            <Route path='/show_clients' element={ <ShowClients/>} />
-            <Route path='/create_client' element={ <CreateClient/>} />
-            <Route path='/edit_client/:id' element={ <EditClient/>} />
+          <Route path="/show_articulos" element={<ShowArticulos />} />
+          <Route path="/create_articulo" element={<CreateArticulo />} />
+          <Route path="/edit_articulo/:id" element={<EditArticulo />} />
 
-            <Route path='/show_articulos' element={ <ShowArticulos/>} />
-            <Route path='/create_articulo' element={ <CreateArticulo/>} />
-            <Route path='/edit_articulo/:id' element={ <EditArticulo/>} />
+          <Route path="/show_clientes" element={<ShowClientes />} />
+          <Route path="/create_cliente" element={<CreateCliente />} />
+          <Route path="/edit_cliente/:id" element={<EditCliente />} />
 
-            <Route path='/show_pedidos' element={ <ShowPedidos/>} />
-            <Route path='/create_pedido' element={ <CreatePedido/>} />
-            <Route path='/edit_pedido/:id' element={ <EditPedido/>} />
+          <Route path="/show_diseños" element={<ShowDiseños />} />
+          <Route path="/create_diseño" element={<CreateDiseño />} />
+          <Route path="/edit_diseño/:id" element={<EditDiseño />} />
 
-            <Route path='/show_imagenes' element={ <ShowImagenes/>} />
-            <Route path='/create_imagen' element={ <CreateImagen/>} />
-            <Route path='/edit_imagen/:id' element={ <EditImagen/>} />
-          </Routes>  
-        </BrowserRouter>
+          <Route path="/show_logos" element={<ShowLogos />} />
+          <Route path="/create_logo" element={<CreateLogo />} />
+          <Route path="/edit_logo/:id" element={<EditLogo />} />
+
+          <Route path="/show_pedidos" element={<ShowPedidos />} />
+          <Route path="/create_pedido" element={<CreatePedido />} />
+          <Route path="/edit_pedido/:id" element={<EditPedido />} />
+
+          <Route path="/show_trabajos" element={<ShowTrabajos />} />
+          <Route path="/create_trabajo" element={<CreateTrabajo />} />
+          <Route path="/edit_trabajo/:id" element={<EditTrabajo />} />
+
+          <Route path="/show_usuarios" element={<ShowUsuarios />} />
+          <Route path="/create_usuario" element={<CreateUsuario />} />
+          <Route path="/edit_usuario/:id" element={<EditUsuario />} />
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }

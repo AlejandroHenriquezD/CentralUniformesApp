@@ -10,7 +10,7 @@ class Logo extends Model
     use HasFactory;
     protected $fillable = ['nombre', 'img', 'id_user'];
 
-    // protected $with = 'user';
+    protected $with = 'user';
 
     public function user()
     {

@@ -13,7 +13,7 @@ class ArticuloController extends Controller
     //     $count = DB::table('articulos')->count();
     //     return $count;
     // }
-    
+
     // public function indexPdf()
     // {
     //     $articulos = Articulo::all();
@@ -41,7 +41,15 @@ class ArticuloController extends Controller
         $articulo->precio = $request->precio;
         $articulo->stock = $request->stock;
         $articulo->descripcion = $request->descripcion;
-        $articulo->img = $request->img;
+
+        if ($request->hasFile('img')) {
+            $file = $request->file('img');
+            $destinationPath = 'images/logosTable/';
+            $filename = time() . '-' . $file->getClientOriginalName();
+            $uploadSuccess = $request->file('img')->move($destinationPath, $filename);
+            $articulo->img = $destinationPath . $filename;
+        }
+
 
         $articulo->save();
     }

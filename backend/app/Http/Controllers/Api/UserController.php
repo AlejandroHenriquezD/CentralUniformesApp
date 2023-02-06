@@ -9,9 +9,25 @@ use Illuminate\Support\Facades\DB;
 
 class UserController extends Controller
 {
+    public function empleadosonly()
+    {
+        $users = DB::table('users')
+            ->where('rol', '=', "Empleado")
+            ->get();
+        return $users;
+    }
+
     public function index()
     {
         $users = User::all();
+        return $users;
+    }
+
+    public function clientesonly()
+    {
+        $users = DB::table('users')
+            ->where('rol', '=', "Cliente")
+            ->get();
         return $users;
     }
 
@@ -40,6 +56,7 @@ class UserController extends Controller
         $user->dni = $request->dni;
         $user->name = $request->name;
         $user->email = $request->email;
+        $user->password = bcrypt($user['password']);
         $user->rol = $request->rol;
 
         $user->save();
