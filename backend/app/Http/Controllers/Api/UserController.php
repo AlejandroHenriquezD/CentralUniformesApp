@@ -39,6 +39,7 @@ class UserController extends Controller
         $user->dni = $request->dni;
         $user->name = $request->name;
         $user->email = $request->email;
+        $user->password = $request->password;
         $user->rol = $request->rol;
 
         $user->save();

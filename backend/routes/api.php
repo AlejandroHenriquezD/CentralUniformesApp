@@ -7,6 +7,7 @@ use App\Http\Controllers\Api\DiseñoController;
 use App\Http\Controllers\Api\LogoController;
 use App\Http\Controllers\Api\PedidoController;
 use App\Http\Controllers\Api\TrabajoController;
+use App\Http\Controllers\Api\UserController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -14,14 +15,14 @@ Route::group(['middleware' => ["auth:sanctum"]], function () {
     //rutas
     Route::get('user-profile', [AuthController::class, 'userProfile']);
     Route::get('logout', [AuthController::class, 'logout']);
+});
 
-    Route::controller(UserController::class)->group(function () {
-        Route::get('/users', 'index');
-        Route::post('/user', 'store');
-        Route::get('/user/{id}', 'show');
-        Route::put('/user/{id}', 'update');
-        Route::delete('/user/{id}', 'destroy');
-    });
+Route::controller(UserController::class)->group(function () {
+    Route::get('/users', 'index');
+    Route::post('/user', 'store');
+    Route::get('/user/{id}', 'show');
+    Route::put('/user/{id}', 'update');
+    Route::delete('/user/{id}', 'destroy');
 });
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {

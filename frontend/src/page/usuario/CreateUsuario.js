@@ -3,12 +3,13 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import "../../components/form.css";
 
-const endpoint = "http://localhost:8000/api/user";
+const endpoint = "http://localhost:8000/api/register";
 
 const CreateUsuario = () => {
   const [dni, setDni] = useState();
   const [name, setName] = useState();
   const [password, setPassword] = useState();
+  const [confirm_password, setConfirm_Password] = useState();
   const [email, setEmail] = useState();
   const [rol, setRol] = useState();
   const navigate = useNavigate();
@@ -19,6 +20,7 @@ const CreateUsuario = () => {
       dni: dni,
       name: name,
       password: password,
+      confirm_password: confirm_password,
       email: email,
       rol: rol,
     });
@@ -52,10 +54,19 @@ const CreateUsuario = () => {
           <input
             value={password}
             onChange={(e) => setPassword(e.target.value)}
-            type="password"
+            type="new-password"
             className="form"
           />
-        </div>{" "}
+        </div>
+        <div className="mb-3">
+          <label className="form-label">Confirmar contraseña</label>
+          <input
+            value={confirm_password}
+            onChange={(e) => setConfirm_Password(e.target.value)}
+            type="current-password"
+            className="form"
+          />
+        </div>
         <div className="mb-3">
           <label className="form-label">Email</label>
           <input
