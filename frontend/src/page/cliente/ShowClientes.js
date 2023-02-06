@@ -28,7 +28,7 @@ const ShowClientes = () => {
           to="/create_cliente"
           className="btn btn-danger btn-lg mt-2 mb-2 text-white"
         >
-          Crear
+          Crear Cliente
         </Link>
       </div>
       <img className="lg mt-2 mb-2 " src={logo_pequeño} alt="Logo" />
@@ -55,7 +55,7 @@ const ShowClientes = () => {
               <td> {cliente.direccion} </td>
               <td> {cliente.telefono} </td>
               <td> {cliente.observaciones} </td>
-              <td> {cliente.id_user.name} </td>
+              <td> {cliente.usuario.name} </td>
               <td>
                 <Link
                   to={`/edit_cliente/${cliente.id}`}

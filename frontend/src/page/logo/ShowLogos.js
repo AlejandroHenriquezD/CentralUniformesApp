@@ -29,7 +29,7 @@ const ShowLogos = () => {
           to="/create_logo"
           className="btn btn-danger btn-lg mt-2 mb-2 text-white"
         >
-          Crear
+          Crear Logo
         </Link>
       </div>
       <img className="lg mt-2 mb-2 " src={logo_pequeño} alt="Logo" />
@@ -47,8 +47,8 @@ const ShowLogos = () => {
           {logos.map((logo) => (
             <tr key={logo.id}>
               <td> {logo.nombre} </td>
-              <td> {logo.img} </td>
-              <td> {logo.id_user.name} </td>
+              <td> <img src={"http://localhost:8000/" + logo.img} /> </td>
+              <td> {logo.user.name} </td>
               <td>
                 <Link to={`/edit_logo/${logo.id}`} className="btn btn-primary">
                   Editar

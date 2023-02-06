@@ -5,30 +5,30 @@ import { Link } from "react-router-dom";
 
 const endpoint = "http://localhost:8000/api";
 
-const ShowPedidos = () => {
-  const [pedidos, setPedidos] = useState([]);
+const ShowDiseños = () => {
+  const [diseños, setDiseños] = useState([]);
   useEffect(() => {
-    getAllPedidos();
+    getAllDiseños();
   }, []);
 
-  const getAllPedidos = async () => {
-    const response = await axios.get(`${endpoint}/pedidos`);
-    setPedidos(response.data);
+  const getAllDiseños = async () => {
+    const response = await axios.get(`${endpoint}/diseños`);
+    setDiseños(response.data);
   };
 
-  const deletePedido = async (id) => {
-    await axios.delete(`${endpoint}/pedido/${id}`);
-    getAllPedidos();
+  const deleteDiseño = async (id) => {
+    await axios.delete(`${endpoint}/diseño/${id}`);
+    getAllDiseños();
   };
 
   return (
     <div>
       <div className="d-grip gap-2">
         <Link
-          to="/create_pedido"
+          to="/create_diseño"
           className="btn btn-danger btn-lg mt-2 mb-2 text-white"
         >
-          Crear
+          Crear Diseño
         </Link>
       </div>
       <img className="lg mt-2 mb-2 " src={logo_pequeño} alt="Logo" />
@@ -36,33 +36,37 @@ const ShowPedidos = () => {
       <table className="table table-striped">
         <thead className="bg-success text-white">
           <tr>
-            <td>Observaciones</td>
-            <td>Unidades</td>
-            <td>Cliente</td>
-            <td>Empleado</td>
-            <td>Trabajo</td>
-            <td>Diseño</td>
+            <td>Nombre</td>
+            <td>Imagen</td>
+            <td>Posición</td>
+            <td>Tamaño</td>
+            <td>Favorito</td>
+            <td>Usuario</td>
+            <td>Logo</td>
+            <td>Artículo</td>
             <th>Accion</th>
           </tr>
         </thead>
         <tbody>
-          {pedidos.map((pedido) => (
-            <tr key={pedido.id}>
-              <td> {pedido.observaciones}</td>
-              <td>{pedido.unidades}</td>
-              <td> {pedido.id_cliente.name}</td>
-              <td> {pedido.id_empleado.name}</td>
-              <td> {pedido.id_trabajo.nombre}</td>
-              <td> {pedido.id_diseño.nombre}</td>
+          {diseños.map((diseño) => (
+            <tr key={diseño.id}>
+              <td> {diseño.nombre}</td>
+              <td>{diseño.img}</td>
+              <td>{diseño.posicion}</td>
+              <td>{diseño.tamaño}</td>
+              <td>{diseño.favorito}</td>
+              <td> {diseño.user.name}</td>
+              <td> {diseño.logo.nombre}</td>
+              <td> {diseño.articulo.nombre}</td>
               <td>
                 <Link
-                  to={`/edit_pedido/${pedido.id}`}
+                  to={`/edit_diseño/${diseño.id}`}
                   className="btn btn-primary"
                 >
                   Editar
                 </Link>
                 <button
-                  onClick={() => deletePedido(pedido.id)}
+                  onClick={() => deleteDiseño(diseño.id)}
                   className="boton danger"
                 >
                   Eliminar
@@ -76,4 +80,4 @@ const ShowPedidos = () => {
   );
 };
 
-export default ShowPedidos;
+export default ShowDiseños;

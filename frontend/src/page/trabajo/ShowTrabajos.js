@@ -29,7 +29,7 @@ const ShowTrabajos = () => {
           to="/create_trabajo"
           className="btn btn-danger btn-lg mt-2 mb-2 text-white"
         >
-          Crear
+          Crear Trabajo
         </Link>
       </div>
       <img className="lg mt-2 mb-2 " src={logo_pequeño} alt="Logo" />

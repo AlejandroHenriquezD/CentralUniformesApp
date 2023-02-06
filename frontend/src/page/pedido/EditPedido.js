@@ -39,19 +39,20 @@ const EditPedido = () => {
       setObservaciones(response.data.observaciones);
       setUnidades(response.data.unidades);
       setId_Cliente(response.data.id_cliente);
-      setId_Empleado(response.data.id_empelado);
+      setId_Empleado(response.data.id_empleado);
       setId_Trabajo(response.data.id_trabajo);
       setId_Diseño(response.data.id_diseño);
       getAll();
     };
     const getAll = async () => {
-      const response = await axios.get(`${endpoint2}/users`);
-      const response2 = await axios.get(`${endpoint2}/trabajos`);
-      const response3 = await axios.get(`${endpoint2}/diseños`);
+      const response = await axios.get(`${endpoint2}/clients`);
+      const response2 = await axios.get(`${endpoint2}/empleados`);
+      const response3 = await axios.get(`${endpoint2}/trabajos`);
+      const response4 = await axios.get(`${endpoint2}/diseños`);
       setClientes(response.data);
-      setEmpleados(response.data);
-      setTrabajos(response2.data);
-      setDiseños(response3.data);
+      setEmpleados(response2.data);
+      setTrabajos(response3.data);
+      setDiseños(response4.data);
     };
     getPedidoById();
     // eslint-disable-next-line react-hooks/exhaustive-deps

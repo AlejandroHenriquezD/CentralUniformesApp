@@ -16,15 +16,15 @@ const CreateCliente = () => {
   const [id_user, setId_User] = useState("");
   const navigate = useNavigate();
 
-  const [usuarios, setUsuarios] = useState([]);
+  const [clientes, setClientes] = useState([]);
 
   useEffect(() => {
     getAll();
   }, []);
 
   const getAll = async () => {
-    const response = await axios.get(`${endpoint2}/users`);
-    setUsuarios(response.data);
+    const response = await axios.get(`${endpoint2}/clients`);
+    setClientes(response.data);
   };
 
   const store = async (e) => {
@@ -109,8 +109,8 @@ const CreateCliente = () => {
             className="form"
           >
             <option value="" />
-            {usuarios.map((usuario) => (
-              <option value={`${usuario.id}`}>{usuario.name}</option>
+            {clientes.map((cliente) => (
+              <option value={`${cliente.id}`}>{cliente.name}</option>
             ))}
           </select>
         </div>

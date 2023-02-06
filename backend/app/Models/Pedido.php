@@ -10,8 +10,8 @@ class Pedido extends Model
     use HasFactory;
     protected $fillable = ['fecha_pedido', 'observaciones', 'unidades', 'id_cliente', 'id_empleado', 'id_trabajo', 'id_diseño'];
 
-    protected $with = 'articulo';
-    
+    protected $with = ['cliente', 'empleado', 'trabajo', 'diseño'];
+
     public function trabajo()
     {
         return $this->belongsTo('App\Models\Trabajo', 'id_trabajo', 'id');

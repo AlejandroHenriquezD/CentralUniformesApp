@@ -19,6 +19,8 @@ class Diseño extends Model
         'id_articulo'
     ];
 
+    protected $with = ['logo', 'articulo', 'user'];    
+
     public function logo()
     {
         return $this->belongsTo('App\Models\Logo', 'id_logo', 'id');

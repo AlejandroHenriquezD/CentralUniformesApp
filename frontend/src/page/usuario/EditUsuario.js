@@ -29,11 +29,11 @@ const EditUsuario = () => {
   useEffect(() => {
     const getUsuarioById = async () => {
       const response = await axios.get(`${endpoint}${id}`);
-      setDni(response.data.nombre);
-      setName(response.data.descripcion);
-      setPassword(response.data.descripcion);
-      setEmail(response.data.descripcion);
-      setRol(response.data.descripcion);
+      setDni(response.data.dni);
+      setName(response.data.name);
+      setPassword(response.data.password);
+      setEmail(response.data.email);
+      setRol(response.data.rol);
     };
     getUsuarioById();
     //eslint-disable-next-line react-hooks/exhaustive-deps

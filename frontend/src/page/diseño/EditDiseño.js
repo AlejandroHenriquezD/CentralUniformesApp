@@ -39,14 +39,14 @@ const EditDiseño = () => {
   useEffect(() => {
     const getDiseñoById = async () => {
       const response = await axios.get(`${endpoint}${id}`);
-      setNombre(response.data.observaciones);
-      setImg(response.data.unidades);
-      setPosicion(response.data.id_cliente);
-      setTamaño(response.data.id_empelado);
-      setFavorito(response.data.id_trabajo);
-      setId_User(response.data.id_diseño);
-      setId_Logo(response.data.id_diseño);
-      setId_Articulo(response.data.id_diseño);
+      setNombre(response.data.nombre);
+      setImg(response.data.img);
+      setPosicion(response.data.posicion);
+      setTamaño(response.data.tamaño);
+      setFavorito(response.data.favorito);
+      setId_User(response.data.id_user);
+      setId_Logo(response.data.id_logo);
+      setId_Articulo(response.data.id_articulo);
       getAll();
     };
     const getAll = async () => {
@@ -135,7 +135,7 @@ const EditDiseño = () => {
           >
             <option value="" />
             {logos.map((logo) => (
-              <option value={`${logo.id}`}>{logo.name}</option>
+              <option value={`${logo.id}`}>{logo.nombre}</option>
             ))}
           </select>
         </div>

@@ -28,7 +28,7 @@ const ShowPedidos = () => {
           to="/create_pedido"
           className="btn btn-danger btn-lg mt-2 mb-2 text-white"
         >
-          Crear
+          Crear Pedido
         </Link>
       </div>
       <img className="lg mt-2 mb-2 " src={logo_pequeño} alt="Logo" />
@@ -36,6 +36,7 @@ const ShowPedidos = () => {
       <table className="table table-striped">
         <thead className="bg-success text-white">
           <tr>
+            <td>Fecha</td>
             <td>Observaciones</td>
             <td>Unidades</td>
             <td>Cliente</td>
@@ -48,12 +49,13 @@ const ShowPedidos = () => {
         <tbody>
           {pedidos.map((pedido) => (
             <tr key={pedido.id}>
+              <td> {pedido.fecha_pedido}</td>
               <td> {pedido.observaciones}</td>
               <td>{pedido.unidades}</td>
-              <td> {pedido.id_cliente.name}</td>
-              <td> {pedido.id_empleado.name}</td>
-              <td> {pedido.id_trabajo.nombre}</td>
-              <td> {pedido.id_diseño.nombre}</td>
+              <td> {pedido.cliente.name}</td>
+              <td> {pedido.empleado.name}</td>
+              <td> {pedido.trabajo.nombre}</td>
+              <td> {pedido.diseño.nombre}</td>
               <td>
                 <Link
                   to={`/edit_pedido/${pedido.id}`}

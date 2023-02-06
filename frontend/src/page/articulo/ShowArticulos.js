@@ -29,7 +29,7 @@ const ShowArticulos = () => {
           to="/create_articulo"
           className="btn btn-danger btn-lg mt-2 mb-2 text-white"
         >
-          Crear
+          Crear Artículo
         </Link>
       </div>
       <img className="lg mt-2 mb-2 " src={logo_pequeño} alt="Logo" />
@@ -52,7 +52,7 @@ const ShowArticulos = () => {
             <tr key={articulo.id}>
               <td> {articulo.nombre} </td>
               <td> {articulo.descripcion} </td>
-              <td> {articulo.img} </td>
+              <td> <img src={"http://localhost:8000/" + articulo.img} /> </td>
               <td> {articulo.precio} </td>
               <td> {articulo.color} </td>
               <td> {articulo.talla} </td>

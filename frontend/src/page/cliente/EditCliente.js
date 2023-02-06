@@ -17,7 +17,7 @@ const EditCliente = () => {
   const navigate = useNavigate();
   const { id } = useParams();
 
-  const [usuarios, setUsuarios] = useState([]);
+  const [clientes, setClientes] = useState([]);
 
   const update = async (e) => {
     e.preventDefault();
@@ -45,8 +45,8 @@ const EditCliente = () => {
       getAll();
     };
     const getAll = async () => {
-      const response = await axios.get(`${endpoint2}/users`);
-      setUsuarios(response.data);
+      const response = await axios.get(`${endpoint2}/clients`);
+      setClientes(response.data);
     };
     getClienteById();
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -120,8 +120,8 @@ const EditCliente = () => {
             className="form"
           >
             <option value="" />
-            {usuarios.map((usuario) => (
-              <option value={`${usuario.id}`}>{usuario.name}</option>
+            {clientes.map((cliente) => (
+              <option value={`${cliente.id}`}>{cliente.name}</option>
             ))}
           </select>
         </div>

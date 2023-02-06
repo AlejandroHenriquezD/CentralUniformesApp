@@ -17,15 +17,27 @@ const CreateArticulo = () => {
 
   const store = async (e) => {
     e.preventDefault();
-    await axios.post(endpoint, {
-      nombre: nombre,
-      descripcion: descripcion,
-      img: img,
-      precio: precio,
-      color: color,
-      talla: talla,
-      stock: stock,
-    });
+    // await axios.post(endpoint, {
+    //   nombre: nombre,
+    //   descripcion: descripcion,
+    //   img: img,
+    //   precio: precio,
+    //   color: color,
+    //   talla: talla,
+    //   stock: stock,
+    // });
+    const fData = new FormData();
+
+    fData.append("nombre", nombre);
+    fData.append("talla", talla);
+    fData.append("color", color);
+    fData.append("precio", precio);
+    fData.append("stock", stock);
+    fData.append("descripcion", descripcion);
+    fData.append("img", document.getElementById("imgForm").files[0]);
+    console.log(document.getElementById("imgForm").files[0]);
+    axios.post(endpoint, fData);
+
     navigate("/show_articulos");
   };
 
@@ -56,7 +68,8 @@ const CreateArticulo = () => {
           <input
             value={img}
             onChange={(e) => setImg(e.target.value)}
-            type="text"
+            type="file"
+            id="imgForm"
             className="form"
           />
         </div>

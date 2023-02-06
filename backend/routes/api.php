@@ -23,6 +23,8 @@ Route::controller(UserController::class)->group(function () {
     Route::get('/user/{id}', 'show');
     Route::put('/user/{id}', 'update');
     Route::delete('/user/{id}', 'destroy');
+    Route::get('/empleados', 'empleadosonly');
+    Route::get('/clients', 'clientesonly');
 });
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {

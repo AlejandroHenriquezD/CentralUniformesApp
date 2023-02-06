@@ -39,13 +39,14 @@ const CreatePedido = () => {
   }, []);
 
   const getAll = async () => {
-    const response = await axios.get(`${endpoint2}/users`);
-    const response2 = await axios.get(`${endpoint2}/trabajos`);
-    const response3 = await axios.get(`${endpoint2}/diseños`);
+    const response = await axios.get(`${endpoint2}/clients`);
+    const response2 = await axios.get(`${endpoint2}/empleados`);
+    const response3 = await axios.get(`${endpoint2}/trabajos`);
+    const response4 = await axios.get(`${endpoint2}/diseños`);
     setId_Clientes(response.data);
-    setId_Empleados(response.data);
-    setId_Trabajos(response2.data);
-    setId_Diseños(response3.data);
+    setId_Empleados(response2.data);
+    setId_Trabajos(response3.data);
+    setId_Diseños(response4.data);
   };
 
   return (

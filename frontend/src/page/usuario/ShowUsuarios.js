@@ -28,7 +28,7 @@ const ShowUsuarios = () => {
           to="/create_usuario"
           className="btn btn-danger btn-lg mt-2 mb-2 text-white"
         >
-          Crear
+          Crear Usuario
         </Link>
       </div>
       <img className="lg mt-2 mb-2 " src={logo_pequeño} alt="Logo" />
@@ -38,7 +38,6 @@ const ShowUsuarios = () => {
           <tr>
             <td>DNI</td>
             <td>Nombre</td>
-            <td>Contraseña</td>
             <td>Email</td>
             <td>Rol</td>
             <th>Accion</th>
@@ -49,7 +48,6 @@ const ShowUsuarios = () => {
             <tr key={usuario.id}>
               <td> {usuario.dni}</td>
               <td>{usuario.name}</td>
-              <td> {usuario.password}</td>
               <td> {usuario.email}</td>
               <td> {usuario.rol}</td>
               <td>
