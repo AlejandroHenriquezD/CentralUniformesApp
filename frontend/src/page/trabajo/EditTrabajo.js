@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useNavigate, useParams } from "react-router-dom";
-import "../form.css";
+import "../../components/form.css";
 
-const endpoint = "http://localhost:8000/api/pedido/";
+const endpoint = "http://localhost:8000/api/trabajo/";
 
 const EditTrabajo = () => {
   const [nombre, setNombre] = useState("");
@@ -17,9 +17,8 @@ const EditTrabajo = () => {
       nombre: nombre,
       descripcion: descripcion,
     });
-    navigate("/Show_trabajos");
+    navigate("/show_trabajos");
   };
-
   useEffect(() => {
     const getTrabajoById = async () => {
       const response = await axios.get(`${endpoint}${id}`);
@@ -27,8 +26,9 @@ const EditTrabajo = () => {
       setDescripcion(response.data.descripcion);
     };
     getTrabajoById();
-    //eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
   return (
     <div>
       <h3>Editar Trabajo</h3>
@@ -43,7 +43,7 @@ const EditTrabajo = () => {
           />
         </div>
         <div className="mb-3">
-          <label className="form-label">Descripción</label>
+          <label className="form-label">Descripcion</label>
           <input
             value={descripcion}
             onChange={(e) => setDescripcion(e.target.value)}
@@ -52,7 +52,7 @@ const EditTrabajo = () => {
           />
         </div>
         <button type="submit" className="btn btn-danger">
-          Crear
+          Actualizar
         </button>
       </form>
     </div>

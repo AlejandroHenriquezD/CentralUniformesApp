@@ -1,12 +1,12 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
-import "../form.css";
+import { useNavigate, useParams } from "react-router-dom";
+import "../../components/form.css";
 
-const endpoint = "http://localhost:8000/api/pedido";
+const endpoint = "http://localhost:8000/api/pedido/";
 const endpoint2 = "http://localhost:8000/api";
 
-const CreatePedido = () => {
+const EditPedido = () => {
   const [observaciones, setObservaciones] = useState("");
   const [unidades, setUnidades] = useState(0);
   const [id_cliente, setId_Cliente] = useState(0);
@@ -14,16 +14,16 @@ const CreatePedido = () => {
   const [id_trabajo, setId_Trabajo] = useState(0);
   const [id_diseño, setId_Diseño] = useState(0);
   const navigate = useNavigate();
+  const { id } = useParams();
 
-  //Foreign key
-  const [clientes, setId_Clientes] = useState([]);
-  const [empleados, setId_Empleados] = useState([]);
-  const [trabajos, setId_Trabajos] = useState([]);
-  const [diseños, setId_Diseños] = useState([]);
+  const [clientes, setClientes] = useState([]);
+  const [empleados, setEmpleados] = useState([]);
+  const [trabajos, setTrabajos] = useState([]);
+  const [diseños, setDiseños] = useState([]);
 
-  const store = async (e) => {
+  const update = async (e) => {
     e.preventDefault();
-    await axios.post(endpoint, {
+    await axios.put(`${endpoint}${id}`, {
       observaciones: observaciones,
       unidades: unidades,
       id_cliente: id_cliente,
@@ -33,25 +33,33 @@ const CreatePedido = () => {
     });
     navigate("/show_pedidos");
   };
-
   useEffect(() => {
-    getAll();
+    const getPedidoById = async () => {
+      const response = await axios.get(`${endpoint}${id}`);
+      setObservaciones(response.data.observaciones);
+      setUnidades(response.data.unidades);
+      setId_Cliente(response.data.id_cliente);
+      setId_Empleado(response.data.id_empelado);
+      setId_Trabajo(response.data.id_trabajo);
+      setId_Diseño(response.data.id_diseño);
+      getAll();
+    };
+    const getAll = async () => {
+      const response = await axios.get(`${endpoint2}/users`);
+      const response2 = await axios.get(`${endpoint2}/trabajos`);
+      const response3 = await axios.get(`${endpoint2}/diseños`);
+      setClientes(response.data);
+      setEmpleados(response.data);
+      setTrabajos(response2.data);
+      setDiseños(response3.data);
+    };
+    getPedidoById();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-
-  const getAll = async () => {
-    const response = await axios.get(`${endpoint2}/users`);
-    const response2 = await axios.get(`${endpoint2}/trabajos`);
-    const response3 = await axios.get(`${endpoint2}/diseños`);
-    setId_Clientes(response.data);
-    setId_Empleados(response.data);
-    setId_Trabajos(response2.data);
-    setId_Diseños(response3.data);
-  };
-
   return (
     <div>
-      <h3>Crear Pedido</h3>
-      <form onSubmit={store}>
+      <h3>Editar Pedido</h3>
+      <form onSubmit={update}>
         <div className="mb-3">
           <label className="form-label">Observaciones</label>
           <input
@@ -138,4 +146,4 @@ const CreatePedido = () => {
   );
 };
 
-export default CreatePedido;
+export default EditPedido;

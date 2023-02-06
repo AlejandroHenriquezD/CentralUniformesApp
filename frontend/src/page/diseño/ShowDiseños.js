@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import logo_pequeño from "../logo_pequeño.png";
+import logo_pequeño from "../../components/logo_pequeño.png";
 import { Link } from "react-router-dom";
 
 const endpoint = "http://localhost:8000/api";

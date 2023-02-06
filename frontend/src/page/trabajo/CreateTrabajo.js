@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import "../form.css";
+import "../../components/form.css";
 
 const endpoint = "http://localhost:8000/api/trabajo";
 
 const CreateTrabajo = () => {
-  const [nombre, setNombre] = useState();
-  const [descripcion, setDescripcion] = useState();
+  const [nombre, setNombre] = useState("");
+  const [descripcion, setDescripcion] = useState("");
   const navigate = useNavigate();
 
   const store = async (e) => {
@@ -33,7 +33,7 @@ const CreateTrabajo = () => {
           />
         </div>
         <div className="mb-3">
-          <label className="form-label">Descripción</label>
+          <label className="form-label">Descripcion</label>
           <input
             value={descripcion}
             onChange={(e) => setDescripcion(e.target.value)}

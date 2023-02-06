@@ -1,11 +1,11 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
-import "../form.css";
+import { useNavigate, useParams } from "react-router-dom";
+import "../../components/form.css";
 
-const endpoint = "http://localhost:8000/api/articulo";
+const endpoint = "http://localhost:8000/api/articulo/";
 
-const CreateArticulo = () => {
+const EditArticulo = () => {
   const [nombre, setNombre] = useState("");
   const [descripcion, setDescripcion] = useState("");
   const [img, setImg] = useState("");
@@ -14,10 +14,11 @@ const CreateArticulo = () => {
   const [talla, setTalla] = useState("");
   const [stock, setStock] = useState(0);
   const navigate = useNavigate();
+  const { id } = useParams();
 
-  const store = async (e) => {
+  const update = async (e) => {
     e.preventDefault();
-    await axios.post(endpoint, {
+    await axios.put(`${endpoint}${id}`, {
       nombre: nombre,
       descripcion: descripcion,
       img: img,
@@ -28,11 +29,25 @@ const CreateArticulo = () => {
     });
     navigate("/show_articulos");
   };
+  useEffect(() => {
+    const getArticuloById = async () => {
+      const response = await axios.get(`${endpoint}${id}`);
+      setNombre(response.data.nombre);
+      setDescripcion(response.data.descripcion);
+      setImg(response.data.img);
+      setPrecio(response.data.precio);
+      setColor(response.data.color);
+      setTalla(response.data.talla);
+      setStock(response.data.stock);
+    };
+    getArticuloById();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <div>
-      <h3>Crear Artículo</h3>
-      <form onSubmit={store}>
+      <h3>Editar Artículo</h3>
+      <form onSubmit={update}>
         <div className="mb-3">
           <label className="form-label">Nombre</label>
           <input
@@ -97,11 +112,11 @@ const CreateArticulo = () => {
           />
         </div>
         <button type="submit" className="btn btn-danger">
-          Crear
+          Actualizar
         </button>
       </form>
     </div>
   );
 };
 
-export default CreateArticulo;
+export default EditArticulo;
