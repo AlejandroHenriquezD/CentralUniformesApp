@@ -51,12 +51,12 @@ const ShowDiseños = () => {
           {diseños.map((diseño) => (
             <tr key={diseño.id}>
               <td> {diseño.nombre}</td>
-              <td>{diseño.img}</td>
+              <td><img src={"http://localhost:8000/" + diseño.img} /></td>
               <td>{diseño.posicion}</td>
               <td>{diseño.tamaño}</td>
               <td>{diseño.favorito}</td>
               <td> {diseño.user.name}</td>
-              <td> {diseño.logo.nombre}</td>
+              <td> {diseño.logo.nombre} </td>
               <td> {diseño.articulo.nombre}</td>
               <td>
                 <Link

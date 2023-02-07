@@ -85,4 +85,5 @@ Route::controller(TrabajoController::class)->group(function () {
 });;
 
 Route::post('login', [AuthController::class, 'signin']);
+Route::post('registercli', [AuthController::class, 'signupclient']);
 Route::post('register', [AuthController::class, 'signup']);

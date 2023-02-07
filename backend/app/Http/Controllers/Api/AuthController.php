@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\API;
 
+use App\Models\Cliente;
 use Illuminate\Http\Request;
 use App\Http\Controllers\API\BaseController as BaseController;
 use Illuminate\Support\Facades\Auth;
@@ -26,6 +27,41 @@ class AuthController extends BaseController
             return $this->sendError('Unauthorised.', ['error' => 'Unauthorised']);
         }
     }
+    public function signupclient(Request $request)
+    {
+        $validator = Validator::make($request->all(), [
+            'dni' => 'required',
+            'name' => 'required',
+            'email' => 'required|email',
+            'password' => 'required',
+            'confirm_password' => 'required|same:password',
+        ]);
+
+        if ($validator->fails()) {
+            return $this->sendError('Error validation', $validator->errors());
+        }
+
+        $input = $request->all();
+        $input['rol'] = 'Cliente';
+        $input['password'] = bcrypt($input['password']);
+        $user = User::create($input);
+        $success['token'] =  $user->createToken('MyAuthApp')->plainTextToken;
+        $success['id'] =  $user->id;
+
+        $cliente = new Cliente();
+        $cliente->telefono = $request->telefono;
+        $cliente->direccion = $request->direccion;
+        $cliente->codigo_postal = $request->codigo_postal;
+        $cliente->municipio = $request->municipio;
+        $cliente->provincia = $request->provincia;
+        $cliente->observaciones = $request->observaciones;
+        $cliente->id_user = $user->id;
+
+        $cliente->save();
+
+        return $this->sendResponse($success, 'User created successfully.');
+    }
+
     public function signup(Request $request)
     {
         $validator = Validator::make($request->all(), [
@@ -49,6 +85,7 @@ class AuthController extends BaseController
 
         return $this->sendResponse($success, 'User created successfully.');
     }
+
 
     public function userProfile()
     {

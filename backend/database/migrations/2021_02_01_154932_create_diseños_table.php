@@ -17,10 +17,10 @@ return new class extends Migration
             $table->id();
             $table->string('nombre');
             $table->string('img');
-            $table->string('posicion');
-            $table->integer('tamaño');
-            $table->boolean('favorito');
-            $table->unsignedBigInteger('id_user');
+            $table->string('posicion')->nullable();
+            $table->integer('tamaño')->nullable();
+            $table->boolean('favorito')->nullable();
+            $table->unsignedBigInteger('id_user')->nullable();
             $table->unsignedBigInteger('id_logo')->nullable();
             $table->unsignedBigInteger('id_articulo');
 
@@ -33,12 +33,12 @@ return new class extends Migration
                 ->references('id')
                 ->on('logos')
                 ->onDelete('cascade');
-            
+
             $table->foreign('id_articulo')
                 ->references('id')
                 ->on('articulos')
                 ->onDelete('cascade');
-            
+
             $table->timestamps();
         });
     }
