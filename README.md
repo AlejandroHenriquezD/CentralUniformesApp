@@ -44,17 +44,17 @@ La idea surge por la necesidad de un sistema para realizar pedidos de ropa. La a
 # Diagramas
 
 ## Diagrama Entidad Relación
-![screenshots](https://github.com/AlejandroHenriquezD/CentralUniformes/blob/master/screenshots/er.png)
+![screenshots](https://github.com/AlejandroHenriquezD/CentralUniformesApp/blob/master/screenshots/entidad_relacion.png)
 
 ## Diagrama UML
-![screenshots](https://github.com/AlejandroHenriquezD/CentralUniformes/blob/master/screenshots/uml.png)
+![screenshots](https://github.com/AlejandroHenriquezD/CentralUniformesApp/blob/master/screenshots/modelo_relacional.png)
 ## Casos de Uso
-![screenshots](https://github.com/AlejandroHenriquezD/CentralUniformes/blob/master/screenshots/casosdeuso.png)
+![screenshots](https://github.com/AlejandroHenriquezD/CentralUniformesApp/blob/master/screenshots/casos_uso.png)
 
 El administrador de almacén que gestione la aplicación podrá realizar estas tareas las cuales son básicamente lo que conocemos como un CRUD (Create Read Update Delete) y el cliente podrá hacer pedidos ver artículos y registrarse
 
 ## Modelo Relacional
-![screenshots](https://github.com/AlejandroHenriquezD/CentralUniformes/blob/master/screenshots/modelorelacional.png)
+![screenshots](https://github.com/AlejandroHenriquezD/CentralUniformesApp/blob/master/screenshots/modelo_relacional.png)
 
 El modelo de datos se compone de 4 tablas las dos más importantes son clientes y artículos, la primera se almacenará toda la información de los usuarios en la segunda todos los artículos (entendiendo como artículo un modelo de algo Ej: Camisa Básica Blanca Talla L), la entidad imagenes es un apoyo a la tabla articulos y en la entidad pedidos se guardaran los pedidos de cada cliente. La tabla pedidos tendrá dos claves foráneas (id_articulo y id_cliente) al igual que la tabla Imagenes tendrá una clave foránea de la tabla articulos.
 
