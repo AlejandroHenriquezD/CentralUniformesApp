@@ -11,7 +11,7 @@ Necesitaremos las siguientes herramientas
 
 Una vez instaladas las herramientas clonamos la app desde el repositorio en github.
 
-`git clone https://github.com/AlejandroHenriquezD/CentralUniformes`
+`git clone https://github.com/AlejandroHenriquezD/CentralUniformesApp`
 
 Una vez hecho esto tenemos que instalar las dependencias ejecutando el siguiente comando desde cada carpeta
 
@@ -51,39 +51,40 @@ La idea surge por la necesidad de un sistema para realizar pedidos de ropa. La a
 ## Casos de Uso
 ![screenshots](https://github.com/AlejandroHenriquezD/CentralUniformesApp/blob/master/screenshots/casos_uso.png)
 
-El administrador de almacén que gestione la aplicación podrá realizar estas tareas las cuales son básicamente lo que conocemos como un CRUD (Create Read Update Delete) y el cliente podrá hacer pedidos ver artículos y registrarse
+El cliente tendra la capacidad de crear sus diseños, añadir sus logos para hacer diseños con estos y realizar pedidos de estos diseños. El empleado se encargara de hacer las tareas que le asignen y el encargado sera el "administrador" el cual podra realizar todos los CRUDS de las tablas y asignara los pedidos a los empleados.
 
 ## Modelo Relacional
 ![screenshots](https://github.com/AlejandroHenriquezD/CentralUniformesApp/blob/master/screenshots/modelo_relacional.png)
 
-El modelo de datos se compone de 4 tablas las dos más importantes son clientes y artículos, la primera se almacenará toda la información de los usuarios en la segunda todos los artículos (entendiendo como artículo un modelo de algo Ej: Camisa Básica Blanca Talla L), la entidad imagenes es un apoyo a la tabla articulos y en la entidad pedidos se guardaran los pedidos de cada cliente. La tabla pedidos tendrá dos claves foráneas (id_articulo y id_cliente) al igual que la tabla Imagenes tendrá una clave foránea de la tabla articulos.
+El modelo relacional se compone de **siete tablas**, la tabla **usuarios** sera la que guarde la información principal de cada usuario registrado sin importar si es cliente, empleado o encargado, la tabla **clientes** tendra una clave foranea con la tabla usuario y servira para guardar informacion adicional de los clientes, la tabla **logos** tendra una imagen y un usuario asociado para que el cliente pueda guardar sus logos para sus diseños, la tabla **diseños** es donde se van a guardar los diseños creados por los clientes para que estos puedan hacer pedidos, la tabla **articulos** contendra la información de los articulos asi como su stock,precio etc, la tabla **trabajos** sera una tabla de tipo maestra la cual contendra los tipos de trabajo que puede necesitar un pedido (bordado, planchado...) y por ultimo la tabla **pedidos** en la cual se guardaran los pedidos realizados por el cliente y el empleado encargado en trabajar ese pedido  
 
 # Requisitos de Usuario
 
 ## Enunciado del problema 
 
-Se pide una aplicación que trabaje con clientes que realizan pedidos de ropa.
+Se pide una aplicación que trabaje con clientes que realizan sus diseños de ropa personalizados y pueden hacer pedidos de estos diseños. Ademas si eres empleado tendras otra interfaz para ver que pedidos tienes que atender
 
 Tiene que tener
+- Una pagina para hacer diseños
 - Una pagina para hacer pedidos 
-- Una pagina para ver mis pedidos
+- Una pagina para ver mis diseños
+- Una pagina para añadir logos 
+- Una pagina para configuración
 
 Es una app desarrollada desde cero en laravel y reactJs
 
 ## Requisitos de Usuario
-- R1. Plataforma: La app sera desarrollada para dispositivos móviles
+- R1. Plataforma: La app sera desarrollada para web
 
-- R2. La app tendrá un sistema de cuentas y por lo tanto dos interfaces para inciar sesión y crear cuenta
+- R2. La app tendrá un sistema de registro y por lo tanto dos interfaces para inciar sesión y crear cuenta
 
-- R3. La app tendrá un menú en la parte superior con un desplegable que tendrá todas las opciones de navegación y la posibilidad de cerrar la sesión.
+- R3. La app tendrá un menú en la parte superior con un desplegable que tendrá todas las opciones de navegación.
 
 - R4. Habrá una interfaz para ver todos los productos disponibles y poder seleccionar el que queremos.
 
 - R5. Una vez seleccionado el producto elegimos la cantidad y confirmamos el pedido.
 
-- R6. Habrá otra interfaz en la cual podremos comprobar todos los pedidos que hemos realizado.
-
-- R7. Habrá otro frontend a modo de panel de administración
+- R6. Habrá una seccion solo visible para encargado a modo de panel de administración
 
 # Prototipo / Mockup
 
@@ -169,11 +170,11 @@ Respecto a los elementos multimedia hemos optado por que no sean muy abdantes pa
 
 # Planificación
 
-La planificación que he llevado a cabo ha sido con la ayuda de github, usando su función de proyectos en la cual puedes asignar tareas e ir cambiando su estado en una vista tablero muy cómoda.
+La planificación que hemos llevado a cabo ha sido con la ayuda de github, usando su función de proyectos en la cual puedes asignar tareas e ir cambiando su estado en una vista tablero muy cómoda.
 
 [Mi Tablero](https://github.com/users/AlejandroHenriquezD/projects/1/views/1)
 
-Para organizarme mejor he dividido el proyecto en pequeños objetivos para poder tener más claro que quiero hacer cada dia. Mi metodología de trabajo se basa en entender lo que quiero hacer y buscar un ejemplo de como hacerlo, preferiblemente un video, seguir el ejemplo del video y una vez hecho hacer lo mismo pero para mi caso personal.
+Para organizarnos mejor hemos dividido el proyecto en pequeños objetivos para poder tener más claro que queremos hacer cada dia. Nuestra metodología de trabajo se basa en entender lo que queremos hacer y buscar un ejemplo de como hacerlo, preferiblemente un video, seguir el ejemplo del video y una vez hecho hacer lo mismo pero adaptado a nuestro proyecto.
 
 
 # Conclusión
