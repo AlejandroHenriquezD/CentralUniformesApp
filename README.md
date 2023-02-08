@@ -87,7 +87,7 @@ Es una app desarrollada desde cero en laravel y reactJs
 
 # Prototipo / Mockup
 
-[Figma](https://www.figma.com/proto/BwXMCLHKQkuFyYyXLssCwu/Central-Uniformes?page-id=0%3A1&node-id=13%3A7&viewport=1803%2C-1213%2C0.99&scaling=scale-down&starting-point-node-id=13%3A7)
+[Figma](https://www.figma.com/proto/yPzGfJeuUoQvJv7zYD3fZ2/Central-Uniformes-App?node-id=3%3A2&scaling=min-zoom&page-id=0%3A1&starting-point-node-id=3%3A2&show-proto-sidebar=1)
 
 # Pila tecnológica
 
