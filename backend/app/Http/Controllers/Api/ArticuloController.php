@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use App\Models\Articulo;
+use App\Models\Diseño;
 use Illuminate\Http\Request;
 
 class ArticuloController extends Controller
@@ -41,6 +42,7 @@ class ArticuloController extends Controller
         $articulo->precio = $request->precio;
         $articulo->stock = $request->stock;
         $articulo->descripcion = $request->descripcion;
+        $articulo->img = $request->img;
 
         if ($request->hasFile('img')) {
             $file = $request->file('img');
@@ -50,8 +52,16 @@ class ArticuloController extends Controller
             $articulo->img = $destinationPath . $filename;
         }
 
-
         $articulo->save();
+
+        $design = new Diseño();
+        $design->nombre = $articulo->nombre;
+        $design->id_articulo = $articulo->id;
+        $design->img = $articulo->img;
+        $design->id_logo = 1;
+        $design->id_user = 1;
+
+        $design->save();
     }
 
     public function show($id)
