@@ -20,7 +20,7 @@ class PedidoController extends Controller
         $pedido = new Pedido();
         $pedido->fecha_pedido = $request->fecha_pedido;
         $pedido->id_cliente = $request->id_cliente;
-        $pedido->id_empleado = $request->id_empleado;
+        $pedido->id_empleado = 1;
         $pedido->unidades = $request->unidades;
         $pedido->observaciones = $request->observaciones;
         $pedido->id_trabajo = $request->id_trabajo;
