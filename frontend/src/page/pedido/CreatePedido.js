@@ -10,14 +10,12 @@ const CreatePedido = () => {
   const [observaciones, setObservaciones] = useState("");
   const [unidades, setUnidades] = useState(0);
   const [id_cliente, setId_Cliente] = useState(0);
-  const [id_empleado, setId_Empleado] = useState(0);
   const [id_trabajo, setId_Trabajo] = useState(0);
   const [id_diseño, setId_Diseño] = useState(0);
   const navigate = useNavigate();
 
   //Foreign key
   const [clientes, setId_Clientes] = useState([]);
-  const [empleados, setId_Empleados] = useState([]);
   const [trabajos, setId_Trabajos] = useState([]);
   const [diseños, setId_Diseños] = useState([]);
 
@@ -27,7 +25,6 @@ const CreatePedido = () => {
       observaciones: observaciones,
       unidades: unidades,
       id_cliente: id_cliente,
-      id_empleado: id_empleado,
       id_trabajo: id_trabajo,
       id_diseño: id_diseño,
     });
@@ -40,11 +37,9 @@ const CreatePedido = () => {
 
   const getAll = async () => {
     const response = await axios.get(`${endpoint2}/clients`);
-    const response2 = await axios.get(`${endpoint2}/empleados`);
     const response3 = await axios.get(`${endpoint2}/trabajos`);
     const response4 = await axios.get(`${endpoint2}/diseños`);
     setId_Clientes(response.data);
-    setId_Empleados(response2.data);
     setId_Trabajos(response3.data);
     setId_Diseños(response4.data);
   };
@@ -83,21 +78,6 @@ const CreatePedido = () => {
             <option value="" />
             {clientes.map((cliente) => (
               <option value={`${cliente.id}`}>{cliente.name}</option>
-            ))}
-          </select>
-        </div>
-        <div className="mb-3">
-          <label className="form-label">Empleado</label>
-          <select
-            value={id_empleado}
-            onChange={(e) => {
-              setId_Empleado(e.target.value);
-            }}
-            className="form"
-          >
-            <option value="" />
-            {empleados.map((empleado) => (
-              <option value={`${empleado.id}`}>{empleado.name}</option>
             ))}
           </select>
         </div>

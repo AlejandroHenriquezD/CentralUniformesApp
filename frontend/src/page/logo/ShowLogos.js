@@ -5,6 +5,8 @@ import logo_pequeño from "../../components/logo_pequeño.png";
 
 import { Link } from "react-router-dom";
 
+import "../styles.css";
+
 const endpoint = "http://localhost:8000/api";
 const ShowLogos = () => {
   const [logos, setLogos] = useState([]);
@@ -47,7 +49,13 @@ const ShowLogos = () => {
           {logos.map((logo) => (
             <tr key={logo.id}>
               <td> {logo.nombre} </td>
-              <td> <img src={"http://localhost:8000/" + logo.img} /> </td>
+              <td>
+                <img
+                  className="img"
+                  src={"http://localhost:8000/" + logo.img}
+                  alt={logo.nombre}
+                />{" "}
+              </td>
               <td> {logo.user.name} </td>
               <td>
                 <Link to={`/edit_logo/${logo.id}`} className="btn btn-primary">

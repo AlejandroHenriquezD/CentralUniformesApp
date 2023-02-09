@@ -26,7 +26,7 @@ const EditLogo = () => {
       img: img,
       id_user: id_user,
     });
-    navigate("/show_logo");
+    navigate("/show_logos");
   };
   useEffect(() => {
     const getLogoById = async () => {
@@ -48,15 +48,6 @@ const EditLogo = () => {
     <div>
       <h3>Editar Logo</h3>
       <form onSubmit={update} encType="multipart/form-data">
-        <div className="mb-3">
-          <label className="form-label">Nombre</label>
-          <input
-            value={nombre}
-            onChange={(e) => setNombre(e.target.value)}
-            type="text"
-            className="form"
-          />
-        </div>
         <div className="mb-3">
           <label htmlFor="img" className="form-label">
             Imagen

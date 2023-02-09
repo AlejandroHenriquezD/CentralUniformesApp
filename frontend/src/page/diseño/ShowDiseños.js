@@ -51,13 +51,33 @@ const ShowDiseños = () => {
           {diseños.map((diseño) => (
             <tr key={diseño.id}>
               <td> {diseño.nombre}</td>
-              <td><img src={"http://localhost:8000/" + diseño.img} /></td>
+              <td>
+                <img
+                  className="img"
+                  src={"http://localhost:8000/" + diseño.img}
+                  alt={diseño.nombre}
+                />
+              </td>
               <td>{diseño.posicion}</td>
               <td>{diseño.tamaño}</td>
               <td>{diseño.favorito}</td>
               <td> {diseño.user.name}</td>
-              <td> {diseño.logo.nombre} </td>
-              <td> {diseño.articulo.nombre}</td>
+              <td>
+                {" "}
+                <img
+                  className="img"
+                  src={"http://localhost:8000/" + diseño.logo.img}
+                  alt={diseño.nombre}
+                />{" "}
+              </td>
+              <td>
+                {" "}
+                <img
+                  className="img"
+                  src={"http://localhost:8000/" + diseño.articulo.img}
+                  alt={diseño.nombre}
+                />
+              </td>
               <td>
                 <Link
                   to={`/edit_diseño/${diseño.id}`}
