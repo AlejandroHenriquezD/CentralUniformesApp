@@ -6192,3 +6192,97 @@ Error: connect ECONNREFUSED 127.0.0.1:8000
 2023-02-01T17:21:00.875Z - info: Starting temp files cleanup with 180000ms threshold
 2023-02-01T17:21:00.876Z - info: reporter initialized
 2023-02-01T18:04:30.294Z - info: fs store is loading data
+2023-02-07T19:29:36.439Z - info: Initializing jsreport (version: 3.10.0, configuration file: jsreport.config.json, nodejs: 16.17.0)
+2023-02-07T19:29:36.442Z - info: Searching for available extensions in D:\xampp\htdocs\central_uniformes\Informes\
+2023-02-07T19:29:37.197Z - info: Extensions location cache contains up to date information, skipping crawling in D:\xampp\htdocs\central_uniformes\Informes\
+2023-02-07T19:29:37.221Z - info: Found 35 extension(s)
+2023-02-07T19:29:39.495Z - info: Using extension base@3.0.1
+2023-02-07T19:29:39.506Z - info: Using extension child-templates@3.1.0
+2023-02-07T19:29:39.618Z - info: Using extension cli@3.2.3
+2023-02-07T19:29:39.669Z - info: Using extension components@3.3.0
+2023-02-07T19:29:39.755Z - info: Using extension data@3.1.0
+2023-02-07T19:29:39.820Z - info: Using extension express@3.6.0
+2023-02-07T19:30:01.394Z - info: Using extension freeze@3.0.1
+2023-02-07T19:30:01.588Z - info: Using extension fs-store@3.2.4
+2023-02-07T19:30:08.169Z - info: Using extension handlebars@3.2.1
+2023-02-07T19:30:08.211Z - info: Using extension import-export@3.2.0
+2023-02-07T19:30:08.841Z - info: Using extension jsrender@3.0.0
+2023-02-07T19:30:08.877Z - info: Using extension licensing@3.0.2
+2023-02-07T19:30:09.937Z - info: Using extension localization@3.2.1
+2023-02-07T19:30:09.956Z - info: Using extension npm@3.1.2
+2023-02-07T19:30:09.979Z - info: Using extension pdf-utils@3.7.0
+2023-02-07T19:30:10.052Z - info: Using extension reports@3.1.1
+2023-02-07T19:30:10.119Z - info: Using extension tags@3.1.1
+2023-02-07T19:30:10.179Z - info: Using extension text@3.0.0
+2023-02-07T19:30:10.194Z - info: Using extension version-control@3.1.2
+2023-02-07T19:30:10.869Z - info: Using extension assets@3.6.0
+2023-02-07T19:30:11.469Z - info: Using extension authorization@3.3.0
+2023-02-07T19:30:11.685Z - info: Using extension browser-client@3.1.1
+2023-02-07T19:30:11.790Z - info: Using extension chrome-pdf@3.3.0
+2023-02-07T19:30:11.857Z - info: Using extension docx@3.6.0
+2023-02-07T19:30:11.922Z - info: Using extension html-to-xlsx@3.3.0
+2023-02-07T19:30:18.456Z - info: html-to-xlsx detected chrome as available html engine
+2023-02-07T19:30:18.457Z - info: Using extension pptx@3.4.0
+2023-02-07T19:30:18.535Z - info: Using extension scheduling@3.0.3
+2023-02-07T19:30:19.984Z - info: Using extension scripts@3.4.0
+2023-02-07T19:30:20.040Z - info: Using extension static-pdf@3.0.1
+2023-02-07T19:30:20.050Z - info: Using extension studio@3.9.0
+2023-02-07T19:30:23.532Z - info: Using extension xlsx@3.4.0
+2023-02-07T19:30:25.700Z - info: Using extension public-templates@3.0.0
+2023-02-07T19:30:25.721Z - info: Using extension sample-template@3.2.1
+2023-02-07T19:30:25.756Z - info: Using extension studio-theme-dark@3.0.1
+2023-02-07T19:30:25.861Z - info: Code sandboxing is disabled, users can potentially penetrate the local system if you allow code from external users to be part of your reports
+2023-02-07T19:30:25.862Z - info: Using general timeout for rendering (reportTimeout: 60000)
+2023-02-07T19:30:25.863Z - info: Using fs provider for template store.
+2023-02-07T19:30:25.872Z - info: fs store is persisting using fs for D:\xampp\htdocs\central_uniformes\Informes\data
+2023-02-07T19:30:25.880Z - info: fs store is loading data
+2023-02-07T19:30:26.091Z - info: fs store is initialized successfully
+2023-02-07T19:30:26.110Z - info: Creating default express app.
+2023-02-07T19:30:28.577Z - info: jsreport server successfully started on http port: 5488
+2023-02-07T19:30:28.583Z - info: Verifying license key free
+2023-02-07T19:30:28.586Z - info: Using free license
+2023-02-07T19:30:28.595Z - info: Initializing worker threads
+2023-02-07T19:30:35.258Z - info: 2 worker threads initialized in 6663ms
+2023-02-07T19:30:35.259Z - info: Starting temp files cleanup with 180000ms threshold
+2023-02-07T19:30:35.261Z - info: reporter initialized
+2023-02-07T19:31:26.089Z - warn: Cleaning fs journal failed, will reload Unexpected end of JSON input stack=SyntaxError: Unexpected end of JSON input
+    at JSON.parse (<anonymous>)
+    at parse (D:\xampp\htdocs\central_uniformes\Informes\node_modules\@jsreport\jsreport-fs-store\lib\customUtils.js:83:15)
+    at Object.clean (D:\xampp\htdocs\central_uniformes\Informes\node_modules\@jsreport\jsreport-fs-store\lib\journal.js:185:24)
+    at async lock (D:\xampp\htdocs\central_uniformes\Informes\node_modules\@jsreport\jsreport-fs-store\lib\customUtils.js:163:12)
+2023-02-07T19:33:14.537Z - info: Render request 1 queued for execution and waiting for available worker fromEmitProfile=true, rootId=bw9ufwxicutmkhb, id=bw9ufwxicutmkhb
+2023-02-07T19:33:14.651Z - info: Starting rendering request 1 rootId=bw9ufwxicutmkhb, id=bw9ufwxicutmkhb, fromEmitProfile=true
+2023-02-07T19:33:14.652Z - info: Rendering template { name: invoice-main, recipe: chrome-pdf, engine: handlebars, preview: false } rootId=bw9ufwxicutmkhb, id=bw9ufwxicutmkhb, fromEmitProfile=true
+2023-02-07T19:33:20.895Z - warn: Error when processing render request 1
+(because) error when evaluating custom script /samples/Invoice/test
+Request failed with status code 500
+Error: Request failed with status code 500
+    at createError (D:\xampp\htdocs\central_uniformes\Informes\node_modules\axios\lib\core\createError.js:16:15)
+    at settle (D:\xampp\htdocs\central_uniformes\Informes\node_modules\axios\lib\core\settle.js:17:12)
+    at IncomingMessage.handleStreamEnd (D:\xampp\htdocs\central_uniformes\Informes\node_modules\axios\lib\adapters\http.js:293:11)
+    at IncomingMessage.emit (node:events:525:35)
+    at IncomingMessage.emit (node:domain:552:15)
+    at endReadableNT (node:internal/streams/readable:1358:12)
+    at processTicksAndRejections (node:internal/process/task_queues:83:21) rootId=bw9ufwxicutmkhb, id=bw9ufwxicutmkhb, fromEmitProfile=true
+2023-02-07T19:33:20.898Z - warn: Rendering request 1 finished with error in 6363 ms rootId=bw9ufwxicutmkhb, id=bw9ufwxicutmkhb, fromEmitProfile=true
+2023-02-07T19:33:20.901Z - error: Report render failed
+(because) error when evaluating custom script /samples/Invoice/test
+Request failed with status code 500
+Error: Request failed with status code 500
+    at createError (D:\xampp\htdocs\central_uniformes\Informes\node_modules\axios\lib\core\createError.js:16:15)
+    at settle (D:\xampp\htdocs\central_uniformes\Informes\node_modules\axios\lib\core\settle.js:17:12)
+    at IncomingMessage.handleStreamEnd (D:\xampp\htdocs\central_uniformes\Informes\node_modules\axios\lib\adapters\http.js:293:11)
+    at IncomingMessage.emit (node:events:525:35)
+    at IncomingMessage.emit (node:domain:552:15)
+    at endReadableNT (node:internal/streams/readable:1358:12)
+    at processTicksAndRejections (node:internal/process/task_queues:83:21) rootId=bw9ufwxicutmkhb, id=bw9ufwxicutmkhb
+2023-02-07T19:33:20.907Z - error: Error during processing request at http://localhost:5488/templates/rkJTnK2ce, details: Error when evaluating custom script /samples/Invoice/test
+Request failed with status code 500
+Error: Request failed with status code 500
+    at createError (D:\xampp\htdocs\central_uniformes\Informes\node_modules\axios\lib\core\createError.js:16:15)
+    at settle (D:\xampp\htdocs\central_uniformes\Informes\node_modules\axios\lib\core\settle.js:17:12)
+    at IncomingMessage.handleStreamEnd (D:\xampp\htdocs\central_uniformes\Informes\node_modules\axios\lib\adapters\http.js:293:11)
+    at IncomingMessage.emit (node:events:525:35)
+    at IncomingMessage.emit (node:domain:552:15)
+    at endReadableNT (node:internal/streams/readable:1358:12)
+    at processTicksAndRejections (node:internal/process/task_queues:83:21)
