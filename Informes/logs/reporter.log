@@ -10456,3 +10456,101 @@ Error: Report cancelled by the client or closed network
     at parse (C:\Users\casim\Desktop\CentralUniformesApp\Informes\node_modules\@jsreport\jsreport-fs-store\lib\customUtils.js:83:15)
     at Object.clean (C:\Users\casim\Desktop\CentralUniformesApp\Informes\node_modules\@jsreport\jsreport-fs-store\lib\journal.js:185:24)
     at async lock (C:\Users\casim\Desktop\CentralUniformesApp\Informes\node_modules\@jsreport\jsreport-fs-store\lib\customUtils.js:163:12)
+2023-02-10T17:19:11.907Z - info: Initializing jsreport (version: 3.10.0, configuration file: jsreport.config.json, nodejs: 16.17.0)
+2023-02-10T17:19:11.910Z - info: Searching for available extensions in D:\xampp\htdocs\central_uniformes\Informes\
+2023-02-10T17:19:11.924Z - info: Extensions location cache contains up to date information, skipping crawling in D:\xampp\htdocs\central_uniformes\Informes\
+2023-02-10T17:19:11.953Z - info: Found 36 extension(s)
+2023-02-10T17:19:12.605Z - info: Using extension base@3.0.1
+2023-02-10T17:19:12.619Z - info: Using extension child-templates@3.1.0
+2023-02-10T17:19:12.630Z - info: Using extension cli@3.2.3
+2023-02-10T17:19:12.640Z - info: Using extension components@3.3.0
+2023-02-10T17:19:12.654Z - info: Using extension data@3.1.0
+2023-02-10T17:19:12.665Z - info: Using extension express@3.6.0
+2023-02-10T17:19:15.770Z - info: Using extension freeze@3.0.1
+2023-02-10T17:19:15.783Z - info: Using extension fs-store@3.2.4
+2023-02-10T17:19:16.753Z - info: Using extension handlebars@3.2.1
+2023-02-10T17:19:16.765Z - info: Using extension import-export@3.2.0
+2023-02-10T17:19:16.866Z - info: Using extension jsrender@3.0.0
+2023-02-10T17:19:16.872Z - info: Using extension licensing@3.0.2
+2023-02-10T17:19:17.057Z - info: Using extension localization@3.2.1
+2023-02-10T17:19:17.064Z - info: Using extension npm@3.1.2
+2023-02-10T17:19:17.081Z - info: Using extension pdf-utils@3.7.0
+2023-02-10T17:19:17.096Z - info: Using extension phantom-pdf@3.2.0
+2023-02-10T17:19:17.109Z - info: Using extension reports@3.1.1
+2023-02-10T17:19:17.127Z - info: Using extension tags@3.1.1
+2023-02-10T17:19:17.145Z - info: Using extension text@3.0.0
+2023-02-10T17:19:17.153Z - info: Using extension version-control@3.1.2
+2023-02-10T17:19:17.246Z - info: Using extension assets@3.6.0
+2023-02-10T17:19:17.343Z - info: Using extension authorization@3.3.0
+2023-02-10T17:19:17.385Z - info: Using extension browser-client@3.1.1
+2023-02-10T17:19:17.418Z - info: Using extension chrome-pdf@3.3.0
+2023-02-10T17:19:17.432Z - info: Using extension docx@3.6.0
+2023-02-10T17:19:17.441Z - info: Using extension html-to-xlsx@3.3.0
+2023-02-10T17:19:18.373Z - info: html-to-xlsx detected chrome as available html engine
+2023-02-10T17:19:18.374Z - info: html-to-xlsx detected phantom as available html engine
+2023-02-10T17:19:18.375Z - info: Using extension pptx@3.4.0
+2023-02-10T17:19:18.386Z - info: Using extension scheduling@3.0.3
+2023-02-10T17:19:18.611Z - info: Using extension scripts@3.4.0
+2023-02-10T17:19:18.619Z - info: Using extension static-pdf@3.0.1
+2023-02-10T17:19:18.628Z - info: Using extension studio@3.9.0
+2023-02-10T17:19:19.144Z - info: Using extension xlsx@3.4.0
+2023-02-10T17:19:19.497Z - info: Using extension public-templates@3.0.0
+2023-02-10T17:19:19.508Z - info: Using extension sample-template@3.2.1
+2023-02-10T17:19:19.520Z - info: Using extension studio-theme-dark@3.0.1
+2023-02-10T17:19:19.537Z - info: Code sandboxing is disabled, users can potentially penetrate the local system if you allow code from external users to be part of your reports
+2023-02-10T17:19:19.537Z - info: Using general timeout for rendering (reportTimeout: 60000)
+2023-02-10T17:19:19.538Z - info: Using fs provider for template store.
+2023-02-10T17:19:19.546Z - info: fs store is persisting using fs for D:\xampp\htdocs\central_uniformes\Informes\data
+2023-02-10T17:19:19.553Z - info: fs store is loading data
+2023-02-10T17:19:19.690Z - info: fs store is initialized successfully
+2023-02-10T17:19:19.712Z - info: Creating default express app.
+2023-02-10T17:19:20.132Z - info: jsreport server successfully started on http port: 5488
+2023-02-10T17:19:20.134Z - info: Verifying license key free
+2023-02-10T17:19:20.139Z - info: Using free license
+2023-02-10T17:19:20.150Z - info: Initializing worker threads
+2023-02-10T17:19:21.371Z - info: 2 worker threads initialized in 1221ms
+2023-02-10T17:19:21.371Z - info: Starting temp files cleanup with 180000ms threshold
+2023-02-10T17:19:21.373Z - info: reporter initialized
+2023-02-10T17:20:19.730Z - warn: Cleaning fs journal failed, will reload Unexpected end of JSON input stack=SyntaxError: Unexpected end of JSON input
+    at JSON.parse (<anonymous>)
+    at parse (D:\xampp\htdocs\central_uniformes\Informes\node_modules\@jsreport\jsreport-fs-store\lib\customUtils.js:83:15)
+    at Object.clean (D:\xampp\htdocs\central_uniformes\Informes\node_modules\@jsreport\jsreport-fs-store\lib\journal.js:185:24)
+    at async lock (D:\xampp\htdocs\central_uniformes\Informes\node_modules\@jsreport\jsreport-fs-store\lib\customUtils.js:163:12)
+2023-02-10T17:38:13.954Z - info: Verifying license key free
+2023-02-10T17:38:14.347Z - info: Using enterprise trial license
+2023-02-10T17:38:15.474Z - info: Render request 1 queued for execution and waiting for available worker fromEmitProfile=true, rootId=hipzaruavlcybq2, id=hipzaruavlcybq2
+2023-02-10T17:38:15.519Z - info: Starting rendering request 1 rootId=hipzaruavlcybq2, id=hipzaruavlcybq2, fromEmitProfile=true
+2023-02-10T17:38:15.520Z - info: Rendering template { name: invoice-main1, recipe: chrome-pdf, engine: handlebars, preview: true } rootId=hipzaruavlcybq2, id=hipzaruavlcybq2, fromEmitProfile=true
+2023-02-10T17:38:21.749Z - info: Rendering request 1 finished in 6274 ms rootId=hipzaruavlcybq2, id=hipzaruavlcybq2, fromEmitProfile=true
+2023-02-10T17:38:49.545Z - info: Render request 2 queued for execution and waiting for available worker fromEmitProfile=true, rootId=7ilzxyuvj7vtxtu, id=7ilzxyuvj7vtxtu
+2023-02-10T17:38:49.571Z - info: Starting rendering request 2 rootId=7ilzxyuvj7vtxtu, id=7ilzxyuvj7vtxtu, fromEmitProfile=true
+2023-02-10T17:38:49.572Z - info: Rendering template { name: invoice-main1, recipe: chrome-pdf, engine: handlebars, preview: true } rootId=7ilzxyuvj7vtxtu, id=7ilzxyuvj7vtxtu, fromEmitProfile=true
+2023-02-10T17:38:50.200Z - info: Rendering request 2 finished in 654 ms rootId=7ilzxyuvj7vtxtu, id=7ilzxyuvj7vtxtu, fromEmitProfile=true
+2023-02-10T17:39:22.386Z - info: Render request 3 queued for execution and waiting for available worker fromEmitProfile=true, rootId=87nywbuj70ydgxq, id=87nywbuj70ydgxq
+2023-02-10T17:39:22.408Z - info: Starting rendering request 3 rootId=87nywbuj70ydgxq, id=87nywbuj70ydgxq, fromEmitProfile=true
+2023-02-10T17:39:22.409Z - info: Rendering template { name: invoice-main, recipe: chrome-pdf, engine: handlebars, preview: true } rootId=87nywbuj70ydgxq, id=87nywbuj70ydgxq, fromEmitProfile=true
+2023-02-10T17:39:22.975Z - info: Rendering request 3 finished in 590 ms rootId=87nywbuj70ydgxq, id=87nywbuj70ydgxq, fromEmitProfile=true
+2023-02-10T17:39:30.563Z - info: Render request 4 queued for execution and waiting for available worker fromEmitProfile=true, rootId=085y04aexvuspre, id=085y04aexvuspre
+2023-02-10T17:39:30.587Z - info: Starting rendering request 4 rootId=085y04aexvuspre, id=085y04aexvuspre, fromEmitProfile=true
+2023-02-10T17:39:30.588Z - info: Rendering template { name: invoice-main1, recipe: chrome-pdf, engine: handlebars, preview: true } rootId=085y04aexvuspre, id=085y04aexvuspre, fromEmitProfile=true
+2023-02-10T17:39:31.124Z - info: Rendering request 4 finished in 561 ms rootId=085y04aexvuspre, id=085y04aexvuspre, fromEmitProfile=true
+2023-02-10T17:39:42.022Z - info: Render request 5 queued for execution and waiting for available worker fromEmitProfile=true, rootId=jba77oypkjjxg74, id=jba77oypkjjxg74
+2023-02-10T17:39:42.056Z - info: Starting rendering request 5 rootId=jba77oypkjjxg74, id=jba77oypkjjxg74, fromEmitProfile=true
+2023-02-10T17:39:42.057Z - info: Rendering template { name: chart, recipe: phantom-pdf, engine: handlebars, preview: true } rootId=jba77oypkjjxg74, id=jba77oypkjjxg74, fromEmitProfile=true
+2023-02-10T17:39:48.088Z - info: Rendering request 5 finished in 6056 ms rootId=jba77oypkjjxg74, id=jba77oypkjjxg74, fromEmitProfile=true
+2023-02-10T17:40:07.616Z - info: Render request 6 queued for execution and waiting for available worker fromEmitProfile=true, rootId=ggjxsgvq4uucxaa, id=ggjxsgvq4uucxaa
+2023-02-10T17:40:07.634Z - info: Starting rendering request 6 rootId=ggjxsgvq4uucxaa, id=ggjxsgvq4uucxaa, fromEmitProfile=true
+2023-02-10T17:40:07.635Z - info: Rendering template { name: chart, recipe: phantom-pdf, engine: handlebars, preview: true } rootId=ggjxsgvq4uucxaa, id=ggjxsgvq4uucxaa, fromEmitProfile=true
+2023-02-10T17:40:09.706Z - info: Rendering request 6 finished in 2082 ms rootId=ggjxsgvq4uucxaa, id=ggjxsgvq4uucxaa, fromEmitProfile=true
+2023-02-10T17:40:41.854Z - info: Render request 7 queued for execution and waiting for available worker fromEmitProfile=true, rootId=jvfz8pj10p3vasc, id=jvfz8pj10p3vasc
+2023-02-10T17:40:41.888Z - info: Starting rendering request 7 rootId=jvfz8pj10p3vasc, id=jvfz8pj10p3vasc, fromEmitProfile=true
+2023-02-10T17:40:41.888Z - info: Rendering template { name: chart, recipe: phantom-pdf, engine: handlebars, preview: true } rootId=jvfz8pj10p3vasc, id=jvfz8pj10p3vasc, fromEmitProfile=true
+2023-02-10T17:40:44.955Z - info: Rendering request 7 finished in 3089 ms rootId=jvfz8pj10p3vasc, id=jvfz8pj10p3vasc, fromEmitProfile=true
+2023-02-10T17:40:52.152Z - info: Render request 8 queued for execution and waiting for available worker fromEmitProfile=true, rootId=o5fvtefco8qe6dq, id=o5fvtefco8qe6dq
+2023-02-10T17:40:52.175Z - info: Starting rendering request 8 rootId=o5fvtefco8qe6dq, id=o5fvtefco8qe6dq, fromEmitProfile=true
+2023-02-10T17:40:52.176Z - info: Rendering template { name: chart, recipe: phantom-pdf, engine: handlebars, preview: true } rootId=o5fvtefco8qe6dq, id=o5fvtefco8qe6dq, fromEmitProfile=true
+2023-02-10T17:40:55.231Z - info: Rendering request 8 finished in 3067 ms rootId=o5fvtefco8qe6dq, id=o5fvtefco8qe6dq, fromEmitProfile=true
+2023-02-10T17:41:03.841Z - info: Render request 9 queued for execution and waiting for available worker fromEmitProfile=true, rootId=p9bt3fpsqgm3dbm, id=p9bt3fpsqgm3dbm
+2023-02-10T17:41:03.864Z - info: Starting rendering request 9 rootId=p9bt3fpsqgm3dbm, id=p9bt3fpsqgm3dbm, fromEmitProfile=true
+2023-02-10T17:41:03.865Z - info: Rendering template { name: chart, recipe: phantom-pdf, engine: handlebars, preview: true } rootId=p9bt3fpsqgm3dbm, id=p9bt3fpsqgm3dbm, fromEmitProfile=true
+2023-02-10T17:41:06.921Z - info: Rendering request 9 finished in 3071 ms rootId=p9bt3fpsqgm3dbm, id=p9bt3fpsqgm3dbm, fromEmitProfile=true

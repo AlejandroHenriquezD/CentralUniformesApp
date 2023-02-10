@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use App\Models\Articulo;
 use App\Models\Diseño;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class ArticuloController extends Controller
@@ -18,13 +19,15 @@ class ArticuloController extends Controller
     public function indexPdf()
     {
         $articulos = Articulo::all();
-
         $data = ['articulos'=>$articulos];
         return response()->json($data,200, []);
+    }
 
-        // $articulos = DB::table('articulos')->get();
-        // $pdf = PDF::loadview('articulos',['articulos'=> $articulos]);
-        // return $pdf->stream();
+    public function usuariosPdf()
+    {
+        $usuarios = User::all();
+        $data = ['usuarios'=>$usuarios];
+        return response()->json($data,200, []);
     }
 
     public function chart()
