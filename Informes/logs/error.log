@@ -47,3 +47,153 @@ Error: Request failed with status code 500
     at IncomingMessage.emit (node:domain:552:15)
     at endReadableNT (node:internal/streams/readable:1358:12)
     at processTicksAndRejections (node:internal/process/task_queues:83:21)
+2023-02-08T16:05:50.366Z - error: Report render failed
+(because) error when evaluating custom script /samples/Invoice/test
+Request failed with status code 500
+Error: Request failed with status code 500
+    at createError (D:\xampp\htdocs\central_uniformes\Informes\node_modules\axios\lib\core\createError.js:16:15)
+    at settle (D:\xampp\htdocs\central_uniformes\Informes\node_modules\axios\lib\core\settle.js:17:12)
+    at IncomingMessage.handleStreamEnd (D:\xampp\htdocs\central_uniformes\Informes\node_modules\axios\lib\adapters\http.js:293:11)
+    at IncomingMessage.emit (node:events:525:35)
+    at IncomingMessage.emit (node:domain:552:15)
+    at endReadableNT (node:internal/streams/readable:1358:12)
+    at processTicksAndRejections (node:internal/process/task_queues:83:21) rootId=hiwz3x5aag8qjjl, id=hiwz3x5aag8qjjl
+2023-02-08T18:10:56.731Z - error: Report render failed
+(because) unexpected token < in JSON at position 0
+SyntaxError: Unexpected token < in JSON at position 0
+    at JSON.parse (<anonymous>)
+    at Request._callback (sandbox.js:13:27)
+    at Request.self.callback (D:\xampp\htdocs\central_uniformes\Informes\node_modules\request\request.js:185:22)
+    at Request.emit (node:events:513:28)
+    at Request.emit (node:domain:552:15)
+    at Request.<anonymous> (D:\xampp\htdocs\central_uniformes\Informes\node_modules\request\request.js:1154:10)
+    at Request.emit (node:events:513:28)
+    at Request.emit (node:domain:552:15)
+    at IncomingMessage.<anonymous> (D:\xampp\htdocs\central_uniformes\Informes\node_modules\request\request.js:1076:12)
+    at Object.onceWrapper (node:events:627:28) rootId=7pwklmeyncbq4ln, id=7pwklmeyncbq4ln
+2023-02-08T18:11:03.532Z - error: Report render failed
+(because) cannot read properties of undefined (reading 'forEach')
+TypeError: Cannot read properties of undefined (reading 'forEach')
+    at Request._callback (sandbox.js:16:16)
+    at Request.self.callback (D:\xampp\htdocs\central_uniformes\Informes\node_modules\request\request.js:185:22)
+    at Request.emit (node:events:513:28)
+    at Request.emit (node:domain:552:15)
+    at Request.<anonymous> (D:\xampp\htdocs\central_uniformes\Informes\node_modules\request\request.js:1154:10)
+    at Request.emit (node:events:513:28)
+    at Request.emit (node:domain:552:15)
+    at IncomingMessage.<anonymous> (D:\xampp\htdocs\central_uniformes\Informes\node_modules\request\request.js:1076:12)
+    at Object.onceWrapper (node:events:627:28)
+    at IncomingMessage.emit (node:events:525:35) rootId=nkwfhvn2x4v5v1o, id=nkwfhvn2x4v5v1o
+2023-02-08T18:19:42.563Z - error: Report render failed
+(because) unexpected token < in JSON at position 0
+SyntaxError: Unexpected token < in JSON at position 0
+    at JSON.parse (<anonymous>)
+    at Request._callback (sandbox.js:13:27)
+    at Request.self.callback (D:\xampp\htdocs\central_uniformes\Informes\node_modules\request\request.js:185:22)
+    at Request.emit (node:events:513:28)
+    at Request.emit (node:domain:552:15)
+    at Request.<anonymous> (D:\xampp\htdocs\central_uniformes\Informes\node_modules\request\request.js:1154:10)
+    at Request.emit (node:events:513:28)
+    at Request.emit (node:domain:552:15)
+    at IncomingMessage.<anonymous> (D:\xampp\htdocs\central_uniformes\Informes\node_modules\request\request.js:1076:12)
+    at Object.onceWrapper (node:events:627:28) rootId=kk74yd6wsbpxivv, id=kk74yd6wsbpxivv
+2023-02-08T18:20:09.974Z - error: Report render failed
+(because) unexpected token < in JSON at position 0
+SyntaxError: Unexpected token < in JSON at position 0
+    at JSON.parse (<anonymous>)
+    at Request._callback (sandbox.js:13:27)
+    at Request.self.callback (D:\xampp\htdocs\central_uniformes\Informes\node_modules\request\request.js:185:22)
+    at Request.emit (node:events:513:28)
+    at Request.emit (node:domain:552:15)
+    at Request.<anonymous> (D:\xampp\htdocs\central_uniformes\Informes\node_modules\request\request.js:1154:10)
+    at Request.emit (node:events:513:28)
+    at Request.emit (node:domain:552:15)
+    at IncomingMessage.<anonymous> (D:\xampp\htdocs\central_uniformes\Informes\node_modules\request\request.js:1076:12)
+    at Object.onceWrapper (node:events:627:28) rootId=wgsi035tqifhblb, id=wgsi035tqifhblb
+2023-02-08T18:20:36.212Z - error: Report render failed
+(because) unexpected token < in JSON at position 0
+SyntaxError: Unexpected token < in JSON at position 0
+    at JSON.parse (<anonymous>)
+    at Request._callback (sandbox.js:13:27)
+    at Request.self.callback (D:\xampp\htdocs\central_uniformes\Informes\node_modules\request\request.js:185:22)
+    at Request.emit (node:events:513:28)
+    at Request.emit (node:domain:552:15)
+    at Request.<anonymous> (D:\xampp\htdocs\central_uniformes\Informes\node_modules\request\request.js:1154:10)
+    at Request.emit (node:events:513:28)
+    at Request.emit (node:domain:552:15)
+    at IncomingMessage.<anonymous> (D:\xampp\htdocs\central_uniformes\Informes\node_modules\request\request.js:1076:12)
+    at Object.onceWrapper (node:events:627:28) rootId=oxvair1kf33mc4d, id=oxvair1kf33mc4d
+2023-02-08T18:20:39.005Z - error: Report render failed
+(because) unexpected token < in JSON at position 0
+SyntaxError: Unexpected token < in JSON at position 0
+    at JSON.parse (<anonymous>)
+    at Request._callback (sandbox.js:13:27)
+    at Request.self.callback (D:\xampp\htdocs\central_uniformes\Informes\node_modules\request\request.js:185:22)
+    at Request.emit (node:events:513:28)
+    at Request.emit (node:domain:552:15)
+    at Request.<anonymous> (D:\xampp\htdocs\central_uniformes\Informes\node_modules\request\request.js:1154:10)
+    at Request.emit (node:events:513:28)
+    at Request.emit (node:domain:552:15)
+    at IncomingMessage.<anonymous> (D:\xampp\htdocs\central_uniformes\Informes\node_modules\request\request.js:1076:12)
+    at Object.onceWrapper (node:events:627:28) rootId=8ab1hfkycecjdfp, id=8ab1hfkycecjdfp
+2023-02-08T18:21:08.509Z - error: Report render failed
+(because) unexpected token < in JSON at position 0
+SyntaxError: Unexpected token < in JSON at position 0
+    at JSON.parse (<anonymous>)
+    at Request._callback (sandbox.js:13:27)
+    at Request.self.callback (D:\xampp\htdocs\central_uniformes\Informes\node_modules\request\request.js:185:22)
+    at Request.emit (node:events:513:28)
+    at Request.emit (node:domain:552:15)
+    at Request.<anonymous> (D:\xampp\htdocs\central_uniformes\Informes\node_modules\request\request.js:1154:10)
+    at Request.emit (node:events:513:28)
+    at Request.emit (node:domain:552:15)
+    at IncomingMessage.<anonymous> (D:\xampp\htdocs\central_uniformes\Informes\node_modules\request\request.js:1076:12)
+    at Object.onceWrapper (node:events:627:28) rootId=zi24kjms7ivzrmj, id=zi24kjms7ivzrmj
+2023-02-08T18:29:11.235Z - error: Report render failed
+(because) unexpected token < in JSON at position 0
+SyntaxError: Unexpected token < in JSON at position 0
+    at JSON.parse (<anonymous>)
+    at Request._callback (sandbox.js:12:27)
+    at Request.self.callback (D:\xampp\htdocs\central_uniformes\Informes\node_modules\request\request.js:185:22)
+    at Request.emit (node:events:513:28)
+    at Request.emit (node:domain:552:15)
+    at Request.<anonymous> (D:\xampp\htdocs\central_uniformes\Informes\node_modules\request\request.js:1154:10)
+    at Request.emit (node:events:513:28)
+    at Request.emit (node:domain:552:15)
+    at IncomingMessage.<anonymous> (D:\xampp\htdocs\central_uniformes\Informes\node_modules\request\request.js:1076:12)
+    at Object.onceWrapper (node:events:627:28) rootId=sktdpvu5q4oubls, id=sktdpvu5q4oubls
+2023-02-09T20:14:21.325Z - error: Error when processing render request 61
+(because) timeout when executing in phantom
+Error: Timeout when executing in phantom
+    at Timeout._onTimeout (D:\xampp\htdocs\central_uniformes\Informes\node_modules\phantom-html-to-pdf\lib\dedicatedProcessStrategy.js:89:26)
+    at listOnTimeout (node:internal/timers:559:17)
+    at processTimers (node:internal/timers:502:7) rootId=9fyeim8adiyw9ve, id=9fyeim8adiyw9ve, fromEmitProfile=true
+2023-02-09T20:14:21.326Z - error: Rendering request 61 finished with error in 60032 ms rootId=9fyeim8adiyw9ve, id=9fyeim8adiyw9ve, fromEmitProfile=true
+2023-02-09T20:29:30.061Z - error: Error when processing render request 80
+(because) timeout when executing in phantom
+Error: Timeout when executing in phantom
+    at Timeout._onTimeout (D:\xampp\htdocs\central_uniformes\Informes\node_modules\phantom-html-to-pdf\lib\dedicatedProcessStrategy.js:89:26)
+    at listOnTimeout (node:internal/timers:559:17)
+    at processTimers (node:internal/timers:502:7) rootId=pew8l3ckrd6426y, id=pew8l3ckrd6426y, fromEmitProfile=true
+2023-02-09T20:29:30.069Z - error: Rendering request 80 finished with error in 60023 ms rootId=pew8l3ckrd6426y, id=pew8l3ckrd6426y, fromEmitProfile=true
+2023-02-10T15:23:26.798Z - error: Error when processing render request 13
+(because) timeout when executing in phantom
+Error: Timeout when executing in phantom
+    at Timeout._onTimeout (D:\xampp\htdocs\central_uniformes\Informes\node_modules\phantom-html-to-pdf\lib\dedicatedProcessStrategy.js:89:26)
+    at listOnTimeout (node:internal/timers:559:17)
+    at processTimers (node:internal/timers:502:7) rootId=jpu0lvk9lpyddud, id=jpu0lvk9lpyddud, fromEmitProfile=true
+2023-02-10T15:23:26.803Z - error: Rendering request 13 finished with error in 60026 ms rootId=jpu0lvk9lpyddud, id=jpu0lvk9lpyddud, fromEmitProfile=true
+2023-02-10T15:24:42.794Z - error: Error when processing render request 14
+(because) timeout when executing in phantom
+Error: Timeout when executing in phantom
+    at Timeout._onTimeout (D:\xampp\htdocs\central_uniformes\Informes\node_modules\phantom-html-to-pdf\lib\dedicatedProcessStrategy.js:89:26)
+    at listOnTimeout (node:internal/timers:559:17)
+    at processTimers (node:internal/timers:502:7) rootId=waw7htpqqcenwvs, id=waw7htpqqcenwvs, fromEmitProfile=true
+2023-02-10T15:24:42.795Z - error: Rendering request 14 finished with error in 60023 ms rootId=waw7htpqqcenwvs, id=waw7htpqqcenwvs, fromEmitProfile=true
+2023-02-10T15:35:26.699Z - error: Error when processing render request 21
+(because) timeout when executing in phantom
+Error: Timeout when executing in phantom
+    at Timeout._onTimeout (D:\xampp\htdocs\central_uniformes\Informes\node_modules\phantom-html-to-pdf\lib\dedicatedProcessStrategy.js:89:26)
+    at listOnTimeout (node:internal/timers:559:17)
+    at processTimers (node:internal/timers:502:7) rootId=2i03xxaqu9x17f4, id=2i03xxaqu9x17f4, fromEmitProfile=true
+2023-02-10T15:35:26.704Z - error: Rendering request 21 finished with error in 60023 ms rootId=2i03xxaqu9x17f4, id=2i03xxaqu9x17f4, fromEmitProfile=true

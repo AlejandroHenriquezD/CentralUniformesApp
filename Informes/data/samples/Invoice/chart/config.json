@@ -1,0 +1,26 @@
+{
+    "name": "chart",
+    "engine": "handlebars",
+    "recipe": "phantom-pdf",
+    "shortid": "WlgmnzH4d",
+    "chrome": {
+        "printBackground": true
+    },
+    "creationDate": {
+        "$$date": 1675968764903
+    },
+    "modificationDate": {
+        "$$date": 1676044042940
+    },
+    "_id": "Hv45uPzY8FUAxP3S",
+    "$entitySet": "templates",
+    "phantom": {
+        "waitForJS": true
+    },
+    "data": null,
+    "scripts": [
+        {
+            "shortid": "TLmnCTpxpg"
+        }
+    ]
+}

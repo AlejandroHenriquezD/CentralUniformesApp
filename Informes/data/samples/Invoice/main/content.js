@@ -1,5 +1,3 @@
-// Use the "beforeRender" or "afterRender" hook
-// to manipulate and control the report generation
 const axios = require('axios');
 async function beforeRender(req, res) {
 

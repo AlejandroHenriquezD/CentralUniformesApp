@@ -9,6 +9,9 @@
     "entryPoint": "server.js"
   },
   "dependencies": {
-    "jsreport": "^3.10.0"
+    "@jsreport/jsreport-phantom-pdf": "^3.2.0",
+    "jsreport": "^3.10.0",
+    "phantom-pdf": "^0.4.1",
+    "request": "^2.88.2"
   }
 }
