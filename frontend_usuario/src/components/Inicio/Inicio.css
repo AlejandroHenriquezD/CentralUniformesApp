@@ -1,4 +1,68 @@
-.img {
+#imageContent {
+    /* display: flex;
+    flex-direction: column; */
+    height: 80vh;
+    overflow: scroll;
+}
+
+.imageButton {
+    position: relative;
+    height: 50vh;
+    overflow: hidden;
+}
+
+.imageButton:hover {
+    cursor: pointer;
+}
+
+.imageButton img {
+    width: 100%;
+    min-width: min-content;
+    height: 100%;
+    min-height:min-content;
+}
+
+.rightBlueSquare {
+    position: absolute;
+    background-color: rgba(14, 28, 46, 0.7);
+    transform: rotate(56deg);
+    height: 55em;
+    width: 55em;
+    bottom: -35em;
+    right: -20em;
+    z-index: 0;
+}
+
+.leftBlueSquare {
+    position: absolute;
+    background-color: rgba(14, 28, 46, 0.7);
+    transform: rotate(33deg);
+    height: 55em;
+    width: 55em;
+    bottom: -35em;
+    left: -20em;
+    z-index: 0;
+}
+
+.rightHomeText {
+    position: absolute;
+    color:rgba(255, 255, 255, 1);
+    width: 20em;
+    top: 12em;
+    right: 2em;
+    text-align: end;
+}
+
+.leftHomeText {
+    position: absolute;
+    color:rgba(255, 255, 255, 1);
+    width: 20em;
+    top: 12em;
+    left: 2em;
+    text-align: start;
+}
+
+/* .img {
     width: 70%;
     margin-top: 25%;
 }
@@ -16,4 +80,4 @@
 
 .sli {
     margin-top: 20%;
-}
+} */

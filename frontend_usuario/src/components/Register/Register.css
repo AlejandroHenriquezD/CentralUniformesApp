@@ -1,4 +1,75 @@
-.tittle {
+#registerHeader {
+    display: flex;
+    height: 25vh;
+    width: 100vw;
+    align-items: center;
+    justify-content: center;
+}
+
+#registerHeader img {
+    height: 30%;
+}
+
+#registerContent {
+    display: flex;
+    flex-direction: column;
+    height: 75vh;
+    align-items: center;
+    background-color: rgba(14, 28, 46, 1);
+    overflow: auto;
+}
+
+#formContainer {
+    width: 75%;
+}
+
+#registerContent h3 {
+    color: rgba(111, 183, 76, 1);
+    margin-top: 3em;
+    margin-bottom: 3em;
+}
+
+.formGroup {
+    margin-bottom: 3em;
+}
+
+.registerLabel {
+    color: rgba(255, 255, 255, 1);
+    margin-bottom: 0.5em;
+}
+
+.registerInput {
+    color: rgba(0, 0, 0, 1);
+    width: 99%;
+    height: 3em;
+    border-radius: 10px;
+    border: 0px;
+    background-color: rgba(241, 232, 223, 1);
+}
+
+#back {
+    display: flex;
+    justify-content: end;
+}
+
+#register {
+    display: flex;
+    justify-content: start;
+}
+
+.registerButton {
+    background-color: rgba(111, 183, 76, 1);
+    border-radius: 10px;
+    border: 0px;
+    width: 10em;
+    height: 3em;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    color: rgba(0, 0, 0, 1);
+    text-decoration: none;
+}
+
+/* .tittle {
     font-family: Verdana;
     text-shadow: 2px 2px 4px #000000;
 }
@@ -33,4 +104,4 @@
 .lab {
     margin-bottom: 7%;
     color: #FA6660;
-}
+} */

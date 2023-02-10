@@ -1,0 +1,13 @@
+#footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 20vh;
+  background-color: rgba(217, 217, 217, 1);
+  border-top: 2px solid rgba(111, 183, 76, 1);
+}
+
+#footer img{
+  width: 30%;
+  height: min-content;
+}

@@ -1,0 +1,45 @@
+#header {
+  display: flex;
+  height: 20vh;
+  align-items: center;
+  justify-content: center;
+}
+
+#header img{
+  width: 30%;
+  height: min-content;
+  margin-right: 5%;
+}
+
+#header img:hover{
+  cursor: pointer;
+}
+
+.headerButton {
+  display: block;
+  height: 100%;
+  width: 16%;
+  background-color: rgba(255,255,255,1);
+  border: 0px;
+  font-size: large;
+}
+
+.headerButton:hover {
+  background-color: rgba(218, 218, 218, 1);
+  cursor: pointer;
+}
+
+#dropdown {
+  position: absolute;
+  width: 100%;
+  left: 43.50%;
+  z-index: 1;
+}
+
+#dropdown button {
+  height: 10vh;
+}
+
+.dropdownHidden{
+  display: none;
+}

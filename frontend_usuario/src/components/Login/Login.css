@@ -1,4 +1,139 @@
-.tittle {
+#loginBackground {
+    background-image: url("../../../public/img/fondo_login.jpg");
+    background-size: 100% 100%;
+}
+
+#loginPage {
+    display: flex;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(5px);
+}
+
+#loginCanvas {
+    display: flex;
+    height: 75vh;
+    width: 75vw;
+    background-color: rgba(255, 255, 255, 1);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.halfCanvas {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    height: 100%;
+    width: 50%;
+    overflow: hidden;
+    align-items: center;
+    justify-content: center;
+}
+
+#redSquare {
+    position: absolute;
+    background-color: rgba(225, 37, 26, 1);
+    transform: rotate(45deg);
+    height: 15em;
+    width: 15em;
+    top: -7.5em;
+    left: -7.5em;
+    z-index: 0;
+}
+
+#greenSquare {
+    position: absolute;
+    background-color: rgba(111, 183, 76, 1);
+    transform: rotate(45deg);
+    height: 30em;
+    width: 30em;
+    bottom: -15em;
+    left: -15em;
+    z-index: 0;
+}
+
+#logo {
+    display: flex;
+    height: 40%;
+    z-index: 1;
+    align-items: center;
+    justify-content: center;
+}
+
+#logo img{
+    width: 75%;
+    height: min-content;
+}
+
+.loginButtons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 1;
+    width: 100%;
+    height: 40%;
+}
+
+.loginButton {
+    display: flex;
+    background-color: rgba(14, 28, 46, 1);
+    color: rgba(255, 255, 255, 1);
+    border-radius: 10px;
+    width: 10em;
+    height: 2.5em;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    text-decoration: none;
+}
+
+.loginButton:hover {
+    cursor: pointer;
+}
+
+#imagenLogin {
+    width: 100%;
+    min-width: min-content;
+    height: 100%;
+    min-height:min-content;
+}
+
+.loginButtons form{
+    display: flex;
+    flex-direction: column;
+    width: 75%;
+    align-items: start;
+}
+
+.formGroup {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    width: 100%;
+    font-size: larger;
+    margin-bottom: 1em;
+}
+
+.loginInput {
+    width: 99%;
+    height: 2.5em;
+    border-radius: 10px;
+    background-color: rgba(241, 232, 223, 1);
+}
+
+#hiddenButtons {
+    display: flex;
+    height: 20%;
+    justify-content: space-between;
+}
+
+#hiddenButtons div{
+    margin: 2em 2em 2em 2em;
+}
+
+/* .tittle {
     font-family: Verdana;
     text-shadow: 2px 2px 4px #000000;
 }
@@ -28,5 +163,5 @@
     color: white;
     font-family: Verdana;
     box-shadow: 5px 5px 10px black;
-}
+} */
 

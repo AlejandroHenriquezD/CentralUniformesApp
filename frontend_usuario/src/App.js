@@ -4,6 +4,7 @@ import Login from './components/Login/Login';
 import Register from './components/Register/Register';
 import Inicio from './components/Inicio/Inicio';
 import Articulos from './components/Articulos/Articulos';
+import Articulo from './components/Articulo/Articulo';
 import AñadirArticulo from './components/Articulos/AñadirArticulo';
 import Pedidos from './components/Pedidos/Pedidos';
 
@@ -19,6 +20,7 @@ function App() {
             <Route path='/mis_pedidos' element={ <Pedidos/> } />
 
             <Route path='/articulos' element={ <Articulos/>} />
+            <Route path='/articulo' element={ <Articulo/>} />
             <Route path='/add_articulo/:id' element={ <AñadirArticulo/>} />
 
 

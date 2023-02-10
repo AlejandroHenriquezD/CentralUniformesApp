@@ -1,4 +1,45 @@
+#articulosContent {
+  height: 80vh;
+  overflow: scroll;
+  background-color: rgba(218, 218, 218, 1);
+}
+
 .articulo {
+  height: 50vh;
+  margin: 1em 1em 1em 1em;
+  border: 2px solid rgba(218, 218, 218, 1);
+}
+
+.articulo:hover {
+  border: 2px solid rgba(225, 37, 26, 1);
+  cursor: pointer;
+}
+
+.articuloImgContainer {
+  display: flex;
+  height: 75%;
+  align-items: center;
+  justify-content: center;
+}
+
+.articuloImgContainer img {
+  height: 100%;
+}
+
+.articuloData {
+  text-align: start;
+  border-top: 2px solid rgba(111, 183, 76, 1);
+}
+
+.articuloData h3 {
+  margin-left: 1em;
+}
+
+.articuloData h4 {
+  margin-left: 1em;
+}
+
+/* .articulo {
     border-bottom: solid;
     border-color:#D6D6D6 ;
     margin-top: 1%;
@@ -51,4 +92,4 @@
 
 .text{
     margin-left: 1%;
-}
+} */
