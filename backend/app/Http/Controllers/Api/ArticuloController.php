@@ -38,11 +38,17 @@ class ArticuloController extends Controller
 
 
         return response()->json($array,200);
+        $data = ['articulos'=>$articulos];
+        return response()->json($data,200, []);
 
-    //     // $articulos = DB::table('articulos')->get();
-    //     // $pdf = PDF::loadview('articulos',['articulos'=> $articulos]);
-    //     // return $pdf->stream();
-    // }
+        // $articulos = DB::table('articulos')->get();
+        // $pdf = PDF::loadview('articulos',['articulos'=> $articulos]);
+        // return $pdf->stream();
+    }
+        // $articulos = DB::table('articulos')->get();
+        // $pdf = PDF::loadview('articulos',['articulos'=> $articulos]);
+        // return $pdf->stream();
+    
 
     public function index()
     {
