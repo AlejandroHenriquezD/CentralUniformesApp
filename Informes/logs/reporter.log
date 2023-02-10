@@ -7832,3 +7832,15 @@ Error: Request failed with status code 500
     at IncomingMessage.emit (node:domain:552:15)
     at endReadableNT (node:internal/streams/readable:1358:12)
     at processTicksAndRejections (node:internal/process/task_queues:83:21) rootId=1amks9mu3vfsbk2, id=1amks9mu3vfsbk2
+2023-02-10T16:01:06.346Z - info: Render request 3 queued for execution and waiting for available worker fromEmitProfile=true, rootId=8lpx8bk3arrh992, id=8lpx8bk3arrh992
+2023-02-10T16:01:06.371Z - info: Starting rendering request 3 rootId=8lpx8bk3arrh992, id=8lpx8bk3arrh992, fromEmitProfile=true
+2023-02-10T16:01:06.372Z - info: Rendering template { name: invoice-main, recipe: chrome-pdf, engine: handlebars, preview: true } rootId=8lpx8bk3arrh992, id=8lpx8bk3arrh992, fromEmitProfile=true
+2023-02-10T16:01:09.153Z - info: Rendering request 3 finished in 2805 ms rootId=8lpx8bk3arrh992, id=8lpx8bk3arrh992, fromEmitProfile=true
+2023-02-10T16:03:02.296Z - info: Render request 4 queued for execution and waiting for available worker fromEmitProfile=true, rootId=2ayeeeckpshl7t6, id=2ayeeeckpshl7t6
+2023-02-10T16:03:02.317Z - info: Starting rendering request 4 rootId=2ayeeeckpshl7t6, id=2ayeeeckpshl7t6, fromEmitProfile=true
+2023-02-10T16:03:02.317Z - info: Rendering template { name: invoice-main, recipe: chrome-pdf, engine: handlebars, preview: false } rootId=2ayeeeckpshl7t6, id=2ayeeeckpshl7t6, fromEmitProfile=true
+2023-02-10T16:03:02.804Z - info: Rendering request 4 finished in 508 ms rootId=2ayeeeckpshl7t6, id=2ayeeeckpshl7t6, fromEmitProfile=true
+2023-02-10T16:03:56.735Z - info: Render request 5 queued for execution and waiting for available worker fromEmitProfile=true, rootId=3d4mkh7e52ayi96, id=3d4mkh7e52ayi96
+2023-02-10T16:03:56.755Z - info: Starting rendering request 5 rootId=3d4mkh7e52ayi96, id=3d4mkh7e52ayi96, fromEmitProfile=true
+2023-02-10T16:03:56.756Z - info: Rendering template { name: invoice-main, recipe: chrome-pdf, engine: handlebars, preview: false } rootId=3d4mkh7e52ayi96, id=3d4mkh7e52ayi96, fromEmitProfile=true
+2023-02-10T16:03:57.220Z - info: Rendering request 5 finished in 486 ms rootId=3d4mkh7e52ayi96, id=3d4mkh7e52ayi96, fromEmitProfile=true
