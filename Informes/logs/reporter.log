@@ -10392,3 +10392,67 @@ Error: Report cancelled by the client or closed network
 2023-02-10T16:29:30.497Z - info: Starting rendering request 2 rootId=tx7hr6stpdedvoz, id=tx7hr6stpdedvoz, fromEmitProfile=true
 2023-02-10T16:29:30.498Z - info: Rendering template { name: invoice-main, recipe: chrome-pdf, engine: handlebars, preview: true } rootId=tx7hr6stpdedvoz, id=tx7hr6stpdedvoz, fromEmitProfile=true
 2023-02-10T16:29:32.611Z - info: Rendering request 2 finished in 2144 ms rootId=tx7hr6stpdedvoz, id=tx7hr6stpdedvoz, fromEmitProfile=true
+2023-02-10T16:39:04.704Z - info: Initializing jsreport (version: 3.10.0, configuration file: jsreport.config.json, nodejs: 16.17.0)
+2023-02-10T16:39:04.706Z - info: Searching for available extensions in C:\Users\casim\Desktop\CentralUniformesApp\Informes\
+2023-02-10T16:39:04.710Z - info: Extensions location cache C:\Users\casim\AppData\Local\Temp\jsreport\core\locations.json contains older information, crawling
+2023-02-10T16:39:06.388Z - info: Found 36 extension(s)
+2023-02-10T16:39:06.479Z - info: Using extension base@3.0.1
+2023-02-10T16:39:06.484Z - info: Using extension child-templates@3.1.0
+2023-02-10T16:39:06.487Z - info: Using extension cli@3.2.3
+2023-02-10T16:39:06.488Z - info: Using extension components@3.3.0
+2023-02-10T16:39:06.490Z - info: Using extension data@3.1.0
+2023-02-10T16:39:06.492Z - info: Using extension express@3.6.0
+2023-02-10T16:39:06.811Z - info: Using extension freeze@3.0.1
+2023-02-10T16:39:06.813Z - info: Using extension fs-store@3.2.4
+2023-02-10T16:39:06.929Z - info: Using extension handlebars@3.2.1
+2023-02-10T16:39:06.931Z - info: Using extension import-export@3.2.0
+2023-02-10T16:39:06.946Z - info: Using extension jsrender@3.0.0
+2023-02-10T16:39:06.947Z - info: Using extension licensing@3.0.2
+2023-02-10T16:39:06.977Z - info: Using extension localization@3.2.1
+2023-02-10T16:39:06.978Z - info: Using extension npm@3.1.2
+2023-02-10T16:39:06.982Z - info: Using extension pdf-utils@3.7.0
+2023-02-10T16:39:06.985Z - info: Using extension phantom-pdf@3.2.0
+2023-02-10T16:39:06.990Z - info: Using extension reports@3.1.1
+2023-02-10T16:39:06.996Z - info: Using extension tags@3.1.1
+2023-02-10T16:39:07.003Z - info: Using extension text@3.0.0
+2023-02-10T16:39:07.005Z - info: Using extension version-control@3.1.2
+2023-02-10T16:39:07.020Z - info: Using extension assets@3.6.0
+2023-02-10T16:39:07.031Z - info: Using extension authorization@3.3.0
+2023-02-10T16:39:07.036Z - info: Using extension browser-client@3.1.1
+2023-02-10T16:39:07.038Z - info: Using extension chrome-pdf@3.3.0
+2023-02-10T16:39:07.042Z - info: Using extension docx@3.6.0
+2023-02-10T16:39:07.045Z - info: Using extension html-to-xlsx@3.3.0
+2023-02-10T16:39:07.158Z - info: html-to-xlsx detected chrome as available html engine
+2023-02-10T16:39:07.158Z - info: html-to-xlsx detected phantom as available html engine
+2023-02-10T16:39:07.159Z - info: Using extension pptx@3.4.0
+2023-02-10T16:39:07.162Z - info: Using extension scheduling@3.0.3
+2023-02-10T16:39:07.200Z - info: Using extension scripts@3.4.0
+2023-02-10T16:39:07.202Z - info: Using extension static-pdf@3.0.1
+2023-02-10T16:39:07.203Z - info: Using extension studio@3.9.0
+2023-02-10T16:39:07.295Z - info: Using extension xlsx@3.4.0
+2023-02-10T16:39:07.321Z - info: Using extension public-templates@3.0.0
+2023-02-10T16:39:07.323Z - info: Using extension sample-template@3.2.1
+2023-02-10T16:39:07.326Z - info: Using extension studio-theme-dark@3.0.1
+2023-02-10T16:39:07.328Z - info: Code sandboxing is disabled, users can potentially penetrate the local system if you allow code from external users to be part of your reports
+2023-02-10T16:39:07.328Z - info: Using general timeout for rendering (reportTimeout: 60000)
+2023-02-10T16:39:07.328Z - info: Using fs provider for template store.
+2023-02-10T16:39:07.334Z - info: fs store is persisting using fs for C:\Users\casim\Desktop\CentralUniformesApp\Informes\data
+2023-02-10T16:39:07.341Z - info: fs store is loading data
+2023-02-10T16:39:07.380Z - info: fs store is initialized successfully
+2023-02-10T16:39:07.401Z - info: Creating default express app.
+2023-02-10T16:39:07.429Z - info: jsreport server successfully started on http port: 5488
+2023-02-10T16:39:07.430Z - info: Verifying license key free
+2023-02-10T16:39:07.431Z - info: Using free license
+2023-02-10T16:39:07.435Z - info: Initializing worker threads
+2023-02-10T16:39:07.780Z - info: 2 worker threads initialized in 345ms
+2023-02-10T16:39:07.781Z - info: Starting temp files cleanup with 180000ms threshold
+2023-02-10T16:39:07.782Z - info: reporter initialized
+2023-02-10T16:39:31.658Z - info: Render request 1 queued for execution and waiting for available worker fromEmitProfile=true, rootId=q31e146q7fftf14, id=q31e146q7fftf14
+2023-02-10T16:39:31.703Z - info: Starting rendering request 1 rootId=q31e146q7fftf14, id=q31e146q7fftf14, fromEmitProfile=true
+2023-02-10T16:39:31.703Z - info: Rendering template { name: invoice-main, recipe: chrome-pdf, engine: handlebars, preview: false } rootId=q31e146q7fftf14, id=q31e146q7fftf14, fromEmitProfile=true
+2023-02-10T16:39:33.287Z - info: Rendering request 1 finished in 1632 ms rootId=q31e146q7fftf14, id=q31e146q7fftf14, fromEmitProfile=true
+2023-02-10T16:40:07.381Z - warn: Cleaning fs journal failed, will reload Unexpected end of JSON input stack=SyntaxError: Unexpected end of JSON input
+    at JSON.parse (<anonymous>)
+    at parse (C:\Users\casim\Desktop\CentralUniformesApp\Informes\node_modules\@jsreport\jsreport-fs-store\lib\customUtils.js:83:15)
+    at Object.clean (C:\Users\casim\Desktop\CentralUniformesApp\Informes\node_modules\@jsreport\jsreport-fs-store\lib\journal.js:185:24)
+    at async lock (C:\Users\casim\Desktop\CentralUniformesApp\Informes\node_modules\@jsreport\jsreport-fs-store\lib\customUtils.js:163:12)
