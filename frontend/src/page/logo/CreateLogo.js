@@ -7,7 +7,6 @@ const endpoint = "http://localhost:8000/api/logo";
 const endpoint2 = "http://localhost:8000/api";
 
 const CreateLogo = () => {
-  const [nombre, setNombre] = useState("");
   const [img, setImg] = useState("");
   const [id_user, setId_User] = useState("");
   const navigate = useNavigate();
@@ -22,7 +21,7 @@ const CreateLogo = () => {
     e.preventDefault();
     const fData = new FormData();
 
-    fData.append("nombre", nombre);
+    fData.append("nombre", img.name);
     fData.append("img", img);
     fData.append("id_user", id_user);
 
@@ -43,15 +42,6 @@ const CreateLogo = () => {
     <div>
       <h3>Crear Logo</h3>
       <form onSubmit={store} encType="multipart/form-data">
-        <div className="mb-3">
-          <label className="form-label">Nombre</label>
-          <input
-            value={nombre}
-            onChange={(e) => setNombre(e.target.value)}
-            type="text"
-            className="form"
-          />
-        </div>
         <div className="mb-3">
           <label htmlFor="img" className="form-label">
             Imagen

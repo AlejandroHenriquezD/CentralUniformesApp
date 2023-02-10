@@ -18,8 +18,8 @@ return new class extends Migration
             $table->string('nombre');
             $table->string('img');
             $table->string('posicion')->nullable();
-            $table->integer('tamaño')->nullable();
-            $table->boolean('favorito')->nullable();
+            $table->string('tamaño')->nullable();
+            $table->string('favorito')->nullable();
             $table->unsignedBigInteger('id_user')->nullable();
             $table->unsignedBigInteger('id_logo')->nullable();
             $table->unsignedBigInteger('id_articulo');

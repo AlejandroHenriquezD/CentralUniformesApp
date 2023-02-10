@@ -52,7 +52,14 @@ const ShowArticulos = () => {
             <tr key={articulo.id}>
               <td> {articulo.nombre} </td>
               <td> {articulo.descripcion} </td>
-              <td> <img src={"http://localhost:8000/" + articulo.img} /> </td>
+              <td>
+                {" "}
+                <img
+                  className="img"
+                  src={"http://localhost:8000/" + articulo.img}
+                  alt={articulo.nombre}
+                />{" "}
+              </td>
               <td> {articulo.precio} </td>
               <td> {articulo.color} </td>
               <td> {articulo.talla} </td>

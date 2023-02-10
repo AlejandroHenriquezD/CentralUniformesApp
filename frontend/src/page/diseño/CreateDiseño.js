@@ -83,21 +83,31 @@ const CreateDiseño = () => {
         </div>
         <div className="mb-3">
           <label className="form-label">Tamaño</label>
-          <input
+          <select
             value={tamaño}
-            onChange={(e) => setTamaño(e.target.value)}
-            type="text"
+            onChange={(e) => {
+              setTamaño(e.target.value);
+            }}
             className="form"
-          />
+          >
+            <option value="" />
+            <option value="Pequeño">Pequeño</option>
+            <option value="Mediano">Mediano</option>
+            <option value="Grande">Grande</option>
+          </select>
         </div>
         <div className="mb-3">
           <label className="form-label">Favorito</label>
-          <input
+          <select
             value={favorito}
-            onChange={(e) => setFavorito(e.target.value)}
-            type="boolean"
+            onChange={(e) => {
+              setFavorito(e.target.value);
+            }}
             className="form"
-          />
+          >
+            <option value="No">No</option>
+            <option value="Si">Sí</option>
+          </select>
         </div>
         <div className="mb-3">
           <label className="form-label">Usuario</label>
@@ -125,7 +135,7 @@ const CreateDiseño = () => {
           >
             <option value="" />
             {logos.map((logo) => (
-              <option value={`${logo.id}`}>{logo.name}</option>
+              <option value={`${logo.id}`}>{logo.nombre}</option>
             ))}
           </select>
         </div>
