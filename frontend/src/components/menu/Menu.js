@@ -11,6 +11,7 @@ const Menu = () => {
       <a href="/show_articulos">Artículos</a>
       <a href="/show_trabajos">Trabajos</a>
       <a href="http://localhost:5488/templates/rkJTnK2ce">Informe</a>
+      <a href="http://localhost:8080/Ayuda.html">Help</a>
     </div>
   );
 };

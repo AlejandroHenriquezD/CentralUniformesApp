@@ -15,17 +15,17 @@ class ArticuloController extends Controller
     //     return $count;
     // }
 
-    // public function indexPdf()
-    // {
-    //     $articulos = Articulo::all();
+    public function indexPdf()
+    {
+        $articulos = Articulo::all();
 
-    //     $data = ['articulos'=>$articulos];
-    //     return response()->json($data,200, []);
+        $data = ['articulos'=>$articulos];
+        return response()->json($data,200, []);
 
-    //     // $articulos = DB::table('articulos')->get();
-    //     // $pdf = PDF::loadview('articulos',['articulos'=> $articulos]);
-    //     // return $pdf->stream();
-    // }
+        // $articulos = DB::table('articulos')->get();
+        // $pdf = PDF::loadview('articulos',['articulos'=> $articulos]);
+        // return $pdf->stream();
+    }
 
     public function index()
     {

@@ -362,3 +362,119 @@ Error: Request failed with status code 500
     at IncomingMessage.emit (node:domain:552:15)
     at endReadableNT (node:internal/streams/readable:1358:12)
     at processTicksAndRejections (node:internal/process/task_queues:83:21)
+2023-02-09T19:59:03.864Z - error: Report render failed
+(because) error when evaluating custom script /samples/Invoice/test
+Request failed with status code 500
+Error: Request failed with status code 500
+    at createError (C:\xampp\htdocs\CentralUniformesApp\Informes\node_modules\axios\lib\core\createError.js:16:15)
+    at settle (C:\xampp\htdocs\CentralUniformesApp\Informes\node_modules\axios\lib\core\settle.js:17:12)
+    at IncomingMessage.handleStreamEnd (C:\xampp\htdocs\CentralUniformesApp\Informes\node_modules\axios\lib\adapters\http.js:293:11)
+    at IncomingMessage.emit (node:events:525:35)
+    at IncomingMessage.emit (node:domain:552:15)
+    at endReadableNT (node:internal/streams/readable:1358:12)
+    at processTicksAndRejections (node:internal/process/task_queues:83:21) rootId=myzsv5bjd95cr8p, id=myzsv5bjd95cr8p
+2023-02-09T19:59:03.867Z - error: Error during processing request at http://localhost:5488/templates/rkJTnK2ce, details: Error when evaluating custom script /samples/Invoice/test
+Request failed with status code 500
+Error: Request failed with status code 500
+    at createError (C:\xampp\htdocs\CentralUniformesApp\Informes\node_modules\axios\lib\core\createError.js:16:15)
+    at settle (C:\xampp\htdocs\CentralUniformesApp\Informes\node_modules\axios\lib\core\settle.js:17:12)
+    at IncomingMessage.handleStreamEnd (C:\xampp\htdocs\CentralUniformesApp\Informes\node_modules\axios\lib\adapters\http.js:293:11)
+    at IncomingMessage.emit (node:events:525:35)
+    at IncomingMessage.emit (node:domain:552:15)
+    at endReadableNT (node:internal/streams/readable:1358:12)
+    at processTicksAndRejections (node:internal/process/task_queues:83:21)
+2023-02-09T20:00:30.244Z - error: Report render failed
+(because) error when evaluating custom script /samples/Invoice/test
+Request failed with status code 500
+Error: Request failed with status code 500
+    at createError (C:\xampp\htdocs\CentralUniformesApp\Informes\node_modules\axios\lib\core\createError.js:16:15)
+    at settle (C:\xampp\htdocs\CentralUniformesApp\Informes\node_modules\axios\lib\core\settle.js:17:12)
+    at IncomingMessage.handleStreamEnd (C:\xampp\htdocs\CentralUniformesApp\Informes\node_modules\axios\lib\adapters\http.js:293:11)
+    at IncomingMessage.emit (node:events:525:35)
+    at IncomingMessage.emit (node:domain:552:15)
+    at endReadableNT (node:internal/streams/readable:1358:12)
+    at processTicksAndRejections (node:internal/process/task_queues:83:21) rootId=qvec19rakha5dw6, id=qvec19rakha5dw6
+2023-02-09T20:00:30.248Z - error: Error during processing request at http://localhost:5488/templates/rkJTnK2ce, details: Error when evaluating custom script /samples/Invoice/test
+Request failed with status code 500
+Error: Request failed with status code 500
+    at createError (C:\xampp\htdocs\CentralUniformesApp\Informes\node_modules\axios\lib\core\createError.js:16:15)
+    at settle (C:\xampp\htdocs\CentralUniformesApp\Informes\node_modules\axios\lib\core\settle.js:17:12)
+    at IncomingMessage.handleStreamEnd (C:\xampp\htdocs\CentralUniformesApp\Informes\node_modules\axios\lib\adapters\http.js:293:11)
+    at IncomingMessage.emit (node:events:525:35)
+    at IncomingMessage.emit (node:domain:552:15)
+    at endReadableNT (node:internal/streams/readable:1358:12)
+    at processTicksAndRejections (node:internal/process/task_queues:83:21)
+2023-02-10T01:30:45.536Z - error: Report render failed
+(because) error when evaluating custom script /samples/Invoice/test
+Request failed with status code 500
+Error: Request failed with status code 500
+    at createError (C:\Users\casim\Desktop\CentralUniformesApp\Informes\node_modules\axios\lib\core\createError.js:16:15)
+    at settle (C:\Users\casim\Desktop\CentralUniformesApp\Informes\node_modules\axios\lib\core\settle.js:17:12)
+    at IncomingMessage.handleStreamEnd (C:\Users\casim\Desktop\CentralUniformesApp\Informes\node_modules\axios\lib\adapters\http.js:293:11)
+    at IncomingMessage.emit (node:events:525:35)
+    at IncomingMessage.emit (node:domain:552:15)
+    at endReadableNT (node:internal/streams/readable:1358:12)
+    at processTicksAndRejections (node:internal/process/task_queues:83:21) rootId=skharyvkhkhnkxc, id=skharyvkhkhnkxc
+2023-02-10T01:30:45.540Z - error: Error during processing request at http://localhost:5488/templates/rkJTnK2ce, details: Error when evaluating custom script /samples/Invoice/test
+Request failed with status code 500
+Error: Request failed with status code 500
+    at createError (C:\Users\casim\Desktop\CentralUniformesApp\Informes\node_modules\axios\lib\core\createError.js:16:15)
+    at settle (C:\Users\casim\Desktop\CentralUniformesApp\Informes\node_modules\axios\lib\core\settle.js:17:12)
+    at IncomingMessage.handleStreamEnd (C:\Users\casim\Desktop\CentralUniformesApp\Informes\node_modules\axios\lib\adapters\http.js:293:11)
+    at IncomingMessage.emit (node:events:525:35)
+    at IncomingMessage.emit (node:domain:552:15)
+    at endReadableNT (node:internal/streams/readable:1358:12)
+    at processTicksAndRejections (node:internal/process/task_queues:83:21)
+2023-02-10T15:55:08.243Z - error: Report render failed
+(because) error when evaluating custom script /samples/Invoice/test
+Request failed with status code 500
+Error: Request failed with status code 500
+    at createError (C:\Users\casim\Desktop\CentralUniformesApp\Informes\node_modules\axios\lib\core\createError.js:16:15)
+    at settle (C:\Users\casim\Desktop\CentralUniformesApp\Informes\node_modules\axios\lib\core\settle.js:17:12)
+    at IncomingMessage.handleStreamEnd (C:\Users\casim\Desktop\CentralUniformesApp\Informes\node_modules\axios\lib\adapters\http.js:293:11)
+    at IncomingMessage.emit (node:events:525:35)
+    at IncomingMessage.emit (node:domain:552:15)
+    at endReadableNT (node:internal/streams/readable:1358:12)
+    at processTicksAndRejections (node:internal/process/task_queues:83:21) rootId=rtwuhh9d0nn30q7, id=rtwuhh9d0nn30q7
+2023-02-10T15:55:08.246Z - error: Error during processing request at http://localhost:5488/templates/rkJTnK2ce, details: Error when evaluating custom script /samples/Invoice/test
+Request failed with status code 500
+Error: Request failed with status code 500
+    at createError (C:\Users\casim\Desktop\CentralUniformesApp\Informes\node_modules\axios\lib\core\createError.js:16:15)
+    at settle (C:\Users\casim\Desktop\CentralUniformesApp\Informes\node_modules\axios\lib\core\settle.js:17:12)
+    at IncomingMessage.handleStreamEnd (C:\Users\casim\Desktop\CentralUniformesApp\Informes\node_modules\axios\lib\adapters\http.js:293:11)
+    at IncomingMessage.emit (node:events:525:35)
+    at IncomingMessage.emit (node:domain:552:15)
+    at endReadableNT (node:internal/streams/readable:1358:12)
+    at processTicksAndRejections (node:internal/process/task_queues:83:21)
+2023-02-10T15:55:54.539Z - error: Report render failed
+(because) error when evaluating custom script /samples/Invoice/test
+Request failed with status code 500
+Error: Request failed with status code 500
+    at createError (C:\Users\casim\Desktop\CentralUniformesApp\Informes\node_modules\axios\lib\core\createError.js:16:15)
+    at settle (C:\Users\casim\Desktop\CentralUniformesApp\Informes\node_modules\axios\lib\core\settle.js:17:12)
+    at IncomingMessage.handleStreamEnd (C:\Users\casim\Desktop\CentralUniformesApp\Informes\node_modules\axios\lib\adapters\http.js:293:11)
+    at IncomingMessage.emit (node:events:525:35)
+    at IncomingMessage.emit (node:domain:552:15)
+    at endReadableNT (node:internal/streams/readable:1358:12)
+    at processTicksAndRejections (node:internal/process/task_queues:83:21) rootId=a5yg675pv6wveyl, id=a5yg675pv6wveyl
+2023-02-10T15:55:54.543Z - error: Error during processing request at http://localhost:5488/templates/rkJTnK2ce, details: Error when evaluating custom script /samples/Invoice/test
+Request failed with status code 500
+Error: Request failed with status code 500
+    at createError (C:\Users\casim\Desktop\CentralUniformesApp\Informes\node_modules\axios\lib\core\createError.js:16:15)
+    at settle (C:\Users\casim\Desktop\CentralUniformesApp\Informes\node_modules\axios\lib\core\settle.js:17:12)
+    at IncomingMessage.handleStreamEnd (C:\Users\casim\Desktop\CentralUniformesApp\Informes\node_modules\axios\lib\adapters\http.js:293:11)
+    at IncomingMessage.emit (node:events:525:35)
+    at IncomingMessage.emit (node:domain:552:15)
+    at endReadableNT (node:internal/streams/readable:1358:12)
+    at processTicksAndRejections (node:internal/process/task_queues:83:21)
+2023-02-10T15:59:10.369Z - error: Report render failed
+(because) error when evaluating custom script /samples/Invoice/test
+Request failed with status code 500
+Error: Request failed with status code 500
+    at createError (C:\Users\casim\Desktop\CentralUniformesApp\Informes\node_modules\axios\lib\core\createError.js:16:15)
+    at settle (C:\Users\casim\Desktop\CentralUniformesApp\Informes\node_modules\axios\lib\core\settle.js:17:12)
+    at IncomingMessage.handleStreamEnd (C:\Users\casim\Desktop\CentralUniformesApp\Informes\node_modules\axios\lib\adapters\http.js:293:11)
+    at IncomingMessage.emit (node:events:525:35)
+    at IncomingMessage.emit (node:domain:552:15)
+    at endReadableNT (node:internal/streams/readable:1358:12)
+    at processTicksAndRejections (node:internal/process/task_queues:83:21) rootId=1amks9mu3vfsbk2, id=1amks9mu3vfsbk2
