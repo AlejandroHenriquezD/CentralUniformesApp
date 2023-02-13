@@ -102,39 +102,34 @@ Las herramientas que usaremos para desarrollar la aplicación son:
 
 En este apartado compararemos nuestra tecnologías con otras populares
 
-## React y Angular:
 
-### ¿Qué es React?
+### React
 
 React es una biblioteca JavaScript de código abierto desarrollada por un equipo de Facebook.
 
-### ¿Qué es Angular?
+La comunidad de react al igual que en laravel es una muy extendida debido a que react está basado en JavaScript, esto hace que tengamos disponibles muchas librerías y mucha información que consultar cuando tengamos algún problema. Además hay que destacar que react también es una plataforma de código abierto con Licencia MIT
 
-Angular es una plataforma de código abierto basada en TypeScript y un marco de aplicación web desarrollado por un equipo de Google.
-	
-## Angular Vs React
+Una de las grandes ventajas de react reside en su sistema de componentes reutilizables. Esto hace que la escalabilidad y el mantenimiento del proyecto sean mucho mejor, además los errores sucederán en la propia funcionalidad del componente o en la comunicación con los demás siendo esto una gran ayuda a la hora de solucionar errores
 
-Angular consta de tres componentes: modelos, vistas y controladores. Sin embargo, la estructura de la aplicación de Angular es fija y compleja. Angular permite a los desarrolladores dividir los códigos en archivos individuales, lo que facilita la reutilización de plantillas y bases de código en otros proyectos. 
+En comparación con otros frameworks, React es más fácil de mantener y es flexible debido a su estructura modular. Esta flexibilidad, a su vez, ahorra una gran cantidad de tiempo. La idea principal es que cada módulo que definimos tenga todo el código relacionado con este y solo se importe código del modulo en sí. Cuando tenemos varios módulos que necesitan de la misma pieza de código esta la podemos escribir dentro de una carpeta compartida e importarla a los diferentes módulos.
 
-Angular usa TypeScript, un superconjunto de JavaScript. En TypeScript, los errores tipográficos se pueden encontrar fácilmente y el código también es fácil de navegar.
-
-Hablando de React, no tiene ningún formato fijo para escribir códigos. Tiene un código base muy bien estructurado y legible. El uso de árboles de componentes permite organizar lógicamente el código. La programación funcional se utiliza en la biblioteca, lo que hace que las declaraciones de los componentes sean declarativas. 
-
-React se puede escribir en JavaScript ES6+ con script JSX, que es una extensión de sintaxis que hace que el código JavaScript se vea exactamente como HTML. React se puede mejorar utilizando una herramienta de traducción de código para compilar el código JSX en un navegador (por ejemplo, Babel). Además, React se puede desarrollar en TypeScript, pero no es compatible de forma nativa.
+React es un framework fácil de aprender si tienes conocimientos previos de JavaScript, tiene una estructura muy simple de entender ya que se basa en html, javascript y css, para un experto en JS le llevaría uno o dos días para aprender esta herramienta
 
 
+### Laravel
 
-## Laravel vs Django
+Laravel es un framework PHP gratis y de código abierto que brinda un conjunto de herramientas y recursos para crear aplicaciones modernas.
 
-### Django
-Django es un framework gratuito y de código abierto basado en Python. Este framework de alto nivel facilita el desarrollo de mejores aplicaciones web rápidamente con menos código.
-Django es excelente para proyectos que involucran grandes volúmenes de contenido textual, mucho tráfico, archivos multimedia y otros proyectos basados ​​en la web.
+Una de las grandes ventajas de laravel es su amplio uso debido a que laravel es de código abierto y su comunidad está muy extendida y dispuesta a compartir sus conocimientos con el resto haciendo que aprender a usar esta tecnología sea mucho más fácil, un claro ejemplo de esto es la cantidad de videos dedicados a explicar laravel en detalle desde un nivel más básico a cosas más complicadas.
 
-### Laravel 
+Otra gran ventaja que nos ofrece laravel son las migraciones, estas nos permiten generar bases de datos de manera muy sencilla y también realizar cambios si hemos cometido algún error, además las migraciones nos dan la posibilidad de compartir la estructura de la base de datos con otros desarrolladores, en nuestro caso personal nos han sido bastante útil debido a que nos han ahorrado mucho tiempo ya que generar estas migraciones son una tarea relativamente rápida si tienes el diseño de la base de datos claro.
 
-Laravel es un framework del lado del servidor gratuito y de código abierto basado en PHP.
+Respecto a la seguridad laravel no se queda atrás y es que cuenta con mecanismos de hash y salt para encriptar por medio de librerías como BCrypt. Esto es algo casi indispensable en cualquier proyecto debido a que las contraseñas de los usuarios deben ser totalmente privadas a ojos de cualquier persona encargada de gestionar esos datos.
 
-Laravel hace que el desarrollo web sea una experiencia creativa con su gran cantidad de características y capacidades. Facilita las tareas estándar de desarrollo web, como el almacenamiento en caché, la autenticación, el enrutamiento y las sesiones.
+Otra ventaja de Laravel es el uso de la arquitectura MVC (Modelo Vista Controlador) que separa el código de forma ordenada para facilitar la manipulación y la comprensión del código. Como indica el nombre de la arquitectura tendremos por separado tanto los modelos, los controladores, las migraciones y las vistas de blade (en nuestro caso no trabajamos con estas plantillas debido a que queremos montar nuestro frontend con React)
+
+Además en Laravel gracias a su ORM Eloquent puede trabajar con cuatro tipos de bases de datos MySQL, SQL, PostgreSQL y SQLite.
+
 
 # Usabilidad
 Tras implementar la aplicación procedemos a estudiar los aspectos de usabilidad en la misma.
@@ -172,22 +167,18 @@ Respecto a los elementos multimedia hemos optado por que no sean muy abdantes pa
 
 La planificación que hemos llevado a cabo ha sido con la ayuda de github, usando su función de proyectos en la cual puedes asignar tareas e ir cambiando su estado en una vista tablero muy cómoda.
 
-[Mi Tablero](https://github.com/users/AlejandroHenriquezD/projects/1/views/1)
+[Nuestro Tablero](https://github.com/users/AlejandroHenriquezD/projects/3)
 
 Para organizarnos mejor hemos dividido el proyecto en pequeños objetivos para poder tener más claro que queremos hacer cada dia. Nuestra metodología de trabajo se basa en entender lo que queremos hacer y buscar un ejemplo de como hacerlo, preferiblemente un video, seguir el ejemplo del video y una vez hecho hacer lo mismo pero adaptado a nuestro proyecto.
 
 
 # Conclusión
 
-Como conclusión de este proyecto puedo sacar muchas cosas en claro, despues de mes y medio de trabajo me he dado cuenta de lo complicado que puede resultar adapatarte a una nueva pila tecnologica, aunque todas siguen una misma estructura es dficil aprender un entorno nuevo bajo la presion de la entrega del proyecto.
+Como conclusión de este proyecto podemos sacar en claro un par de cosas, es infinitamente mas rapido y efectivo trabajar en equipo que individualmente, la posibilidad de dividir el trabajo en varias partes y avanzar tantas cosas a la vez nos ahorra mucho tiempo y una buena prueba es que hemos desarrollado esta parte del proyecto en unas tres semanas mientras que la entrega anterior fueron casi dos meses
 
-Pero aun asi creo que he sabdio llevar el projecto a buen puerto y estoy orgulloso de mi trabajo, he conseguido cumplir todos los objetivos que me marque y aunque no sea un proyecto profesional creo que el trabajo esta cumplido.
+Creo que tambien nos ha hecho darnos cuenta de para que sirven las ramas en los repositorios que subimos, y tambien de la utilidad de las herramientas de scrum para organizar y ver las tareas hechas y por hacer.
 
-He tenido dias buenos y dias malos pero al final lograba dar con la solucion a los problemas que iban surgiendo gracias a compañeros y profesores. 
-
-Se que no me he esforzado al 100%, pero el tiempo dedicado ha sido aprovechado al máximo.
-
-Y para terminar queria decir que proyecto de integración temprana ayuda mucho a hacerte una idea de lo que es trabajar de verdad para una empresa
+Respecto al resultado del proyecto estamos satisfechos, hemos querido darle bastante importancia a que la aplicación tenga un funcionamiento correcto manejando casos "edge" para lograr el objetivo de que con algunos ajustes la app pueda ponerse a funcionar en un entorno real
 
 # Referencias Externas
 
