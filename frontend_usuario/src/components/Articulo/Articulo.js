@@ -1,7 +1,18 @@
+import { useNavigate } from "react-router-dom";
 import Header from '../Header/Header';
 import "./articulo.css";
 
 const Articulo = () => {
+  const navigate = useNavigate();
+
+  const navigateToArticulos = () => {
+    navigate("/articulos");
+  }
+
+  const navigateToDiseño = () => {
+    navigate("/diseño");
+  }
+
   return(
     <div>
       <Header/>
@@ -14,19 +25,23 @@ const Articulo = () => {
         <div className="halfArticuloContent">
           <div id="articuloDataCanvas">
             <div id="nameAndPrice">
-              <h1>Camiseta</h1>
-              <h2>7€</h2>
+              <h1 id="articuloName">Camiseta</h1>
+              <h1 id="articuloPrice">7€</h1>
             </div>
             <div id="articuloDescription">
-              <h3>Descripción del artículo</h3>
+              <h3>Descripción del artículo:</h3>
               <h4>Camiseta básica de poliester</h4>
             </div>
-            <h3>Talla:</h3>
-            <h4>M</h4>
-            <h3>Color:</h3>
-            <h4>Negro</h4>
-            <button>Volver</button>
-            <button>Seleccionar prenda</button>
+            <div className="otherArticulo">
+              <h3>Talla: </h3>
+              <h3 className="otherArticuloData">M</h3>
+            </div>
+            <div className="otherArticulo">
+              <h3>Color: </h3>
+              <h3 className="otherArticuloData">Negro</h3>
+            </div>
+            <button onClick={navigateToArticulos}>Volver</button>
+            <button onClick={navigateToDiseño}>Seleccionar prenda</button>
           </div>
         </div>
       </div>

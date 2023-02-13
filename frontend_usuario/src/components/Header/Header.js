@@ -17,18 +17,18 @@ const Header = () => {
     navigate("/pedidos");
   };
 
-  
-
   const showDropdown = () => {
     const dropdown = document.getElementById("dropdown");
     dropdown.classList.toggle("dropdownHidden");
   };
 
-  useEffect(() => {
-    const onPageLoad = () => {
+  const onPageLoad = () => {
       const dropdown = document.getElementById("dropdown");
       dropdown.classList.add("dropdownHidden");
     };
+
+  useEffect(() => {
+    
 
     if (document.readyState === 'complete') {
       onPageLoad();

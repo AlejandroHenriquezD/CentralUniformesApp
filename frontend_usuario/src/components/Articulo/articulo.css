@@ -33,16 +33,50 @@
   display: flex;
 }
 
-#nameAndPrice h1 {
+#articuloName {
   width: 75%;
   text-align: start;
 }
 
-#nameAndPrice h2 {
+#articuloDescription {
+  text-align: start;
+  height: 40%;
+}
+
+#articuloPrice {
   width: 25%;
+  font-weight: 400;
   text-align: end;
 }
 
-#articuloDescription {
-  text-align: start;
+#articuloDescription h3 {
+  margin-bottom: 0%;
+}
+
+#articuloDescription h4 {
+  margin-top: 0%;
+}
+
+.otherArticulo {
+  display: flex;
+}
+
+.otherArticulo h3{
+  margin-top: 0%;
+  margin-bottom: 0%;
+}
+
+.otherArticuloData {
+  font-weight: 400;
+  margin-left: 0.5em;
+}
+
+#articuloDataCanvas button {
+  background-color: rgba(14, 28, 46, 1);
+  color:rgb(255, 255, 255);
+  width: 100%;
+  height: 2.5em;
+  border-radius: 10px;
+  border: 0px;
+  margin-top: 2em;
 }
