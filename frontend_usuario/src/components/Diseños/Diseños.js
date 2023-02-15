@@ -10,31 +10,13 @@ import Footer from "../Footer/Footer";
 import { Col, Row } from "antd";
 import { useNavigate } from "react-router-dom";
 
-// const Images = require.context('../../backend/public/storage/images', true);
-// const foto = 'backend/public/storage/images/195906camisa_larga.jpg'
-
 // const endpoint = "http://localhost:8000/api";
-const Articulos = () => {
-  // const [articulos, setArticulos] = useState([]);
-
-  // useEffect(() => {
-  //   getAllArticulos();
-  // }, []);
-
-  // const getAllArticulos = async () => {
-  //   const response = await axios.get(`${endpoint}/articulos`);
-  //   setArticulos(response.data);
-  // };
-  // const navigate = useNavigate()
-
-  // const navigateToArticulos = () => {
-  //     navigate('/articulos');
-  // };
-
+const Diseños = () => {
+  
   const navigate = useNavigate();
 
-  const navigateToArticulo = () => {
-    navigate("/articulo");
+  const navigateToPedido = () => {
+    navigate("/pedido");
   };
 
   return (
@@ -43,104 +25,97 @@ const Articulos = () => {
       <div id="itemsContent">
         <Row justify="start">
           <Col span={6}>
-            <div className="item" onClick={navigateToArticulo}>
+            <div className="item" onClick={navigateToPedido}>
               <div className="itemImgContainer">
                 <img src="/img/camiseta_negra.jpg" />
               </div>
               <div className="itemData">
-                <h4>Camiseta</h4>
+                <h4>Mi diseño</h4>
                 <h3>7€</h3>
               </div>
             </div>
           </Col>
           <Col span={6}>
-            <div className="item" onClick={navigateToArticulo}>
+            <div className="item" onClick={navigateToPedido}>
               <div className="itemImgContainer">
                 <img src="/img/camiseta_negra.jpg" />
               </div>
               <div className="itemData">
-                <h4>Camiseta</h4>
+                <h4>Mi diseño</h4>
                 <h3>7€</h3>
               </div>
             </div>
           </Col>
           <Col span={6}>
-            <div className="item" onClick={navigateToArticulo}>
+            <div className="item" onClick={navigateToPedido}>
               <div className="itemImgContainer">
                 <img src="/img/camiseta_negra.jpg" />
               </div>
               <div className="itemData">
-                <h4>Camiseta</h4>
+                <h4>Mi diseño</h4>
                 <h3>7€</h3>
               </div>
             </div>
           </Col>
           <Col span={6}>
-            <div className="item" onClick={navigateToArticulo}>
+            <div className="item" onClick={navigateToPedido}>
               <div className="itemImgContainer">
                 <img src="/img/camiseta_negra.jpg" />
               </div>
               <div className="itemData">
-                <h4>Camiseta</h4>
+                <h4>Mi diseño</h4>
                 <h3>7€</h3>
               </div>
             </div>
           </Col>
           <Col span={6}>
-            <div className="item" onClick={navigateToArticulo}>
+            <div className="item" onClick={navigateToPedido}>
               <div className="itemImgContainer">
                 <img src="/img/camiseta_negra.jpg" />
               </div>
               <div className="itemData">
-                <h4>Camiseta</h4>
+                <h4>Mi diseño</h4>
                 <h3>7€</h3>
               </div>
             </div>
           </Col>
           <Col span={6}>
-            <div className="item" onClick={navigateToArticulo}>
+            <div className="item" onClick={navigateToPedido}>
               <div className="itemImgContainer">
                 <img src="/img/camiseta_negra.jpg" />
               </div>
               <div className="itemData">
-                <h4>Camiseta</h4>
+                <h4>Mi diseño</h4>
                 <h3>7€</h3>
               </div>
             </div>
           </Col>
           <Col span={6}>
-            <div className="item" onClick={navigateToArticulo}>
+            <div className="item" onClick={navigateToPedido}>
               <div className="itemImgContainer">
                 <img src="/img/camiseta_negra.jpg" />
               </div>
               <div className="itemData">
-                <h4>Camiseta</h4>
+                <h4>Mi diseño</h4>
                 <h3>7€</h3>
+              </div>
+            </div>
+          </Col>
+          <Col span={6}>
+            <div className="item">
+              <div className="itemPlusContainer">
+                <img src="/img/plus.png" />
+              </div>
+              <div className="itemData">
+                <h4>Añadir logo</h4>
               </div>
             </div>
           </Col>
         </Row>
         <Footer />
       </div>
-      {/* <Menu />
-      {articulos.map((articulo) => (
-        <div className="articulo">
-          <img className="img1" src={logo} alt="Foto"></img>
-          <p>{articulo.nombre}</p>
-          <p>{articulo.precio} €</p>
-          <p>Talla {articulo.talla}</p>
-          <p>Color {articulo.color} </p>
-          <button className="boton10">
-            <Link to={`/add_articulo/${articulo.id}`} className="lin">
-              Añadir
-            </Link>
-          </button>
-
-          <p></p>
-        </div> */}
-      {/* ))} */}
     </div>
   );
 };
 
-export default Articulos;
+export default Diseños;

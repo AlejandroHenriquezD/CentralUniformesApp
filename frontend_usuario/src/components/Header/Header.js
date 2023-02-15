@@ -13,8 +13,20 @@ const Header = () => {
     navigate("/articulos");
   };
 
-  const navigateToPedidos = () => {
-    navigate("/pedidos");
+  const navigateToLogos = () => {
+    navigate("/logos");
+  };
+
+  const navigateToDiseños = () => {
+    navigate("/diseños");
+  };
+
+  const navigateToPedido = () => {
+    navigate("/pedido");
+  };
+
+  const navigateToUsuario = () => {
+    navigate("/usuario");
   };
 
   const showDropdown = () => {
@@ -40,13 +52,13 @@ const Header = () => {
     <div id="header">
       <img src="/img/cu_logo.png" onClick={navigateToInicio}/>
       <button className="headerButton" onClick={showDropdown}>Uniformes</button>
-      <button className="headerButton" onClick={navigateToPedidos}>Realizar pedido</button>
-      <button className="headerButton">Configuración</button>
+      <button className="headerButton" onClick={navigateToPedido}>Realizar pedido</button>
+      <button className="headerButton" onClick={navigateToUsuario}>Configuración</button>
     </div>
     <div id="dropdown">
       <button className="headerButton" onClick={navigateToArticulos}>Crear diseño</button>
-      <button className="headerButton">Mis logos</button>
-      <button className="headerButton">Ver diseños</button>
+      <button className="headerButton" onClick={navigateToLogos}>Mis logos</button>
+      <button className="headerButton" onClick={navigateToDiseños}>Ver diseños</button>
     </div>
     </>
   );

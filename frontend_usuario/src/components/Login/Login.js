@@ -71,7 +71,7 @@ const Login = () => {
           </div>
           <div className="halfCanvas">
             <img id="imagenLogin" src="/img/imagen_login_1.jpg" />
-            <div id="redFilter" />
+            <div className="redFilter" />
           </div>
         </div>
       </div>

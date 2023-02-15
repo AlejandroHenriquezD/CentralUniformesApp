@@ -125,13 +125,14 @@
 
 #hiddenButtons {
     display: flex;
+    width: 65%;
     height: 20%;
     justify-content: space-between;
 }
 
-#hiddenButtons div{
+/* #hiddenButtons div{
     margin: 2em 2em 2em 2em;
-}
+} */
 
 /* .tittle {
     font-family: Verdana;
