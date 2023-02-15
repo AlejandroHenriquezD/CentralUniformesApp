@@ -1,6 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import Header from '../Header/Header';
 import "./articulo.css";
+import "../componentes2.css";
 
 const Articulo = () => {
   const navigate = useNavigate();
@@ -16,14 +17,14 @@ const Articulo = () => {
   return(
     <div>
       <Header/>
-      <div id="articuloContent">
-        <div className="halfArticuloContent">
-          <div id="articuloImgCanvas">
+      <div id="content">
+        <div className="halfContent">
+          <div id="imgCanvas">
             <img src="/img/camiseta_negra.jpg" />
           </div>
         </div>
-        <div className="halfArticuloContent">
-          <div id="articuloDataCanvas">
+        <div className="halfContent">
+          <div id="dataCanvas">
             <div id="nameAndPrice">
               <h1 id="articuloName">Camiseta</h1>
               <h1 id="articuloPrice">7€</h1>
@@ -40,8 +41,10 @@ const Articulo = () => {
               <h3>Color: </h3>
               <h3 className="otherArticuloData">Negro</h3>
             </div>
-            <button onClick={navigateToArticulos}>Volver</button>
-            <button onClick={navigateToDiseño}>Seleccionar prenda</button>
+            <div id="lastButtons">
+              <button onClick={navigateToArticulos}>Volver</button>
+              <button onClick={navigateToDiseño}>Seleccionar prenda</button>
+            </div>
           </div>
         </div>
       </div>

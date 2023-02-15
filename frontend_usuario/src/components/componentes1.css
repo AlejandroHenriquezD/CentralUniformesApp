@@ -1,41 +1,52 @@
-#articulosContent {
+#itemsContent {
   height: 80vh;
   overflow: scroll;
   background-color: rgba(218, 218, 218, 1);
 }
 
-.articulo {
+.item {
   height: 50vh;
   margin: 1em 1em 1em 1em;
   border: 2px solid rgba(218, 218, 218, 1);
 }
 
-.articulo:hover {
+.item:hover {
   border: 2px solid rgba(225, 37, 26, 1);
   cursor: pointer;
 }
 
-.articuloImgContainer {
+.itemImgContainer {
   display: flex;
   height: 75%;
   align-items: center;
   justify-content: center;
 }
 
-.articuloImgContainer img {
+.itemImgContainer img {
   height: 100%;
 }
 
-.articuloData {
+.itemPlusContainer {
+  display: flex;
+  height: 75%;
+  align-items: center;
+  justify-content: center;
+}
+
+.itemPlusContainer img {
+  height: 50%;
+}
+
+.itemData {
   text-align: start;
   border-top: 2px solid rgba(111, 183, 76, 1);
 }
 
-.articuloData h3 {
+.itemData h3 {
   margin-left: 1em;
 }
 
-.articuloData h4 {
+.itemData h4 {
   margin-left: 1em;
 }
 

@@ -1,25 +1,30 @@
 import { useNavigate } from "react-router-dom";
 import Header from "../Header/Header";
 import "./diseño.css";
+import "../componentes2.css";
 
 const Diseño = () => {
   const navigate = useNavigate();
 
-  const navigateToArticulos = () => {
-    navigate("/articulos");
+  const navigateToArticulo = () => {
+    navigate("/articulo");
+  };
+
+  const navigateToLogos = () => {
+    navigate("/logos");
   };
 
   return (
     <div>
       <Header />
-      <div id="designContent">
-        <div className="halfDesignContent">
-          <div id="designImgCanvas">
+      <div id="content">
+        <div className="halfContent">
+          <div id="imgCanvas">
             <img src="/img/camiseta_negra.jpg" />
           </div>
         </div>
-        <div className="halfDesignContent">
-          <div id="designDataCanvas">
+        <div className="halfContent">
+          <div id="dataCanvas">
             <form>
               <div id="designForm">
                 <input 
@@ -27,10 +32,10 @@ const Diseño = () => {
                   placeholder="Nombre del diseño"
                   id="designName"
                 />
-                <button className="designLongButton">Seleccionar logo</button>
+                <button className="longButton" onClick={navigateToLogos}>Seleccionar logo</button>
                 <div id="designShortButtons">
-                  <button className="designShortButton">Tamaño</button>
-                  <button className="designShortButton">Posición</button>
+                  <button className="shortButton">Tamaño</button>
+                  <button className="shortButton">Posición</button>
                 </div>
                 <div id="designShortButtons">
                   <div id="logoHeight">
@@ -60,7 +65,10 @@ const Diseño = () => {
                     />
                   </div>
                 </div>
-                <button className="designLongButton">Guardar diseño</button>
+                <div id="lastButtons">
+                  <button className="longButton" onClick={navigateToArticulo}>Volver</button>
+                  <button className="longButton">Guardar diseño</button>
+                </div>
               </div>
             </form>
           </div>
