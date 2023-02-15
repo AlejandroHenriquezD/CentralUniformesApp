@@ -39,8 +39,8 @@ Route::controller(ArticuloController::class)->group(function () {
     Route::delete('/articulo/{id}', 'destroy');
 
     Route::get("json", 'indexPdf');  //Reports
-    Route::get("chart", 'chart'); 
-    Route::get("reportUser", 'usuariosPdf'); 
+    Route::get("chart", 'chart');
+    Route::get("reportUser", 'usuariosPdf');
 });
 
 Route::controller(ClienteController::class)->group(function () {

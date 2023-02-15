@@ -56,7 +56,15 @@ class UserController extends Controller
         $user->dni = $request->dni;
         $user->name = $request->name;
         $user->email = $request->email;
-        $user->password = bcrypt($user['password']);
+
+        //Creo que con esto solucionamos los problemas de cambio de contraseña
+        //Quizás falte un confirm_password pero ahora mismo no me apetece mirarlo
+        //David Casimiro Herrera
+
+        if ($request->password != "") {
+            $user->password = bcrypt($request->password);
+        }
+        
         $user->rol = $request->rol;
 
         $user->save();
