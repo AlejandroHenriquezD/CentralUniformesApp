@@ -53,15 +53,15 @@ class UserController extends Controller
     public function update(Request $request, $id)
     {
         $user = User::findOrFail($request->id);
-        $user->dni = base64_decode($request->dni);
+        $user->dni = $request->dni;
         $user->name = base64_decode($request->name);
-        $user->email = base64_decode($request->email);
+        $user->email = $request->email;
 
         if ($request->password == null) {
-            $user->password = base64_decode(bcrypt($request->password));
+            $user->password = bcrypt(base64_decode($request->password));
         }
 
-        $user->rol = base64_decode($request->rol);
+        $user->rol = $request->rol;
 
         $user->save();
         return $user;

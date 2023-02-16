@@ -17,7 +17,7 @@ class AuthController extends BaseController
 {
     public function signin(Request $request)
     {
-        if (Auth::attempt(['email' => $request->email, 'password' => $request->password])) {
+        if (Auth::attempt(['email' => $request->email, 'password' => base64_decode($request->password)])) {
             $authUser = Auth::user();
             $success['token'] =  $authUser->createToken('MyAuthApp')->plainTextToken;
             $success['id'] =  $authUser->id;
@@ -43,7 +43,9 @@ class AuthController extends BaseController
 
         $input = $request->all();
         $input['rol'] = 'Cliente';
-        $input['password'] = bcrypt($input['password']);
+        $input['password'] = bcrypt(base64_decode($input['password']));
+        $input['name'] = base64_decode($input['name']);
+
         $user = User::create($input);
         $success['token'] =  $user->createToken('MyAuthApp')->plainTextToken;
         $success['id'] =  $user->id;
@@ -79,6 +81,7 @@ class AuthController extends BaseController
 
         $input = $request->all();
         $input['password'] = bcrypt(base64_decode($input['password']));
+        $input['name'] = base64_decode($input['name']);
         $user = User::create($input);
         $success['token'] =  $user->createToken('MyAuthApp')->plainTextToken;
         $success['id'] =  $user->id;

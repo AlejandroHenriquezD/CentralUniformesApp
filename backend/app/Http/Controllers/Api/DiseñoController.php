@@ -38,14 +38,14 @@ class DiseñoController extends Controller
             $design->img = $destinationPath . $filename;
         }
 
-        $design->nombre = base64_decode($request->nombre);
-        $design->posicion = base64_decode($request->posicion);
-        $design->tamaño = base64_decode($request->tamaño);
-        $design->favorito = base64_decode($request->favorito);
-        $design->id_logo = base64_decode($request->id_logo);
-        $design->id_articulo = base64_decode($request->id_articulo);
-        $design->id_user = base64_decode($request->id_user);
-        $design->img = base64_decode($request->img);
+        $design->nombre = $request->nombre;
+        $design->posicion = $request->posicion;
+        $design->tamaño = $request->tamaño;
+        $design->favorito = $request->favorito;
+        $design->id_logo = $request->id_logo;
+        $design->id_articulo = $request->id_articulo;
+        $design->id_user = $request->id_user;
+        $design->img = $request->img;
 
         $design->save();
     }
@@ -65,14 +65,14 @@ class DiseñoController extends Controller
     public function update(Request $request, $id)
     {
         $design = Diseño::findOrFail($request->id);
-        $design->nombre = base64_decode($request->nombre);
-        $design->posicion = base64_decode($request->posicion);
-        $design->tamaño = base64_decode($request->tamaño);
-        $design->favorito = base64_decode($request->favorito);
-        $design->id_logo = base64_decode($request->id_logo);
-        $design->id_articulo = base64_decode($request->id_articulo);
-        $design->id_user = base64_decode($request->id_user);
-        $design->img = base64_decode($request->img);
+        $design->nombre = $request->nombre;
+        $design->posicion = $request->posicion;
+        $design->tamaño = $request->tamaño;
+        $design->favorito = $request->favorito;
+        $design->id_logo = $request->id_logo;
+        $design->id_articulo = $request->id_articulo;
+        $design->id_user = $request->id_user;
+        $design->img = $request->img;
 
         $design->save();
     }

@@ -56,12 +56,12 @@ class ArticuloController extends Controller
     public function store(Request $request)
     {
         $articulo = new Articulo();
-        $articulo->nombre = base64_decode($request->nombre);
-        $articulo->talla = base64_decode($request->talla);
-        $articulo->color = base64_decode($request->color);
-        $articulo->precio = base64_decode($request->precio);
-        $articulo->stock = base64_decode($request->stock);
-        $articulo->descripcion = base64_decode($request->descripcion);
+        $articulo->nombre = $request->nombre;
+        $articulo->talla = $request->talla;
+        $articulo->color = $request->color;
+        $articulo->precio = $request->precio;
+        $articulo->stock = $request->stock;
+        $articulo->descripcion = $request->descripcion;
         $articulo->img = $request->img;
 
         if ($request->hasFile('img')) {
@@ -92,12 +92,12 @@ class ArticuloController extends Controller
     public function update(Request $request, $id)
     {
         $articulo = Articulo::findOrFail($id);
-        $articulo->nombre = base64_decode($request->nombre);
-        $articulo->talla = base64_decode($request->talla);
-        $articulo->color = base64_decode($request->color);
-        $articulo->precio = base64_decode($request->precio);
-        $articulo->stock = base64_decode($request->stock);
-        $articulo->descripcion = base64_decode($request->descripcion);
+        $articulo->nombre = $request->nombre;
+        $articulo->talla = $request->talla;
+        $articulo->color = $request->color;
+        $articulo->precio = $request->precio;
+        $articulo->stock = $request->stock;
+        $articulo->descripcion = $request->descripcion;
         // $articulo->img = $request->img;
 
         // if ($request->hasFile('img')) {

@@ -16,14 +16,14 @@ class TestLogo extends TestCase
         $this->get('http://localhost:8000/api/logos')
             ->assertStatus(200);
     }
-    // public function testCrearLogos()
-    // {
-    //     $response = $this->withHeaders([
-    //         'X-Header' => 'Value',
-    //     ])->post('http://localhost:8000/api/logo', ['nombre' => 'test', 'img' => 'test', 'id_user' => 1]);
+    public function testCrearLogos()
+    {
+        $response = $this->withHeaders([
+            'X-Header' => 'Value',
+        ])->post('http://localhost:8000/api/logo', ['nombre' => 'test', 'img' => 'test', 'id_user' => 1]);
 
-    //     $response->assertStatus(200);
-    // }
+        $response->assertStatus(200);
+    }
     public function testVerUnLogo()
     {
         $response = $this->get('http://localhost:8000/api/logo/0');

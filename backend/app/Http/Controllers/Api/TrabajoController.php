@@ -17,8 +17,8 @@ class TrabajoController extends Controller
     public function store(Request $request)
     {
         $trabajo = new Trabajo();
-        $trabajo->nombre = base64_decode($request->nombre);
-        $trabajo->descripcion = base64_decode($request->descripcion);
+        $trabajo->nombre = $request->nombre;
+        $trabajo->descripcion = $request->descripcion;
 
         $trabajo->save();
     }
@@ -30,8 +30,8 @@ class TrabajoController extends Controller
     public function update(Request $request, $id)
     {
         $trabajo = Trabajo::findOrFail($request->id);
-        $trabajo->nombre = base64_decode($request->nombre);
-        $trabajo->descripcion = base64_decode($request->descripcion);
+        $trabajo->nombre = $request->nombre;
+        $trabajo->descripcion = $request->descripcion;
 
         $trabajo->save();
         return $trabajo;
