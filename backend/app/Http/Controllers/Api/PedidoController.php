@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 
 class PedidoController extends Controller
 {
-    
+
     public function index()
     {
         $pedidos = Pedido::all();
@@ -18,13 +18,13 @@ class PedidoController extends Controller
     public function store(Request $request)
     {
         $pedido = new Pedido();
-        $pedido->fecha_pedido = $request->fecha_pedido;
-        $pedido->id_cliente = $request->id_cliente;
-        $pedido->id_empleado = 1;
-        $pedido->unidades = $request->unidades;
-        $pedido->observaciones = $request->observaciones;
-        $pedido->id_trabajo = $request->id_trabajo;
-        $pedido->id_diseño = $request->id_diseño;
+        $pedido->fecha_pedido = base64_decode($request->fecha_pedido);
+        $pedido->id_cliente = base64_decode($request->id_cliente);
+        $pedido->id_empleado = base64_decode(1);
+        $pedido->unidades = base64_decode($request->unidades);
+        $pedido->observaciones = base64_decode($request->observaciones);
+        $pedido->id_trabajo = base64_decode($request->id_trabajo);
+        $pedido->id_diseño = base64_decode($request->id_diseño);
 
         $pedido->save();
     }
@@ -38,13 +38,13 @@ class PedidoController extends Controller
     public function update(Request $request, $id)
     {
         $pedido = Pedido::findOrFail($id);
-        $pedido->fecha_pedido = $request->fecha_pedido;
-        $pedido->id_cliente = $request->id_cliente;
-        $pedido->id_empleado = $request->id_empleado;
-        $pedido->unidades = $request->unidades;
-        $pedido->observaciones = $request->observaciones;
-        $pedido->id_trabajo = $request->id_trabajo;
-        $pedido->id_diseño = $request->id_diseño;
+        $pedido->fecha_pedido = base64_decode($request->fecha_pedido);
+        $pedido->id_cliente = base64_decode($request->id_cliente);
+        $pedido->id_empleado = base64_decode($request->id_empleado);
+        $pedido->unidades = base64_decode($request->unidades);
+        $pedido->observaciones = base64_decode($request->observaciones);
+        $pedido->id_trabajo = base64_decode($request->id_trabajo);
+        $pedido->id_diseño = base64_decode($request->id_diseño);
 
         $pedido->save();
         return $pedido;

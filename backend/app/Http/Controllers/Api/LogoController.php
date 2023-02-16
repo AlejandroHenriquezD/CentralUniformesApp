@@ -31,8 +31,8 @@ class LogoController extends Controller
             $logo->img = $destinationPath . $filename;
         }
 
-        $logo->nombre = $request->nombre;
-        $logo->id_user = $request->id_user;
+        $logo->nombre = base64_decode($request->nombre);
+        $logo->id_user = base64_decode($request->id_user);
 
         $logo->save();
 

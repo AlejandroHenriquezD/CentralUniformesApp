@@ -34,11 +34,11 @@ class UserController extends Controller
     public function store(Request $request)
     {
         $user = new User();
-        $user->dni = $request->dni;
-        $user->name = $request->name;
-        $user->email = $request->email;
-        $user->password = $request->password;
-        $user->rol = $request->rol;
+        $user->dni = base64_decode($request->dni);
+        $user->name = base64_decode($request->name);
+        $user->email = base64_decode($request->email);
+        $user->password = base64_decode($request->password);
+        $user->rol = base64_decode($request->rol);
 
         $user->save();
         return $user;
@@ -53,19 +53,15 @@ class UserController extends Controller
     public function update(Request $request, $id)
     {
         $user = User::findOrFail($request->id);
-        $user->dni = $request->dni;
-        $user->name = $request->name;
-        $user->email = $request->email;
+        $user->dni = base64_decode($request->dni);
+        $user->name = base64_decode($request->name);
+        $user->email = base64_decode($request->email);
 
-        //Creo que con esto solucionamos los problemas de cambio de contraseña
-        //Quizás falte un confirm_password pero ahora mismo no me apetece mirarlo
-        //David Casimiro Herrera
-
-        if ($request->password != "") {
-            $user->password = bcrypt($request->password);
+        if ($request->password == null) {
+            $user->password = base64_decode(bcrypt($request->password));
         }
-        
-        $user->rol = $request->rol;
+
+        $user->rol = base64_decode($request->rol);
 
         $user->save();
         return $user;
