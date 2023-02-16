@@ -1,5 +1,5 @@
 import Menu from '../Menu/Menu';
-import './Articulos.css';
+import '../componentes1.css';
 import { useNavigate, useParams } from 'react-router-dom'
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
