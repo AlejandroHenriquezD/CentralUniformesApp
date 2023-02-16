@@ -77,7 +77,6 @@ class ArticuloController extends Controller
         $design = new Diseño();
         $design->nombre = $articulo->nombre;
         $design->id_articulo = $articulo->id;
-        $design->img = $articulo->img;
         $design->id_logo = 1;
         $design->id_user = 1;
 
@@ -99,15 +98,15 @@ class ArticuloController extends Controller
         $articulo->precio = base64_decode($request->precio);
         $articulo->stock = base64_decode($request->stock);
         $articulo->descripcion = base64_decode($request->descripcion);
-        $articulo->img = $request->img;
+        // $articulo->img = $request->img;
 
-        if ($request->hasFile('img')) {
-            $file = $request->file('img');
-            $destinationPath = 'images/logosTable/';
-            $filename = time() . '-' . $file->getClientOriginalName();
-            $uploadSuccess = $request->file('img')->move($destinationPath, $filename);
-            $articulo->img = $destinationPath . $filename;
-        }
+        // if ($request->hasFile('img')) {
+        //     $file = $request->file('img');
+        //     $destinationPath = 'images/logosTable/';
+        //     $filename = time() . '-' . $file->getClientOriginalName();
+        //     $uploadSuccess = $request->file('img')->move($destinationPath, $filename);
+        //     $articulo->img = $destinationPath . $filename;
+        // }
 
         $articulo->save();
         return $articulo;

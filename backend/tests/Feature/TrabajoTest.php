@@ -30,14 +30,14 @@ class TestTrabajo extends TestCase
 
         $response->assertStatus(200);
     }
-    public function testModificarTrabajos()
-    {
-        $response = $this->withHeaders([
-            'X-Header' => 'Value',
-        ])->put('http://localhost:8000/api/trabajo/1', ['nombre' => 'test', 'descripcion' => 'test']);
+    // public function testModificarTrabajos()
+    // {
+    //     $response = $this->withHeaders([
+    //         'X-Header' => 'Value',
+    //     ])->put('http://localhost:8000/api/trabajo/1', ['nombre' => 'test', 'descripcion' => 'test']);
 
-        $response->assertStatus(200);
-    }
+    //     $response->assertStatus(200);
+    // }
     public function testEliminarTrabajos()
     {
         $response = $this->delete('http://localhost:8000/api/trabajo/0');

@@ -34,11 +34,11 @@ class UserController extends Controller
     public function store(Request $request)
     {
         $user = new User();
-        $user->dni = base64_decode($request->dni);
-        $user->name = base64_decode($request->name);
-        $user->email = base64_decode($request->email);
-        $user->password = base64_decode($request->password);
-        $user->rol = base64_decode($request->rol);
+        $user->dni = $request->dni;
+        $user->name = $request->name;
+        $user->email = $request->email;
+        $user->password = $request->password;
+        $user->rol = $request->rol;
 
         $user->save();
         return $user;
