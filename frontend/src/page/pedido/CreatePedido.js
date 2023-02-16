@@ -22,11 +22,11 @@ const CreatePedido = () => {
   const store = async (e) => {
     e.preventDefault();
     await axios.post(endpoint, {
-      observaciones: observaciones,
-      unidades: unidades,
-      id_cliente: id_cliente,
-      id_trabajo: id_trabajo,
-      id_diseño: id_diseño,
+      observaciones: (observaciones),
+      unidades: (unidades),
+      id_cliente: (id_cliente),
+      id_trabajo: (id_trabajo),
+      id_diseño: (id_diseño),
     });
     navigate("/show_pedidos");
   };

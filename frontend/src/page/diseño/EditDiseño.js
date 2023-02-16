@@ -25,14 +25,14 @@ const EditDiseño = () => {
   const update = async (e) => {
     e.preventDefault();
     await axios.put(`${endpoint}${id}`, {
-      nombre: nombre,
-      img: img,
-      posicion: posicion,
-      tamaño: tamaño,
-      favorito: favorito,
-      id_user: id_user,
-      id_logo: id_logo,
-      id_articulo: id_articulo,
+      nombre: (nombre),
+      img: (img),
+      posicion: (posicion),
+      tamaño: (tamaño),
+      favorito: (favorito),
+      id_user: (id_user),
+      id_logo: (id_logo),
+      id_articulo: (id_articulo),
     });
     navigate("/show_diseños");
   };

@@ -14,8 +14,8 @@ const EditTrabajo = () => {
   const update = async (e) => {
     e.preventDefault();
     await axios.put(`${endpoint}${id}`, {
-      nombre: nombre,
-      descripcion: descripcion,
+      nombre: (nombre),
+      descripcion: (descripcion),
     });
     navigate("/show_trabajos");
   };

@@ -18,9 +18,9 @@ const CreateUsuario = () => {
     e.preventDefault();
     await axios.post(endpoint, {
       dni: dni,
-      name: name,
-      password: password,
-      confirm_password: confirm_password,
+      name: btoa(name),
+      password: btoa(password),
+      confirm_password: btoa(confirm_password),
       email: email,
       rol: rol,
     });

@@ -18,23 +18,27 @@ const EditArticulo = () => {
 
   const update = async (e) => {
     e.preventDefault();
-    await axios.put(`${endpoint}${id}`, {
-      nombre: nombre,
-      descripcion: descripcion,
-      img: img,
-      precio: precio,
-      color: color,
-      talla: talla,
-      stock: stock,
-    });
+
+    const fData = new FormData();
+
+    fData.append("nombre", nombre);
+    fData.append("talla", talla);
+    fData.append("color", color);
+    fData.append("precio", precio);
+    fData.append("stock", stock);
+    fData.append("descripcion", descripcion);
+    fData.append("img", document.getElementById("imgForm").files[0]);
+    axios.post(`${endpoint}${id}`, fData);
+
     navigate("/show_articulos");
   };
+
   useEffect(() => {
     const getArticuloById = async () => {
       const response = await axios.get(`${endpoint}${id}`);
       setNombre(response.data.nombre);
       setDescripcion(response.data.descripcion);
-      setImg(response.data.img);
+      // setImg(response.data.img);
       setPrecio(response.data.precio);
       setColor(response.data.color);
       setTalla(response.data.talla);
@@ -71,7 +75,8 @@ const EditArticulo = () => {
           <input
             value={img}
             onChange={(e) => setImg(e.target.value)}
-            type="text"
+            type="file"
+            id="imgForm"
             className="form"
           />
         </div>

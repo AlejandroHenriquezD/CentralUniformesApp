@@ -8,7 +8,7 @@ const endpoint2 = "http://localhost:8000/api";
 
 const CreateDiseño = () => {
   const [nombre, setNombre] = useState("");
-  const [img, setImg] = useState("");
+  // const [img, setImg] = useState("");
   const [posicion, setPosicion] = useState("");
   const [tamaño, setTamaño] = useState("");
   const [favorito, setFavorito] = useState("");
@@ -25,14 +25,14 @@ const CreateDiseño = () => {
   const store = async (e) => {
     e.preventDefault();
     await axios.post(endpoint, {
-      nombre: nombre,
-      img: img,
-      posicion: posicion,
-      tamaño: tamaño,
-      favorito: favorito,
-      id_user: id_user,
-      id_logo: id_logo,
-      id_articulo: id_articulo,
+      nombre: (nombre),
+      // img: (img),
+      posicion: (posicion),
+      tamaño: (tamaño),
+      favorito: (favorito),
+      id_user: (id_user),
+      id_logo: (id_logo),
+      id_articulo: (id_articulo),
     });
     navigate("/show_diseños");
   };
@@ -63,7 +63,7 @@ const CreateDiseño = () => {
             className="form"
           />
         </div>
-        <div className="mb-3">
+        {/* <div className="mb-3">
           <label className="form-label">Imagen</label>
           <input
             value={img}
@@ -71,7 +71,7 @@ const CreateDiseño = () => {
             type="text"
             className="form"
           />
-        </div>
+        </div> */}
         <div className="mb-3">
           <label className="form-label">Posición</label>
           <input

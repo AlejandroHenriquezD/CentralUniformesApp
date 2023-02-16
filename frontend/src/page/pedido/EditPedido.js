@@ -24,12 +24,12 @@ const EditPedido = () => {
   const update = async (e) => {
     e.preventDefault();
     await axios.put(`${endpoint}${id}`, {
-      observaciones: observaciones,
-      unidades: unidades,
-      id_cliente: id_cliente,
-      id_empleado: id_empleado,
-      id_trabajo: id_trabajo,
-      id_diseño: id_diseño,
+      observaciones: (observaciones),
+      unidades: (unidades),
+      id_cliente: (id_cliente),
+      id_cliente: (id_empleado),
+      id_trabajo: (id_trabajo),
+      id_diseño: (id_diseño),
     });
     navigate("/show_pedidos");
   };

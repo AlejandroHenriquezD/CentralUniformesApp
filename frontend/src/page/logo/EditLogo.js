@@ -22,9 +22,9 @@ const EditLogo = () => {
   const update = async (e) => {
     e.preventDefault();
     await axios.put(`${endpoint}${id}`, {
-      nombre: nombre,
+      nombre: (nombre),
       img: img,
-      id_user: id_user,
+      id_user: (id_user),
     });
     navigate("/show_logos");
   };

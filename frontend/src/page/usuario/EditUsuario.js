@@ -18,8 +18,9 @@ const EditUsuario = () => {
     e.preventDefault();
     await axios.put(`${endpoint}${id}`, {
       dni: dni,
-      name: name,
-      password: password,
+      name: btoa(name),
+      password: btoa(password),
+      // confirm_password: confirm_password,
       email: email,
       rol: rol,
     });
