@@ -1,4 +1,19 @@
-## Manual de Instalación
+# Aplicación Central Uniformes
+![cu_logo](https://user-images.githubusercontent.com/95490801/220785828-dfa901f7-4a12-4dfa-bbf5-d78bedac38e7.png)
+
+## Índice
+- [Manual de Instalación](#Manual-de-Instalación)
+- [Introducción al Proyecto](#Introducción-al-Proyecto)
+- [Diagramas](#Diagramas)
+- [Requisitos de Usuario](#Requisitos-de-Usuario)
+- [Prototipo / Mockup](#Prototipo-/-Mockup)
+- [Pila tecnológica](#Pila-tecnológica)
+- [Usabilidad](#Usabilidad)
+- [Planificación](#Planificación)
+- [Conclusión](#Conclusión)
+- [Referencias Externas](#Referencias-Externas)
+
+# Manual de Instalación
 
 Necesitaremos las siguientes herramientas
 
@@ -136,32 +151,38 @@ Tras implementar la aplicación procedemos a estudiar los aspectos de usabilidad
 
 Respecto a los colores hemos optado por usar principalmente los colores insignia de la empresa. Además tomamos algunos de los colores que presenta su página web oficial a modo de complementación, para obtener un mayor contraste entre los colores, dar más cohesión al diseño y otorgar mayor visibilidad a los textos y elementos interactivos.
 
-![screenshots](https://github.com/AlejandroHenriquezD/CentralUniformes/blob/master/screenshots/colores.png)
-
-Al hacer esto usamos la marca de la empresa y usamos los huecos en blanco para no sobrecargar la pantalla
-
 ![paleta](https://user-images.githubusercontent.com/95490801/220767127-ffbe3c01-7ecf-4206-8937-13ed47e51530.png)
-
 
 En cuanto a las fuentes hemos optado por hacer toda la página en Noto Sans, elegimos esta fuente debido a que es una fuente muy completa, tiene un tamaño adecuado, es fácil de leer y no cuenta con mucha decoración, siendo una fuente bastante limpia.
 
-Respecto a los iconos hemos optado por una librería de react la cual nos ofrece unos iconos muy elegante e intuitivos para nuestro menú
+La aplicación es usable debido a que todos los formularios de la app estan validados para evitar que el usuario pueda cometer errores al introducir información.
 
-![screenshots](https://github.com/AlejandroHenriquezD/CentralUniformes/blob/master/screenshots/menu1.png)
+Los formularios no solo estan validados si no que ademas nos mostrara un mensaje de error en caso de que esten vacios. Ya que para crear un usuario se deben rellenar muchos campos es probable saltarse alguno, con esta medida evitamos la frustación del usuario.
 
-Para evitar la posible duda del usuario de si su pedido ha sido enviado una alerta emergente aparecerá si el pedido se registra correctamente
+![validaciones](https://user-images.githubusercontent.com/95490801/220776723-2e16185e-0d9c-4e0f-abdf-8f6238d21e8e.png)
 
-![screenshots](https://github.com/AlejandroHenriquezD/CentralUniformes/blob/master/screenshots/alerta.png)
+Es una aplicación facil de usar ya que tiene funcionalidades muy definidas y simples haciendo que incluso una persona que no este familiarizada con las nuevas tecnologias sean capaces de usar la app.
 
-Ademas todos los formularios de la app estan validados para evitar que el usuario pueda cometer errores al introducir información
+Al ser una aplicación de escritorio hemos decidido que se acceda a las diferentes pantallas mediante elementos de un menú en lo alto de cada interfaz, unificando así las pantallas bajo un elemento común.
 
-Es una aplicación facil de usar ya que tiene funcionalidades muy definidas y simples haciendo que incluso una persona que no este familiarizada con las nuevas tecnologias sean capaces de usar la app
+![menu](https://user-images.githubusercontent.com/95490801/220779873-89471164-788d-46e2-9749-8c6e1dcd77b3.png)
+
+Los elementos en pantalla cuentan con una disposición equidistante, simétrica y con espacio entre ellos. Además, muchas de las pantallas cuentan con elementos comunes para homogeneizar la aplicación.
+
+![articulos](https://user-images.githubusercontent.com/95490801/220784418-e5e466e1-e012-4f5f-841b-6f1edfa41953.png)
 
 En cuanto a la cantidad de información en pantalla hemos optado por mostrar lo estrictamente necesario para que no puedas perderte usando la app
 
-Los formularios no solo estan validados si no que ademas nos mostrara un mensaje de error en caso de que esten vacios. Ya que para crear un usuario se deben rellenar muchos campos es probable saltarse alguno, con esta medida evitamos la frustación del usuario. Ademas de que no todos los campos son obligatorios por ello hemos señalado los obligatorios con un "*"
+Respecto a los elementos multimedia hemos optado por que no sean muy abundantes para no sobrecargar en exceso la interfaz.
+No obstante la interfaz de inicio contiene imágenes que sirven como botones para acceder a diferentes áreas de la página, haciendola amigable, invitando al usuario a interactuar con la aplicación. Así como las imágenes necesarias para las prendas de ropa y los logos.
 
-Respecto a los elementos multimedia hemos optado por que no sean muy abdantes para no sobrecargar en exceso la interfaz
+![inicio](https://user-images.githubusercontent.com/95490801/220777851-901599aa-eada-4095-b041-4b85df831083.png)
+
+Por seguridad, la información del usuario solo puede ser obtenida y modificada si el usuario ha inicidado sesión. Para ello, hemos implantado un sistema que hace uso de un token de acceso personal, que se coloca en el almacenamiento local cuando iniciamos sesión o nos registramos y se elimina cuando cerramos sesión.
+
+![token 4](https://user-images.githubusercontent.com/95490801/220785341-c4643615-cd42-41bd-97c2-05671cd00662.png)
+![token1](https://user-images.githubusercontent.com/95490801/220785325-0b99ac78-321c-4055-93ab-be1c88be3962.png)
+![token 3](https://user-images.githubusercontent.com/95490801/220785352-f423e7bf-8959-4411-a919-82559fe731bf.png)
 
 
 # Planificación
