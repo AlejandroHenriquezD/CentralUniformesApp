@@ -1,28 +1,47 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import { notification } from "antd";
 import logo_pequeño from "../../components/logo_pequeño.png";
-
 import { Link } from "react-router-dom";
 
 const endpoint = "http://localhost:8000/api";
+
 const ShowClientes = () => {
+  const [api, contextHolder] = notification.useNotification();
   const [clientes, setClientes] = useState([]);
+
+  const alertaError = (type) => {
+    api[type]({
+      message: "ERROR",
+      description: "Error al acceder a la base de datos",
+    });
+  };
+
   useEffect(() => {
     getAllClientes();
   }, []);
 
   const getAllClientes = async () => {
-    const response = await axios.get(`${endpoint}/clientes`);
-    setClientes(response.data);
+    try {
+      const response = await axios.get(`${endpoint}/clientes`);
+      setClientes(response.data);
+    } catch (error) {
+      alertaError("error");
+    }
   };
 
   const deleteCliente = async (id) => {
-    await axios.delete(`${endpoint}/cliente/${id}`);
-    getAllClientes();
+    try {
+      await axios.delete(`${endpoint}/cliente/${id}`);
+      getAllClientes();
+    } catch (error) {
+      alertaError("error");
+    }
   };
 
   return (
     <div>
+      {contextHolder}
       <div className="d-grip gap-2">
         <Link
           to="/create_cliente"

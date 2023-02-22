@@ -1,29 +1,47 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import { notification } from "antd";
 import logo_pequeño from "../../components/logo_pequeño.png";
 import { Link } from "react-router-dom";
 
 const endpoint = "http://localhost:8000/api";
 
 const ShowArticulos = () => {
+  const [api, contextHolder] = notification.useNotification();
   const [articulos, setArticulos] = useState([]);
+
+  const alertaError = (type) => {
+    api[type]({
+      message: "ERROR",
+      description: "Error al acceder a la base de datos",
+    });
+  };
 
   useEffect(() => {
     getAllArticulos();
   }, []);
 
   const getAllArticulos = async () => {
-    const response = await axios.get(`${endpoint}/articulos`);
-    setArticulos(response.data);
+    try {
+      const response = await axios.get(`${endpoint}/articulos`);
+      setArticulos(response.data);
+    } catch (error) {
+      alertaError("error");
+    }
   };
 
   const deleteArticulo = async (id) => {
-    await axios.delete(`${endpoint}/articulo/${id}`);
-    getAllArticulos();
+    try {
+      await axios.delete(`${endpoint}/articulo/${id}`);
+      getAllArticulos();
+    } catch (error) {
+      alertaError("error");
+    }
   };
 
   return (
     <div className="back">
+      {contextHolder}
       <div className="d-grip gap-2">
         <Link
           to="/create_articulo"
@@ -33,7 +51,6 @@ const ShowArticulos = () => {
         </Link>
       </div>
       <img className="lg mt-2 mb-2 " src={logo_pequeño} alt="Logo" />
-
       <table className="table table-striped">
         <thead className="bg-success text-white">
           <tr>
