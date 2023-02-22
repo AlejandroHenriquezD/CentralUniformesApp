@@ -134,15 +134,16 @@ Además en Laravel gracias a su ORM Eloquent puede trabajar con cuatro tipos de 
 # Usabilidad
 Tras implementar la aplicación procedemos a estudiar los aspectos de usabilidad en la misma.
 
-Respecto a los colores hemos optado por usar principalmente los colores insignia de la empresa
+Respecto a los colores hemos optado por usar principalmente los colores insignia de la empresa. Además tomamos algunos de los colores que presenta su página web oficial a modo de complementación, para obtener un mayor contraste entre los colores, dar más cohesión al diseño y otorgar mayor visibilidad a los textos y elementos interactivos.
 
 ![screenshots](https://github.com/AlejandroHenriquezD/CentralUniformes/blob/master/screenshots/colores.png)
 
 Al hacer esto usamos la marca de la empresa y usamos los huecos en blanco para no sobrecargar la pantalla
 
-![screenshots](https://github.com/AlejandroHenriquezD/CentralUniformes/blob/master/screenshots/inicio.png)
+![paleta](https://user-images.githubusercontent.com/95490801/220767127-ffbe3c01-7ecf-4206-8937-13ed47e51530.png)
 
-En cuantos a las fuentes hemos optado por hacer toda la página en Verdana, elegimos esta fuente debido a que es una fuente muy completa, tiene un tamaño adecuado, es fácil de leer 
+
+En cuanto a las fuentes hemos optado por hacer toda la página en Noto Sans, elegimos esta fuente debido a que es una fuente muy completa, tiene un tamaño adecuado, es fácil de leer y no cuenta con mucha decoración, siendo una fuente bastante limpia.
 
 Respecto a los iconos hemos optado por una librería de react la cual nos ofrece unos iconos muy elegante e intuitivos para nuestro menú
 
