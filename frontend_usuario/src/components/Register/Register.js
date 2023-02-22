@@ -1,42 +1,88 @@
-import React, { useState } from "react";
-import axios from "axios";
+import React, { useState, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import { Col, Row } from "antd";
+import AuthService from "../../services/auth.service";
 import "./Register.css";
 
-const endpoint2 = "http://localhost:8000/api/register";
-
 const Register = () => {
+  // const form = useRef();
+  // const checkBtn = useRef();
+  
   const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
+  const [dni, setDni] = useState("");
   const [password, setPassword] = useState("");
-  const [confirm_password, setConfirm] = useState("");
+  const [confirm_password, setConfirm] = useState(""); 
+  const [email, setEmail] = useState("");
+  const [provincia, setProvincia] = useState("");
+  const [municipio, setMunicipio] = useState("");
+  const [codigo_postal, setCodigo_postal] = useState("");
+  const [direccion, setDireccion] = useState("");
+  const [telefono, setTelefono] = useState("");
+  const rol = "cliente";
 
   const [error, setError] = useState("");
 
   const navigate = useNavigate();
 
-  const register = async (e) => {
-    e.preventDefault();
-    // eslint-disable-next-line
-    if (
-      name.length == 0 ||
-      password.length == 0 ||
-      confirm_password.length == 0 ||
-      email.length == 0
-    ) {
-      setError(true);
-    }
+  // const register = async (e) => {
+  //   e.preventDefault();
+  //   // eslint-disable-next-line
+  //   if (
+  //     name.length == 0 ||
+  //     password.length == 0 ||
+  //     confirm_password.length == 0 ||
+  //     email.length == 0
+  //   ) {
+  //     setError(true);
+  //   }
 
-    await axios.post(endpoint2, {
-      name: name,
-      password: password,
-      confirm_password: confirm_password,
-      email: email,
-    });
+  //   await axios.post(endpoint2, {
+  //     name: name,
+  //     password: password,
+  //     confirm_password: confirm_password,
+  //     email: email,
+  //   });
 
-    navigate("/login");
+  //   navigate("/inicio");
+  // };
+  const handleRegister = (e) => {
+    e.preventDefault(); // Evita que se recarge la página por defecto
+    // setMessage("");
+    // setSuccessful(false);
+    // form.current.validateAll();
+
+    // if (checkBtn.current.context._errors.length === 0) {
+      AuthService.registercli(
+        dni, 
+        btoa(name),
+        email, 
+        rol, 
+        btoa(password),
+        btoa(confirm_password),
+        provincia, 
+        municipio, 
+        codigo_postal, 
+        direccion, 
+        telefono
+      ).then(
+        (response) => {
+          // setMessage(response.data.message);
+          navigate("/inicio");
+        },
+        (error) => {
+          const resMessage =
+            (error.response &&
+              error.response.data &&
+              error.response.data.message) ||
+            error.message ||
+            error.toString();
+
+          // setMessage(resMessage);
+        }
+      );
+    // }
   };
+
   const navigateToLogin = () => {
     navigate("/login");
   };
@@ -64,13 +110,17 @@ const Register = () => {
       <div id="registerContent">
         <h3>¡Introduce tus datos para registrarte!</h3>
         <div id="formContainer">
-          <form className="registerForm">
+          <form className="registerForm" onSubmit={handleRegister}>
             <Row justify="start" gutter={[80, 20]}>
               <Col span={12}>
                 <div className="formGroup">
                   <label className="registerLabel">Nombre y apellidos</label>
-
-                  <input type="text" class="registerInput" />
+                  <input 
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
+                    type="text" 
+                    className="registerInput" 
+                  />
                   {/* {error && name.length <= 0 ? (
                 <div className="lab">
                   <label>
@@ -85,8 +135,12 @@ const Register = () => {
               <Col span={12}>
                 <div className="formGroup">
                   <label className="registerLabel">DNI</label>
-
-                  <input type="text" className="registerInput" />
+                  <input 
+                    value={dni}
+                    onChange={(e) => setDni(e.target.value)}
+                    type="text" 
+                    className="registerInput" 
+                  />
                   {/* {error && dni.length <= 0 ? (
                 <div className="lab">
                   <label>
@@ -101,8 +155,12 @@ const Register = () => {
               <Col span={12}>
                 <div className="formGroup">
                   <label className="registerLabel">Contraseña</label>
-
-                  <input type="password" className="registerInput" />
+                  <input 
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                    type="password" 
+                    className="registerInput" 
+                  />
                   {/* {error && password.length <= 0 ? (
                 <div className="lab">
                   <label>
@@ -117,8 +175,12 @@ const Register = () => {
               <Col span={12}>
                 <div className="formGroup">
                   <label className="registerLabel">Repita su contraseña</label>
-
-                  <input type="password" className="registerInput" />
+                  <input 
+                    value={confirm_password}
+                    onChange={(e) => setConfirm(e.target.value)}
+                    type="password" 
+                    className="registerInput" 
+                  />
                   {/* {error && confirm_password.length <= 0 ? (
                 <div className="lab">
                   <label>
@@ -133,8 +195,12 @@ const Register = () => {
               <Col span={12}>
                 <div className="formGroup">
                   <label className="registerLabel">Correo electrónico</label>
-
-                  <input type="text" class="registerInput" />
+                  <input 
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    type="text" 
+                    className="registerInput" 
+                  />
                   {/* <{error && email.length <= 0 ? (
                 <div className="lab">
                   <label>
@@ -149,8 +215,12 @@ const Register = () => {
               <Col span={12}>
                 <div className="formGroup">
                   <label className="registerLabel">Provincia</label>
-
-                  <input type="text" className="registerInput" />
+                  <input 
+                    value={provincia}
+                    onChange={(e) => setProvincia(e.target.value)}
+                    type="text" 
+                    className="registerInput" 
+                  />
                   {/* {error && provincia.length <= 0 ? (
                 <div className="lab">
                   <label>
@@ -165,8 +235,12 @@ const Register = () => {
               <Col span={12}>
                 <div className="formGroup">
                   <label className="registerLabel">Código postal</label>
-
-                  <input type="text" class="registerInput" />
+                  <input 
+                    value={codigo_postal}
+                    onChange={(e) => setCodigo_postal(e.target.value)}
+                    type="text" 
+                    className="registerInput" 
+                  />
                   {/* {error && cp.length <= 0 ? (
                 <div className="lab">
                   <label>
@@ -181,8 +255,12 @@ const Register = () => {
               <Col span={12}>
                 <div className="formGroup">
                   <label className="registerLabel">Municipio</label>
-
-                  <input type="text" className="registerInput" />
+                  <input 
+                    value={municipio}
+                    onChange={(e) => setMunicipio(e.target.value)}
+                    type="text" 
+                    className="registerInput" 
+                  />
                   {/* {error && municipio.length <= 0 ? (
                 <div className="lab">
                   <label>
@@ -197,8 +275,12 @@ const Register = () => {
               <Col span={12}>
                 <div className="formGroup">
                   <label className="registerLabel">Dirección</label>
-
-                  <input type="text" class="registerInput" />
+                  <input 
+                    value={direccion}
+                    onChange={(e) => setDireccion(e.target.value)}
+                    type="text" 
+                    className="registerInput" 
+                  />
                   {/* {error && direccion.length <= 0 ? (
                 <div className="lab">
                   <label>
@@ -213,8 +295,12 @@ const Register = () => {
               <Col span={12}>
                 <div className="formGroup">
                   <label className="registerLabel">Número de teléfono</label>
-
-                  <input type="text" className="registerInput" />
+                  <input 
+                    value={telefono}
+                    onChange={(e) => setTelefono(e.target.value)}
+                    type="text" 
+                    className="registerInput" 
+                  />
                   {/* {error && tlf.length <= 0 ? (
                 <div className="lab">
                   <label>
@@ -235,12 +321,12 @@ const Register = () => {
               </Col>
               <Col span={12}>
                 <div id="register">
-                  {/* <button type="submit" className="registerButton">
-                    Registrarse
-                  </button> */}
-                  <button onClick={navigateToHome} className="registerButton">
+                  <button type="submit" className="registerButton">
                     Registrarse
                   </button>
+                  {/* <button onClick={navigateToHome} className="registerButton">
+                    Registrarse
+                  </button> */}
                 </div>
               </Col>
             </Row>

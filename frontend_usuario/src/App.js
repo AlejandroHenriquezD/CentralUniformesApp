@@ -11,6 +11,7 @@ import Diseño from "./components/Diseño/Diseño";
 import Diseños from "./components/Diseños/Diseños";
 import Logos from "./components/Logos/Logos";
 import Usuario from "./components/Usuario/Usuario";
+import EditarUsuario from "./components/EditarUsuario/EditarUsuario";
 
 function App() {
   return (
@@ -24,11 +25,12 @@ function App() {
           <Route path="/pedido" element={<Pedido />} />
 
           <Route path="/articulos" element={<Articulos />} />
-          <Route path="/articulo" element={<Articulo />} />
+          <Route path="/articulo/:id" element={<Articulo />} />
           <Route path="/diseño" element={<Diseño />} />
           <Route path="/diseños" element={<Diseños />} />
           <Route path="/logos" element={<Logos />} />
           <Route path="/usuario" element={<Usuario />} />
+          <Route path="/editar" element={<EditarUsuario />} />
           <Route path="/add_articulo/:id" element={<AñadirArticulo />} />
 
           <Route path="/login" element={<Login />} />

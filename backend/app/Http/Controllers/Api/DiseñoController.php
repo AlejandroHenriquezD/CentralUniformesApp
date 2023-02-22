@@ -30,14 +30,6 @@ class DiseñoController extends Controller
     {
         $design = new Diseño();
 
-        if ($request->hasFile('img')) {
-            $file = $request->file('img');
-            $destinationPath = 'images/diseñoTable/';
-            $filename = time() . '-' . $file->getClientOriginalName();
-            $uploadSuccess = $request->file('img')->move($destinationPath, $filename);
-            $design->img = $destinationPath . $filename;
-        }
-
         $design->nombre = $request->nombre;
         $design->posicion = $request->posicion;
         $design->tamaño = $request->tamaño;
@@ -45,7 +37,6 @@ class DiseñoController extends Controller
         $design->id_logo = $request->id_logo;
         $design->id_articulo = $request->id_articulo;
         $design->id_user = $request->id_user;
-        $design->img = $request->img;
 
         $design->save();
     }
@@ -72,7 +63,6 @@ class DiseñoController extends Controller
         $design->id_logo = $request->id_logo;
         $design->id_articulo = $request->id_articulo;
         $design->id_user = $request->id_user;
-        $design->img = $request->img;
 
         $design->save();
     }

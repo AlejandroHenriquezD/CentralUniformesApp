@@ -15,6 +15,11 @@ class ClienteController extends Controller
         return $clientes;
     }
 
+    public function showByUserId($id) {
+        $cliente = Cliente::where('id_user',$id)->get();
+        return $cliente;
+    }
+
 
     public function store(Request $request)
     {

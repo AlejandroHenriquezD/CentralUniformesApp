@@ -32,7 +32,6 @@ class LogoController extends Controller
         }
 
         $logo->nombre = $request->nombre;
-        $logo->img = $request->img;
         $logo->id_user = $request->id_user;
 
         $logo->save();

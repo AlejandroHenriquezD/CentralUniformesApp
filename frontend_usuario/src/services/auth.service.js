@@ -2,13 +2,12 @@ import axios from "axios";
 
 const API_URL = "http://localhost:8000/api/";
 
-const register = (dni, name, username, email, type, password, confirm_password) => {
+const register = (dni, name, email, rol, password, confirm_password) => {
   return axios.post(API_URL + "register", {
     dni,
     name,
-    username,
     email,
-    type,
+    rol,
     password,
     confirm_password
   })
@@ -23,14 +22,53 @@ const register = (dni, name, username, email, type, password, confirm_password) 
   });
 };
 
-const login = (username, password) => {
+const registercli = (
+  dni, 
+  name,
+  email, 
+  rol, 
+  password, 
+  confirm_password, 
+  provincia, 
+  municipio, 
+  codigo_postal, 
+  direccion, 
+  telefono
+  ) => {
+  return axios.post(API_URL + "registercli", {
+    dni,
+    name,
+    email,
+    rol,
+    password,
+    confirm_password,
+    provincia, 
+    municipio, 
+    codigo_postal, 
+    direccion, 
+    telefono
+  })
+  .then((response) => {
+    console.log(response.data);
+    if (response.data.data.token) {
+      localStorage.setItem("user", JSON.stringify(response.data));
+      localStorage.setItem("token", response.data.data.token);
+    }
+
+    return response.data;
+  });
+};
+
+
+const login = (email, password) => {
   return axios
     .post(API_URL + "login", {
-      username,
+      email,
       password,
     })
     .then((response) => {
-      if (response.data.data.token && response.data.data.type==='a') {
+      console.log(response);
+      if (response.data.data.token) {
         localStorage.setItem("user", JSON.stringify(response.data));
         localStorage.setItem("token", response.data.data.token);
         
@@ -60,6 +98,7 @@ const getToken = () => {
 
 const AuthService = {
   register,
+  registercli,
   login,
   logout,
   getCurrentUser,

@@ -48,18 +48,18 @@ const Login = () => {
   const handleLogin = (e) => {
     e.preventDefault();
 
-    setMessage("");
-    setLoading(true);
+    // setMessage("");
+    // setLoading(true);
 
-    form.current.validateAll();
+    // form.current.validateAll();
 
-    if (checkBtn.current.context._errors.length === 0) {
-      AuthService.login(email, password).then(
+    // if (checkBtn.current.context._errors.length === 0) {
+      AuthService.login(email, btoa(password)).then(
         (response) => {
           console.log(response);
           // localStorage.setItem("token", response.data.data.token);
           navigate("/inicio");
-          window.location.reload();
+          // window.location.reload();
         },
         (error) => {
           const resMessage =
@@ -69,13 +69,13 @@ const Login = () => {
             error.message ||
             error.toString();
 
-          setLoading(false);
+          // setLoading(false);
           setMessage(resMessage);
         }
       );
-    } else {
-      setLoading(false);
-    }
+    // } else {
+    //   setLoading(false);
+    // }
   };
 
   // var rootStyle = {
@@ -125,7 +125,7 @@ const Login = () => {
                   <button className="loginButton" onClick={changeLoginContent}>
                     Volver
                   </button>
-                  <button className="loginButton">Iniciar sesión</button>
+                  <button className="loginButton" onClick={handleLogin}>Iniciar sesión</button>
                 </div>
               </div>
             ) : (
@@ -133,7 +133,7 @@ const Login = () => {
                 <button className="loginButton" onClick={changeLoginContent}>
                   Iniciar sesión
                 </button>
-                <button className="loginButton" href="/register">
+                <button className="loginButton" onClick={navigateToRegister}>
                   Registrarse
                 </button>
               </div>
