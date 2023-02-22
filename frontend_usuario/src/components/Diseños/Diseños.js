@@ -1,13 +1,9 @@
-import Menu from "../Menu/Menu";
 import "../componentes1.css";
-// import { useNavigate } from 'react-router-dom'
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import AuthService from "../../services/auth.service";
 import authHeader from "../../services/auth-header";
 import Header from "../Header/Header";
-import logo from "../logo.png";
-import { Link } from "react-router-dom";
 import Footer from "../Footer/Footer";
 import { Col, Row } from "antd";
 import { useNavigate } from "react-router-dom";
@@ -47,7 +43,6 @@ const Diseños = () => {
       headers: authHeader(),
     })
     setDiseñosBase(response.data);
-    console.log(response.data);
   };
 
   const getEmpleados = async () => {

@@ -109,15 +109,6 @@ const EditarUsuario = () => {
                     type="text"
                     className="editarInput"
                   />
-                  {/* {error && name.length <= 0 ? (
-                <div className="lab">
-                  <label>
-                    <b>Nombre no puede estar vacio</b>
-                  </label>
-                </div>
-              ) : (
-                ""
-              )} */}
                 </div>
               </Col>
               <Col span={12}>
@@ -129,15 +120,6 @@ const EditarUsuario = () => {
                     type="text"
                     className="editarInput"
                   />
-                  {/* {error && dni.length <= 0 ? (
-                <div className="lab">
-                  <label>
-                    <b>DNI no puede estar vacío</b>
-                  </label>
-                </div>
-              ) : (
-                ""
-              )} */}
                 </div>
               </Col>
               <Col span={12}>
@@ -149,15 +131,6 @@ const EditarUsuario = () => {
                     type="text"
                     className="editarInput"
                   />
-                  {/* <{error && email.length <= 0 ? (
-                <div className="lab">
-                  <label>
-                    <b>Correo electrónico no puede estar vacío</b>
-                  </label>
-                </div>
-              ) : (
-                ""
-              )}> */}
                 </div>
               </Col>
               <Col span={12}>
@@ -169,15 +142,6 @@ const EditarUsuario = () => {
                     type="text"
                     className="editarInput"
                   />
-                  {/* {error && provincia.length <= 0 ? (
-                <div className="lab">
-                  <label>
-                    <b>Provincia no puede estar vacía</b>
-                  </label>
-                </div>
-              ) : (
-                ""
-              )} */}
                 </div>
               </Col>
               <Col span={12}>
@@ -189,15 +153,6 @@ const EditarUsuario = () => {
                     type="text"
                     className="editarInput"
                   />
-                  {/* {error && cp.length <= 0 ? (
-                <div className="lab">
-                  <label>
-                    <b>Código postal no puede estar vacío</b>
-                  </label>
-                </div>
-              ) : (
-                ""
-              )} */}
                 </div>
               </Col>
               <Col span={12}>
@@ -209,15 +164,6 @@ const EditarUsuario = () => {
                     type="text"
                     className="editarInput"
                   />
-                  {/* {error && municipio.length <= 0 ? (
-                <div className="lab">
-                  <label>
-                    <b>Municipio no puede estar vacío</b>
-                  </label>
-                </div>
-              ) : (
-                ""
-              )} */}
                 </div>
               </Col>
               <Col span={12}>
@@ -229,15 +175,6 @@ const EditarUsuario = () => {
                     type="text"
                     className="editarInput"
                   />
-                  {/* {error && direccion.length <= 0 ? (
-                <div className="lab">
-                  <label>
-                    <b>Dirección no puede estar vacía</b>
-                  </label>
-                </div>
-              ) : (
-                ""
-              )} */}
                 </div>
               </Col>
               <Col span={12}>
@@ -249,15 +186,6 @@ const EditarUsuario = () => {
                     type="text"
                     className="editarInput"
                   />
-                  {/* {error && tlf.length <= 0 ? (
-                <div className="lab">
-                  <label>
-                    <b>Número de teléfono no puede estar vacío</b>
-                  </label>
-                </div>
-              ) : (
-                ""
-              )} */}
                 </div>
               </Col>
               <Col span={12}>
@@ -272,9 +200,6 @@ const EditarUsuario = () => {
                   <button type="submit" className="registerButton">
                     Guardar
                   </button>
-                  {/* <button onClick={navigateToHome} className="registerButton">
-                    Registrarse
-                  </button> */}
                 </div>
               </Col>
             </Row>
