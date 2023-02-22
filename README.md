@@ -155,6 +155,10 @@ Respecto a los colores hemos optado por usar principalmente los colores insignia
 
 En cuanto a las fuentes hemos optado por hacer toda la página en Noto Sans, elegimos esta fuente debido a que es una fuente muy completa, tiene un tamaño adecuado, es fácil de leer y no cuenta con mucha decoración, siendo una fuente bastante limpia.
 
+Al completar un pedido se mostrará en pantalla una alerta indicando que el pedido se ha realizado correctamente, para que el usuario tenga tranquilidad y confianza y aumentando el feedback de la aplicación con el usuario y su interactividad
+
+![pedido alerta](https://user-images.githubusercontent.com/95490801/220787591-10243bd3-8480-4b6e-8ab5-f9fc069987c1.png)
+
 La aplicación es usable debido a que todos los formularios de la app estan validados para evitar que el usuario pueda cometer errores al introducir información.
 
 Los formularios no solo estan validados si no que ademas nos mostrara un mensaje de error en caso de que esten vacios. Ya que para crear un usuario se deben rellenar muchos campos es probable saltarse alguno, con esta medida evitamos la frustación del usuario.
