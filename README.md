@@ -6,7 +6,7 @@
 - [Introducción al Proyecto](#Introducción-al-Proyecto)
 - [Diagramas](#Diagramas)
 - [Requisitos de Usuario](#Requisitos-de-Usuario)
-- [Prototipo / Mockup](#Prototipo-/-Mockup)
+- [Prototipo / Mockup](#Prototipo--Mockup)
 - [Pila tecnológica](#Pila-tecnológica)
 - [Usabilidad](#Usabilidad)
 - [Planificación](#Planificación)
