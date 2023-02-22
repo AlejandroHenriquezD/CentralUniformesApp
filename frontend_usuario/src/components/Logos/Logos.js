@@ -49,8 +49,6 @@ const Logos = () => {
     }).then((res) => {
       getLogosByUserId();
     })
-
-    // window.location.reload();
   };
 
 

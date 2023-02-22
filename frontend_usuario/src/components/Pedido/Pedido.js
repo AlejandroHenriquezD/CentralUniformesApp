@@ -1,4 +1,3 @@
-import Menu from '../Menu/Menu';
 import './Pedido.css';
 import '../componentes2.css';
 import { useNavigate } from 'react-router-dom'
@@ -8,6 +7,7 @@ import authHeader from "../../services/auth-header";
 import Header from '../Header/Header';
 import axios from 'axios';
 import $ from "jquery";
+import Swal from 'sweetalert2';
 
 const endpoint = 'http://localhost:8000/api'
 
@@ -19,7 +19,6 @@ const Pedido = () => {
 
   const userId = AuthService.userId();
 
-  // const [fecha_pedido, setFecha_pedido] = useState("");
   const [id_cliente, setId_cliente] = useState("");
   const [id_empleado, setId_empleado] = useState("");
   const [unidades, setUnidades] = useState("");
@@ -67,7 +66,11 @@ const Pedido = () => {
         id_trabajo,
         id_diseño,
       }
-    }).then((res) => {navigate("/inicio")});
+    }).then((res) => {Swal.fire(
+      'Pedido Confirmado',
+      'Tu pedido se ha registrado correctamente',
+      'success'
+    )});
   }
 
   const getThisDiseño = () => {
@@ -156,15 +159,6 @@ const Pedido = () => {
         </div>
       )}
     </div>
-    /* <Menu/>
-    {pedidos.map((pedido) => (
-            <div className='pedido'>
-                <p>{pedido.fecha_pedido}</p>
-                <p>{pedido.articulo.nombre} {pedido.articulo.talla} {pedido.articulo.color}</p>
-                <p>{pedido.unidades} unidad/es</p>
-                <p>{pedido.articulo.precio}€/unidad</p>
-            </div>
-    ))} */
   )
 }
 

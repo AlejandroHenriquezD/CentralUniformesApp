@@ -5,7 +5,6 @@ import Register from "./components/Register/Register";
 import Inicio from "./components/Inicio/Inicio";
 import Articulos from "./components/Articulos/Articulos";
 import Articulo from "./components/Articulo/Articulo";
-import AñadirArticulo from "./components/Articulos/AñadirArticulo";
 import Pedido from "./components/Pedido/Pedido";
 import Diseño from "./components/Diseño/Diseño";
 import Diseños from "./components/Diseños/Diseños";
@@ -31,7 +30,6 @@ function App() {
           <Route path="/logos" element={<Logos />} />
           <Route path="/usuario" element={<Usuario />} />
           <Route path="/editar" element={<EditarUsuario />} />
-          <Route path="/add_articulo/:id" element={<AñadirArticulo />} />
 
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />

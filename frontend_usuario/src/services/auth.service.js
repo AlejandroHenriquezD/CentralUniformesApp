@@ -12,7 +12,6 @@ const register = (dni, name, email, rol, password, confirm_password) => {
     confirm_password
   })
   .then((response) => {
-    console.log(response.data);
     if (response.data.data.token) {
       localStorage.setItem("user", JSON.stringify(response.data));
       localStorage.setItem("token", response.data.data.token);
@@ -49,7 +48,6 @@ const registercli = (
     telefono
   })
   .then((response) => {
-    console.log(response.data);
     if (response.data.data.token) {
       localStorage.setItem("user", JSON.stringify(response.data));
       localStorage.setItem("token", response.data.data.token);
@@ -67,7 +65,6 @@ const login = (email, password) => {
       password,
     })
     .then((response) => {
-      console.log(response);
       if (response.data.data.token) {
         localStorage.setItem("user", JSON.stringify(response.data));
         localStorage.setItem("token", response.data.data.token);
@@ -87,7 +84,6 @@ const getCurrentUser = () => {
 };
 
 const userId = () => {
-  // return getCurrentUser().data.id;
   const user = JSON.parse(localStorage.getItem("user"));
   return user.data.id;
 } 
@@ -105,7 +101,5 @@ const AuthService = {
   userId,
   getToken,
 };
-
-
 
 export default AuthService;

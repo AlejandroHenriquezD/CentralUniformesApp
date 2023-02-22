@@ -138,7 +138,6 @@ const Diseño = () => {
     element.style.left = x + "%";
     element.style.top = y + "%";
     setPosicion("\"x\":\"" + x + "\",\"y\":\"" + y+ "\"");
-    console.log(posicion);
   }
 
   return (
