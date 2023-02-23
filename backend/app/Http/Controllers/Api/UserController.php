@@ -12,7 +12,7 @@ class UserController extends Controller
     public function empleadosonly()
     {
         $users = DB::table('users')
-            ->where('rol', '=', "Empleado")
+            ->where('rol', '!=', "Cliente")
             ->get();
         return $users;
     }

@@ -1,14 +1,11 @@
 import './Menu.css';
 import { GiHamburgerMenu } from 'react-icons/gi';
 import { FaSignOutAlt } from 'react-icons/fa';
-// import 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css';
 
 const Menu = () => {
 
   return (
-
     <div class="navbar">
-
       <div class="subnav">
         <button class="subnavbtn"><GiHamburgerMenu /></button>
         <div class="subnav-content">
@@ -18,9 +15,7 @@ const Menu = () => {
           <a href="/sistema_ayuda"><b>Sistema de Ayuda</b></a>
         </div>
       </div>
-
       <a class="center" href="/inicio"><b>Pedidos</b></a>
-
       <div class="subnav2">
         <a class="subnavbtn2" href="/login"><FaSignOutAlt /></a>
         <div class="subnav-content">

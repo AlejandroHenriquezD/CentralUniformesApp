@@ -14,8 +14,25 @@
     text-align: end;
 }
 
-/* .pedido {
-    border-bottom: solid;
-    border-color:#D6D6D6 ;
-    margin-top: 1%;
-} */
+#tipoTrabajo {
+    margin-top: 1.5em;
+}
+
+#tipoTrabajoDropdown {
+    width: 100%;
+    border-radius: 10px;
+    border: 0px;
+    overflow: hidden;
+}
+
+#tipoTrabajoDropdown button{
+    font-family: 'Noto Sans', sans-serif;
+    text-align: center;
+    border-top: 1px solid rgba(14, 28, 46, 1);
+    height: 2.5em;
+    color: rgba(14, 28, 46, 1);
+    border-radius: 0%;
+    background-color: rgba(241, 232, 223, 1);
+    margin-top: 0px;
+    width: 100%;
+  }

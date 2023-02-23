@@ -35,13 +35,11 @@ const Header = () => {
   };
 
   const onPageLoad = () => {
-      const dropdown = document.getElementById("dropdown");
-      dropdown.classList.add("dropdownHidden");
-    };
+    const dropdown = document.getElementById("dropdown");
+    dropdown.classList.add("dropdownHidden");
+  };
 
   useEffect(() => {
-    
-
     if (document.readyState === 'complete') {
       onPageLoad();
     }

@@ -67,3 +67,14 @@
   background-color: rgba(241, 232, 223, 1);
   text-align: end;
 }
+
+#logoImg {
+  position: absolute;
+  height: 10%;
+  top: 0%;
+  left: 0%;
+}
+
+.elementHidden {
+  opacity: 0;
+}

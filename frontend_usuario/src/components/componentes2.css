@@ -13,13 +13,17 @@
 }
 
 #imgCanvas {
+  position: relative;
+  display: flex;
+  align-items: center;
   height: 90%;
   width: 90%;
   border: 2px solid rgba(111, 183, 76, 1);
+  overflow: hidden;
 }
 
-#imgCanvas img {
-  height: 100%;
+#imgOnCanvas {
+  height: min-content;
   width: 100%;
 }
 
@@ -31,22 +35,31 @@
 }
 
 #dataCanvas button {
-  background-color: rgba(14, 28, 46, 1);
   color:rgb(255, 255, 255);
   width: 100%;
   height: 2.5em;
   border-radius: 10px;
   border: 0px;
   margin-top: 2em;
-  
+  cursor: pointer;
 }
 
 .longButton {
   width: 100%;
+  background-color: rgba(14, 28, 46, 1);
 }
 
 .shortButton {
   width: 40%;
+  background-color: rgba(14, 28, 46, 1);
+}
+
+.redShortButton {
+  background-color: rgba(225, 37, 26, 1);
+}
+
+.redLongButton {
+  background-color: rgba(225, 37, 26, 1);
 }
 
 #lastButtons {

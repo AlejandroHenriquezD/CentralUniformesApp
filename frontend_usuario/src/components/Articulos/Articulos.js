@@ -1,6 +1,4 @@
-import Menu from "../Menu/Menu";
 import "../componentes1.css";
-// import { useNavigate } from 'react-router-dom'
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import Header from "../Header/Header";
@@ -9,32 +7,30 @@ import { Link } from "react-router-dom";
 import Footer from "../Footer/Footer";
 import { Col, Row } from "antd";
 import { useNavigate } from "react-router-dom";
+import authHeader from "../../services/auth-header";
 
-// const Images = require.context('../../backend/public/storage/images', true);
-// const foto = 'backend/public/storage/images/195906camisa_larga.jpg'
+const endpoint = "http://localhost:8000/api";
 
-// const endpoint = "http://localhost:8000/api";
 const Articulos = () => {
-  // const [articulos, setArticulos] = useState([]);
+  const [articulos, setArticulos] = useState([]);
 
-  // useEffect(() => {
-  //   getAllArticulos();
-  // }, []);
+  useEffect(() => {
+    getAllArticulos();
+  }, []);
 
-  // const getAllArticulos = async () => {
-  //   const response = await axios.get(`${endpoint}/articulos`);
-  //   setArticulos(response.data);
-  // };
-  // const navigate = useNavigate()
-
-  // const navigateToArticulos = () => {
-  //     navigate('/articulos');
-  // };
+  const getAllArticulos = async () => {
+    const response = await axios({
+      url: `${endpoint}/articulos`,
+      method: "GET",
+      headers: authHeader(),
+    })
+    setArticulos(response.data);
+  };
 
   const navigate = useNavigate();
 
-  const navigateToArticulo = () => {
-    navigate("/articulo");
+  const navigateToArticulo = (id) => {
+    navigate(`/articulo/${id}`);
   };
 
   return (
@@ -42,103 +38,22 @@ const Articulos = () => {
       <Header />
       <div id="itemsContent">
         <Row justify="start">
+          {articulos.map((articulo) => (
           <Col span={6}>
-            <div className="item" onClick={navigateToArticulo}>
+            <div className="item" onClick={() => navigateToArticulo(articulo.id)}>
               <div className="itemImgContainer">
-                <img src="/img/camiseta_negra.jpg" />
+                <img src={"http://localhost:8000/"+articulo.img} alt=""/>
               </div>
               <div className="itemData">
-                <h4>Camiseta</h4>
-                <h3>7€</h3>
+                <h4>{articulo.nombre}</h4>
+                <h3>{articulo.precio}€</h3>
               </div>
             </div>
           </Col>
-          <Col span={6}>
-            <div className="item" onClick={navigateToArticulo}>
-              <div className="itemImgContainer">
-                <img src="/img/camiseta_negra.jpg" />
-              </div>
-              <div className="itemData">
-                <h4>Camiseta</h4>
-                <h3>7€</h3>
-              </div>
-            </div>
-          </Col>
-          <Col span={6}>
-            <div className="item" onClick={navigateToArticulo}>
-              <div className="itemImgContainer">
-                <img src="/img/camiseta_negra.jpg" />
-              </div>
-              <div className="itemData">
-                <h4>Camiseta</h4>
-                <h3>7€</h3>
-              </div>
-            </div>
-          </Col>
-          <Col span={6}>
-            <div className="item" onClick={navigateToArticulo}>
-              <div className="itemImgContainer">
-                <img src="/img/camiseta_negra.jpg" />
-              </div>
-              <div className="itemData">
-                <h4>Camiseta</h4>
-                <h3>7€</h3>
-              </div>
-            </div>
-          </Col>
-          <Col span={6}>
-            <div className="item" onClick={navigateToArticulo}>
-              <div className="itemImgContainer">
-                <img src="/img/camiseta_negra.jpg" />
-              </div>
-              <div className="itemData">
-                <h4>Camiseta</h4>
-                <h3>7€</h3>
-              </div>
-            </div>
-          </Col>
-          <Col span={6}>
-            <div className="item" onClick={navigateToArticulo}>
-              <div className="itemImgContainer">
-                <img src="/img/camiseta_negra.jpg" />
-              </div>
-              <div className="itemData">
-                <h4>Camiseta</h4>
-                <h3>7€</h3>
-              </div>
-            </div>
-          </Col>
-          <Col span={6}>
-            <div className="item" onClick={navigateToArticulo}>
-              <div className="itemImgContainer">
-                <img src="/img/camiseta_negra.jpg" />
-              </div>
-              <div className="itemData">
-                <h4>Camiseta</h4>
-                <h3>7€</h3>
-              </div>
-            </div>
-          </Col>
+          ))}
         </Row>
         <Footer />
       </div>
-      {/* <Menu />
-      {articulos.map((articulo) => (
-        <div className="articulo">
-          <img className="img1" src={logo} alt="Foto"></img>
-          <p>{articulo.nombre}</p>
-          <p>{articulo.precio} €</p>
-          <p>Talla {articulo.talla}</p>
-          <p>Color {articulo.color} </p>
-          <button className="boton10">
-            <Link to={`/add_articulo/${articulo.id}`} className="lin">
-              Añadir
-            </Link>
-          </button>
-
-          <p></p>
-        </div> */}
-      {/* ))} */}
     </div>
   );
 };
