@@ -145,6 +145,40 @@ Otra ventaja de Laravel es el uso de la arquitectura MVC (Modelo Vista Controlad
 
 Además en Laravel gracias a su ORM Eloquent puede trabajar con cuatro tipos de bases de datos MySQL, SQL, PostgreSQL y SQLite.
 
+En nuestro proyecto hemos optado por desarrollar  una aplicación web esto lo hemos decidido debido a que era la más óptima para nuestro proyecto. Debido a sus ventajas
+
+Las principales ventajas que nos hicieron optar por ella son, su rendimiento es mucho mayor a una app que requiera de una instalación ya que las aplicaciones web usan menos recursos, otra gran ventaja es que no se obliga a usar determinado sistema operativo. Otra gran característica es su posibilidad de desplegarse en todos los dispositivos que tengan un navegador (Siempre que la app sea responsive).
+
+En contraposición la mayor desventaja que podemos destacar es que la app será dependiente de conexión a internet, otra desventaja es que si la parte frontend no está funcionando correctamente la parte del backend no servirá de nada hasta que la otra funcione
+
+
+Otra opción son las apps nativas
+
+Las aplicaciones nativas son una buena opción aunque no era la más ajustada a nuestro proyecto 
+
+Una de sus grandes ventajas es que al ser desarrollada para un sistema operativo concreto aprovecha en su totalidad el potencial del dispositivo aumentando su rapidez, esta característica hace que la experiencia de usuario sea mucho mejor. En comparación a las apps web, las aplicaciones nativas no necesitan de internet esto para un dispositivo portátil como un móvil es una gran ventaja ya que no siempre estarás en un lugar con conexión.
+
+Hablando de las desventajas podemos destacar que las apps nativas son más complejas de desarrollar, lo cual se traduce en más tiempo de desarrollo y necesitaremos un equipo experto en apps nativas
+
+
+Otra posibilidad son las apps híbridas
+
+Las aplicaciones híbridas son un paso adelante respecto a las nativas, ya que estas sí que pueden ser desplegadas en distintos sistemas operativos, al igual que las nativas no eran la opción más ajustada a nuestro proyecto
+
+Por lo tanto, una gran ventaja respecto a las nativas es que su coste es menor. Una ventaja que sería muy útil para nosotros es que la mayoría están escritos en html el cual dominamos bastante. Otra ventaja es que las apps híbridas permiten trabajar sin necesidad de wifi usando bases de datos locales.
+
+En contraparte muchas de las ventajas de las nativas aquí aparecen como desventajas, vemos su rendimiento reducido, sus funcionalidades pueden no ser muy complejas y una experiencia de usuario peor debido a que no puede adaptarse a todas las plataformas en su totalidad.
+
+Por último las apps PWA (Aplicación web progresiva)
+
+Las aplicaciones pwa son una buena opción también para nuestro proyecto pero al final nos decidimos por las web apps porque nos resultó más fácil su desarrollo
+
+Hablando de sus ventajas podemos ver que son multiplataforma, no necesitan instalación, su velocidad de carga es similar al de las apps nativas, superior a la de las aplicaciones web.
+
+Sobre las desventajas lo primero que hay que destacar es su uso limitado hoy en día siendo esto una dificultad para buscar información, además al igual que las apps híbridas no son capaces de usar todas las funcionalidades del dispositivo
+
+
+
 
 # Usabilidad
 Tras implementar la aplicación procedemos a estudiar los aspectos de usabilidad en la misma.
