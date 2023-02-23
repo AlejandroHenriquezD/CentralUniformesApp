@@ -3,6 +3,8 @@ import axios from "axios";
 import { notification } from "antd";
 import { useNavigate } from "react-router-dom";
 import "../../components/form.css";
+import Menu from '../../components/menu/Menu';
+import authHeader from "../../services/auth-header";
 
 const endpoint = "http://localhost:8000/api/register";
 
@@ -37,15 +39,27 @@ const CreateUsuario = () => {
       ) {
         setError(true);
       } else {
-        await axios.post(endpoint, {
-          dni: dni,
-          name: btoa(name),
-          password: btoa(password),
-          confirm_password: btoa(confirm_password),
-          email: email,
-          rol: rol,
-        });
-        navigate("/show_usuarios");
+        // await axios.post(endpoint, {
+        //   dni: dni,
+        //   name: btoa(name),
+        //   password: btoa(password),
+        //   confirm_password: btoa(confirm_password),
+        //   email: email,
+        //   rol: rol,
+        // });
+        await axios({
+          url: `${endpoint}`,
+          method: "POST",
+          headers: authHeader(),
+          data: {
+            dni: dni,
+            name: btoa(name),
+            password: btoa(password),
+            confirm_password: btoa(confirm_password),
+            email: email,
+            rol: rol,
+          }
+        }).then(() => navigate("/show_usuarios"));
       }
     } catch (error) {
       alertaError("error");
@@ -55,6 +69,7 @@ const CreateUsuario = () => {
 
   return (
     <div>
+      <Menu />
       {contextHolder}
       <h3>Crear Usuario</h3>
       <form onSubmit={store}>

@@ -3,6 +3,8 @@ import axios from "axios";
 import { notification } from "antd";
 import { useNavigate, useParams } from "react-router-dom";
 import "../../components/form.css";
+import Menu from '../../components/menu/Menu';
+import authHeader from "../../services/auth-header";
 
 const endpoint = "http://localhost:8000/api/pedido/";
 const endpoint2 = "http://localhost:8000/api";
@@ -43,15 +45,27 @@ const EditPedido = () => {
       ) {
         setError(true);
       } else {
-        await axios.put(`${endpoint}${id}`, {
-          observaciones: observaciones,
-          unidades: unidades,
-          id_cliente: id_cliente,
-          id_empleado: id_empleado,
-          id_trabajo: id_trabajo,
-          id_diseño: id_diseño,
-        });
-        navigate("/show_pedidos");
+        // await axios.put(`${endpoint}${id}`, {
+        //   observaciones: observaciones,
+        //   unidades: unidades,
+        //   id_cliente: id_cliente,
+        //   id_empleado: id_empleado,
+        //   id_trabajo: id_trabajo,
+        //   id_diseño: id_diseño,
+        // });
+        await axios({
+          url: `${endpoint}${id}`,
+          method: "PUT",
+          headers: authHeader(),
+          data: {
+            observaciones: observaciones,
+            unidades: unidades,
+            id_cliente: id_cliente,
+            id_empleado: id_empleado,
+            id_trabajo: id_trabajo,
+            id_diseño: id_diseño,
+          }
+        }).then(() => navigate("/show_pedidos"));
       }
     } catch (error) {
       alertaError("error");
@@ -61,14 +75,20 @@ const EditPedido = () => {
   useEffect(() => {
     const getPedidoById = async () => {
       try {
-        const response = await axios.get(`${endpoint}${id}`);
-        setObservaciones(response.data.observaciones);
-        setUnidades(response.data.unidades);
-        setId_Cliente(response.data.id_cliente);
-        setId_Empleado(response.data.id_empleado);
-        setId_Trabajo(response.data.id_trabajo);
-        setId_Diseño(response.data.id_diseño);
-        getAll();
+        // const response = await axios.get(`${endpoint}${id}`);
+        await axios({
+          url: `${endpoint}${id}`,
+          method: "GET",
+          headers: authHeader(),   
+        }).then((response) => {
+          setObservaciones(response.data.observaciones);
+          setUnidades(response.data.unidades);
+          setId_Cliente(response.data.id_cliente);
+          setId_Empleado(response.data.id_empleado);
+          setId_Trabajo(response.data.id_trabajo);
+          setId_Diseño(response.data.id_diseño);
+          getAll();
+        });
       } catch (error) {
         alertaError("error");
       }
@@ -76,14 +96,30 @@ const EditPedido = () => {
 
     const getAll = async () => {
       try {
-        const response = await axios.get(`${endpoint2}/clients`);
-        const response2 = await axios.get(`${endpoint2}/empleados`);
-        const response3 = await axios.get(`${endpoint2}/trabajos`);
-        const response4 = await axios.get(`${endpoint2}/diseños`);
-        setClientes(response.data);
-        setEmpleados(response2.data);
-        setTrabajos(response3.data);
-        setDiseños(response4.data);
+        // const response = await axios.get(`${endpoint2}/clients`);
+        // const response2 = await axios.get(`${endpoint2}/empleados`);
+        // const response3 = await axios.get(`${endpoint2}/trabajos`);
+        // const response4 = await axios.get(`${endpoint2}/diseños`);
+        await axios({
+          url: `${endpoint2}/clients`,
+          method: "GET",
+          headers: authHeader(),
+        }).then((response) => setClientes(response.data));
+        await axios({
+          url: `${endpoint2}/empleados`,
+          method: "GET",
+          headers: authHeader(),
+        }).then((response) => setEmpleados(response.data));
+        await axios({
+          url: `${endpoint2}/trabajos`,
+          method: "GET",
+          headers: authHeader(),
+        }).then((response) => setTrabajos(response.data));
+        await axios({
+          url: `${endpoint2}/diseños`,
+          method: "GET",
+          headers: authHeader(),
+        }).then((response) => setDiseños(response.data));
       } catch (error) {
         alertaError("error");
       }
@@ -93,6 +129,7 @@ const EditPedido = () => {
   }, []);
   return (
     <div>
+      <Menu />
       {contextHolder}
       <h3>Editar Pedido</h3>
       <form onSubmit={update}>

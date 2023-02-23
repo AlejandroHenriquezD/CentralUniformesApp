@@ -3,6 +3,8 @@ import axios from "axios";
 import { notification } from "antd";
 import { useNavigate, useParams } from "react-router-dom";
 import "../../components/form.css";
+import Menu from '../../components/menu/Menu';
+import authHeader from "../../services/auth-header";
 
 const endpoint = "http://localhost:8000/api/logo/";
 const endpoint2 = "http://localhost:8000/api";
@@ -31,12 +33,21 @@ const EditLogo = () => {
       if (id_user.length === 0 || img.length === 0) {
         setError(true);
       } else {
-        await axios.put(`${endpoint}${id}`, {
-          nombre: nombre,
-          img: img,
-          id_user: id_user,
-        });
-        navigate("/show_logos");
+        // await axios.put(`${endpoint}${id}`, {
+        //   nombre: nombre,
+        //   img: img,
+        //   id_user: id_user,
+        // });
+        await axios({
+          url: `${endpoint}${id}`,
+          method: "PUT",
+          headers: authHeader(),
+          data: {
+            nombre: nombre,
+            img: img,
+            id_user: id_user,
+          }
+        }).then(() => navigate("/show_logos"));
       }
     } catch (error) {
       alertaError("error");
@@ -46,19 +57,29 @@ const EditLogo = () => {
   useEffect(() => {
     const getLogoById = async () => {
       try {
-        const response = await axios.get(`${endpoint}${id}`);
-        setNombre(response.data.nombre);
-        setImg(response.data.img);
-        setId_User(response.data.id_user);
-        getAll();
+        // const response = await axios.get(`${endpoint}${id}`);
+        await axios({
+          url: `${endpoint}${id}`,
+          method: "GET",
+          headers: authHeader(),   
+        }).then((response) => {
+          setNombre(response.data.nombre);
+          setImg(response.data.img);
+          setId_User(response.data.id_user);
+          getAll();
+        });
       } catch (error) {
         alertaError("error");
       }
     };
     const getAll = async () => {
       try {
-        const response = await axios.get(`${endpoint2}/users`);
-        setUsuarios(response.data);
+        // const response = await axios.get(`${endpoint2}/users`);
+        await axios({
+          url: `${endpoint2}/users`,
+          method: "GET",
+          headers: authHeader(),
+        }).then((response) => setUsuarios(response.data));
       } catch (error) {
         alertaError("error");
       }
@@ -69,6 +90,7 @@ const EditLogo = () => {
 
   return (
     <div>
+      <Menu />
       {contextHolder}
       <h3>Editar Logo</h3>
       <form onSubmit={update} encType="multipart/form-data">

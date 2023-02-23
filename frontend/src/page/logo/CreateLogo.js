@@ -3,6 +3,8 @@ import axios from "axios";
 import { notification } from "antd";
 import { useNavigate } from "react-router-dom";
 import "../../components/form.css";
+import Menu from '../../components/menu/Menu';
+import authHeader from "../../services/auth-header";
 
 const endpoint = "http://localhost:8000/api/logo";
 const endpoint2 = "http://localhost:8000/api";
@@ -33,8 +35,14 @@ const CreateLogo = () => {
         fData.append("nombre", img.name);
         fData.append("img", document.getElementById("imgForm").files[0]);
         fData.append("id_user", id_user);
-        axios.post(endpoint, fData);
-        navigate("/show_logos");
+        // axios.post(endpoint, fData);
+        // navigate("/show_logos");
+        await axios({
+          url: `${endpoint}`,
+          method: "POST",
+          headers: authHeader(),
+          data: fData
+        }).then(() => navigate("/show_logos"));
       }
     } catch (error) {
       alertaError("error");
@@ -47,8 +55,12 @@ const CreateLogo = () => {
 
   const getAll = async () => {
     try {
-      const response = await axios.get(`${endpoint2}/users`);
-      setUsuarios(response.data);
+      // const response = await axios.get(`${endpoint2}/users`);
+      await axios({
+        url: `${endpoint2}/users`,
+        method: "GET",
+        headers: authHeader(),
+      }).then((response) => setUsuarios(response.data));
     } catch (error) {
       alertaError("error");
     }
@@ -56,6 +68,7 @@ const CreateLogo = () => {
 
   return (
     <div>
+      <Menu />
       {contextHolder}
       <h3>Crear Logo</h3>
       <form onSubmit={store} encType="multipart/form-data">

@@ -3,6 +3,8 @@ import axios from "axios";
 import { notification } from "antd";
 import { useNavigate, useParams } from "react-router-dom";
 import "../../components/form.css";
+import Menu from '../../components/menu/Menu';
+import authHeader from "../../services/auth-header";
 
 const endpoint = "http://localhost:8000/api/diseño/";
 const endpoint2 = "http://localhost:8000/api";
@@ -46,17 +48,31 @@ const EditDiseño = () => {
       ) {
         setError(true);
       } else {
-        await axios.put(`${endpoint}${id}`, {
-          nombre: nombre,
-          img: img,
-          posicion: posicion,
-          tamaño: tamaño,
-          favorito: favorito,
-          id_user: id_user,
-          id_logo: id_logo,
-          id_articulo: id_articulo,
-        });
-        navigate("/show_diseños");
+        // await axios.put(`${endpoint}${id}`, {
+        //   nombre: nombre,
+        //   img: img,
+        //   posicion: posicion,
+        //   tamaño: tamaño,
+        //   favorito: favorito,
+        //   id_user: id_user,
+        //   id_logo: id_logo,
+        //   id_articulo: id_articulo,
+        // });
+        await axios({
+          url: `${endpoint}${id}`,
+          method: "PUT",
+          headers: authHeader(),
+          data: {
+            nombre: nombre,
+            img: img,
+            posicion: posicion,
+            tamaño: tamaño,
+            favorito: favorito,
+            id_user: id_user,
+            id_logo: id_logo,
+            id_articulo: id_articulo,
+          }
+        }).then(() => navigate("/show_diseños"));
       }
     } catch (error) {
       alertaError("error");
@@ -65,28 +81,46 @@ const EditDiseño = () => {
   useEffect(() => {
     const getDiseñoById = async () => {
       try {
-        const response = await axios.get(`${endpoint}${id}`);
-        setNombre(response.data.nombre);
-        setImg(response.data.img);
-        setPosicion(response.data.posicion);
-        setTamaño(response.data.tamaño);
-        setFavorito(response.data.favorito);
-        setId_User(response.data.id_user);
-        setId_Logo(response.data.id_logo);
-        setId_Articulo(response.data.id_articulo);
-        getAll();
+        // const response = await axios.get(`${endpoint}${id}`);
+        await axios({
+          url: `${endpoint}${id}`,
+          method: "GET",
+          headers: authHeader(),   
+        }).then((response) => {
+          setNombre(response.data.nombre);
+          setImg(response.data.img);
+          setPosicion(response.data.posicion);
+          setTamaño(response.data.tamaño);
+          setFavorito(response.data.favorito);
+          setId_User(response.data.id_user);
+          setId_Logo(response.data.id_logo);
+          setId_Articulo(response.data.id_articulo);
+          getAll();
+        });
       } catch (error) {
         alertaError("error");
       }
     };
     const getAll = async () => {
       try {
-        const response = await axios.get(`${endpoint2}/users`);
-        const response2 = await axios.get(`${endpoint2}/logos`);
-        const response3 = await axios.get(`${endpoint2}/articulos`);
-        setUsuarios(response.data);
-        setLogos(response2.data);
-        setArticulos(response3.data);
+        // const response = await axios.get(`${endpoint2}/users`);
+        // const response2 = await axios.get(`${endpoint2}/logos`);
+        // const response3 = await axios.get(`${endpoint2}/articulos`);
+        await axios({
+          url: `${endpoint2}/users`,
+          method: "GET",
+          headers: authHeader(),
+        }).then((response) => setUsuarios(response.data));
+        await axios({
+          url: `${endpoint2}/logos`,
+          method: "GET",
+          headers: authHeader(),
+        }).then((response) => setLogos(response.data));
+        await axios({
+          url: `${endpoint2}/articulos`,
+          method: "GET",
+          headers: authHeader(),
+        }).then((response) => setArticulos(response.data));
       } catch (error) {
         alertaError("error");
       }
@@ -97,6 +131,7 @@ const EditDiseño = () => {
 
   return (
     <div>
+      <Menu />
       {contextHolder}
       <h3>Editar Diseño</h3>
       <form onSubmit={update}>

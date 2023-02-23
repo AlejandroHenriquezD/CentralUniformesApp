@@ -3,6 +3,8 @@ import axios from "axios";
 import { notification } from "antd";
 import { useNavigate } from "react-router-dom";
 import "../../components/form.css";
+import Menu from '../../components/menu/Menu';
+import authHeader from "../../services/auth-header";
 
 const endpoint = "http://localhost:8000/api/cliente";
 const endpoint2 = "http://localhost:8000/api";
@@ -34,8 +36,12 @@ const CreateCliente = () => {
 
   const getAll = async () => {
     try {
-      const response = await axios.get(`${endpoint2}/clients`);
-      setClientes(response.data);
+      // const response = await axios.get(`${endpoint2}/clients`);
+      await axios({
+        url: `${endpoint2}/clients`,
+        method: "GET",
+        headers: authHeader(),
+      }).then((response) => setClientes(response.data));
     } catch (error) {
       alertaError("error");
     }
@@ -54,16 +60,29 @@ const CreateCliente = () => {
       ) {
         setError(true);
       } else {
-        await axios.post(endpoint, {
-          provincia: provincia,
-          codigo_postal: codigo_postal,
-          municipio: municipio,
-          direccion: direccion,
-          telefono: telefono,
-          observaciones: observaciones,
-          id_user: id_user,
-        });
-        navigate("/show_clientes");
+        // await axios.post(endpoint, {
+        //   provincia: provincia,
+        //   codigo_postal: codigo_postal,
+        //   municipio: municipio,
+        //   direccion: direccion,
+        //   telefono: telefono,
+        //   observaciones: observaciones,
+        //   id_user: id_user,
+        // });
+        await axios({
+          url: `${endpoint}`,
+          method: "POST",
+          headers: authHeader(),
+          data: {
+            provincia: provincia,
+            codigo_postal: codigo_postal,
+            municipio: municipio,
+            direccion: direccion,
+            telefono: telefono,
+            observaciones: observaciones,
+            id_user: id_user,
+          }
+        }).then(() => navigate("/show_clientes"));
       }
     } catch (error) {
       alertaError("error");
@@ -73,6 +92,7 @@ const CreateCliente = () => {
   return (
     <div>
       {contextHolder}
+      <Menu />
       <h3>Crear Cliente</h3>
       <form onSubmit={store}>
         <div className="mb-3">

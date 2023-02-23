@@ -3,6 +3,8 @@ import axios from "axios";
 import { notification } from "antd";
 import logo_pequeño from "../../components/logo_pequeño.png";
 import { Link } from "react-router-dom";
+import Menu from '../../components/menu/Menu';
+import authHeader from "../../services/auth-header";
 
 const endpoint = "http://localhost:8000/api";
 
@@ -23,8 +25,12 @@ const ShowPedidos = () => {
 
   const getAllPedidos = async () => {
     try {
-      const response = await axios.get(`${endpoint}/pedidos`);
-      setPedidos(response.data);
+      // const response = await axios.get(`${endpoint}/pedidos`);
+      await axios({
+        url: `${endpoint}/pedidos`,
+        method: "GET",
+        headers: authHeader(),
+      }).then((response) => setPedidos(response.data));
     } catch (error) {
       alertaError("error");
     }
@@ -32,8 +38,13 @@ const ShowPedidos = () => {
 
   const deletePedido = async (id) => {
     try {
-      await axios.delete(`${endpoint}/pedido/${id}`);
-      getAllPedidos();
+      // await axios.delete(`${endpoint}/pedido/${id}`);
+      // getAllPedidos();
+      await axios({
+        url: `${endpoint}/pedido/${id}`,
+        method: "DELETE",
+        headers: authHeader(),
+      }).then(() => getAllPedidos());
     } catch (error) {
       alertaError("error");
     }
@@ -41,6 +52,7 @@ const ShowPedidos = () => {
 
   return (
     <div>
+      <Menu />
       {contextHolder}
       <div className="d-grip gap-2">
         <Link

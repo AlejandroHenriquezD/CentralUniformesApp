@@ -3,6 +3,8 @@ import axios from "axios";
 import { notification } from "antd";
 import logo_pequeño from "../../components/logo_pequeño.png";
 import { Link } from "react-router-dom";
+import Menu from '../../components/menu/Menu';
+import authHeader from "../../services/auth-header";
 
 const endpoint = "http://localhost:8000/api";
 
@@ -23,8 +25,12 @@ const ShowClientes = () => {
 
   const getAllClientes = async () => {
     try {
-      const response = await axios.get(`${endpoint}/clientes`);
-      setClientes(response.data);
+      // const response = await axios.get(`${endpoint}/clientes`);
+      await axios({
+        url: `${endpoint}/clientes`,
+        method: "GET",
+        headers: authHeader(),
+      }).then((response) => setClientes(response.data));
     } catch (error) {
       alertaError("error");
     }
@@ -32,8 +38,12 @@ const ShowClientes = () => {
 
   const deleteCliente = async (id) => {
     try {
-      await axios.delete(`${endpoint}/cliente/${id}`);
-      getAllClientes();
+      // await axios.delete(`${endpoint}/cliente/${id}`);
+      await axios({
+        url: `${endpoint}/cliente/${id}`,
+        method: "DELETE",
+        headers: authHeader(),
+      }).then(() => getAllClientes());
     } catch (error) {
       alertaError("error");
     }
@@ -41,6 +51,7 @@ const ShowClientes = () => {
 
   return (
     <div>
+      <Menu />
       {contextHolder}
       <div className="d-grip gap-2">
         <Link

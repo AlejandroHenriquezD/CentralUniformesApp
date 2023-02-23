@@ -3,6 +3,8 @@ import axios from "axios";
 import { notification } from "antd";
 import { useNavigate } from "react-router-dom";
 import "../../components/form.css";
+import Menu from '../../components/menu/Menu';
+import authHeader from "../../services/auth-header";
 
 const endpoint = "http://localhost:8000/api/trabajo";
 
@@ -29,11 +31,19 @@ const CreateTrabajo = () => {
       ) {
         setError(true);
       } else {
-        await axios.post(endpoint, {
-          nombre: nombre,
-          descripcion: descripcion,
-        });
-        navigate("/show_trabajos");
+        // await axios.post(endpoint, {
+        //   nombre: nombre,
+        //   descripcion: descripcion,
+        // });
+        await axios({
+          url: `${endpoint}`,
+          method: "POST",
+          headers: authHeader(),
+          data: {
+            nombre: nombre,
+            descripcion: descripcion,
+          }
+        }).then(() => navigate("/show_trabajos"));
       }
     } catch (error) {
       alertaError("error");
@@ -42,6 +52,7 @@ const CreateTrabajo = () => {
 
   return (
     <div>
+      <Menu />
       {contextHolder}
       <h3>Crear Trabajo</h3>
       <form onSubmit={store}>
