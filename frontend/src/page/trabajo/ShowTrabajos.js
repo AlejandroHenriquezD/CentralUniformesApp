@@ -1,29 +1,47 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import { notification } from "antd";
 import logo_pequeño from "../../components/logo_pequeño.png";
 import { Link } from "react-router-dom";
 
 const endpoint = "http://localhost:8000/api";
 
 const ShowTrabajos = () => {
+  const [api, contextHolder] = notification.useNotification();
   const [trabajos, setTrabajos] = useState([]);
+
+  const alertaError = (type) => {
+    api[type]({
+      message: "ERROR",
+      description: "Error al acceder a la base de datos",
+    });
+  };
 
   useEffect(() => {
     getAllTrabajos();
   }, []);
 
   const getAllTrabajos = async () => {
-    const response = await axios.get(`${endpoint}/trabajos`);
-    setTrabajos(response.data);
+    try {
+      const response = await axios.get(`${endpoint}/trabajos`);
+      setTrabajos(response.data);
+    } catch (error) {
+      alertaError("error");
+    }
   };
 
   const deleteTrabajo = async (id) => {
-    await axios.delete(`${endpoint}/trabajo/${id}`);
-    getAllTrabajos();
+    try {
+      await axios.delete(`${endpoint}/trabajo/${id}`);
+      getAllTrabajos();
+    } catch (error) {
+      alertaError("error");
+    }
   };
 
   return (
     <div className="back">
+      {contextHolder}
       <div className="d-grip gap-2">
         <Link
           to="/create_trabajo"

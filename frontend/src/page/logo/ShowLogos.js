@@ -1,31 +1,47 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-
+import { notification } from "antd";
 import logo_pequeño from "../../components/logo_pequeño.png";
-
 import { Link } from "react-router-dom";
-
 import "../styles.css";
-
 const endpoint = "http://localhost:8000/api";
+
 const ShowLogos = () => {
+  const [api, contextHolder] = notification.useNotification();
   const [logos, setLogos] = useState([]);
+
+  const alertaError = (type) => {
+    api[type]({
+      message: "ERROR",
+      description: "Error al acceder a la base de datos",
+    });
+  };
+
   useEffect(() => {
     getAllLogos();
   }, []);
 
   const getAllLogos = async () => {
-    const response = await axios.get(`${endpoint}/logos`);
-    setLogos(response.data);
+    try {
+      const response = await axios.get(`${endpoint}/logos`);
+      setLogos(response.data);
+    } catch (error) {
+      alertaError("error");
+    }
   };
 
   const deleteLogo = async (id) => {
-    await axios.delete(`${endpoint}/logo/${id}`);
-    getAllLogos();
+    try {
+      await axios.delete(`${endpoint}/logo/${id}`);
+      getAllLogos();
+    } catch (error) {
+      alertaError("error");
+    }
   };
 
   return (
     <div>
+      {contextHolder}
       <div className="d-grip gap-2">
         <Link
           to="/create_logo"
