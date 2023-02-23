@@ -23,7 +23,10 @@ const CreateTrabajo = () => {
   const store = async (e) => {
     try {
       e.preventDefault();
-      if (nombre.length === 0 || descripcion.length === 0) {
+      if (
+        nombre.length === 0 || 
+        descripcion.length === 0
+      ) {
         setError(true);
       } else {
         await axios.post(endpoint, {
