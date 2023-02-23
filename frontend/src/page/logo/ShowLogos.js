@@ -4,6 +4,9 @@ import { notification } from "antd";
 import logo_pequeño from "../../components/logo_pequeño.png";
 import { Link } from "react-router-dom";
 import "../styles.css";
+import Menu from '../../components/menu/Menu';
+import authHeader from "../../services/auth-header";
+
 const endpoint = "http://localhost:8000/api";
 
 const ShowLogos = () => {
@@ -23,8 +26,12 @@ const ShowLogos = () => {
 
   const getAllLogos = async () => {
     try {
-      const response = await axios.get(`${endpoint}/logos`);
-      setLogos(response.data);
+      // const response = await axios.get(`${endpoint}/logos`);
+      await axios({
+        url: `${endpoint}/logos`,
+        method: "GET",
+        headers: authHeader(),
+      }).then((response) => setLogos(response.data));
     } catch (error) {
       alertaError("error");
     }
@@ -32,8 +39,12 @@ const ShowLogos = () => {
 
   const deleteLogo = async (id) => {
     try {
-      await axios.delete(`${endpoint}/logo/${id}`);
-      getAllLogos();
+      // await axios.delete(`${endpoint}/logo/${id}`);
+      await axios({
+        url: `${endpoint}/logo/${id}`,
+        method: "DELETE",
+        headers: authHeader(),
+      }).then(() => getAllLogos());
     } catch (error) {
       alertaError("error");
     }
@@ -41,6 +52,7 @@ const ShowLogos = () => {
 
   return (
     <div>
+      <Menu />
       {contextHolder}
       <div className="d-grip gap-2">
         <Link

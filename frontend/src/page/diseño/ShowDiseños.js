@@ -3,6 +3,8 @@ import axios from "axios";
 import { notification } from "antd";
 import logo_pequeño from "../../components/logo_pequeño.png";
 import { Link } from "react-router-dom";
+import Menu from '../../components/menu/Menu';
+import authHeader from "../../services/auth-header";
 
 const endpoint = "http://localhost:8000/api";
 
@@ -23,8 +25,12 @@ const ShowDiseños = () => {
 
   const getAllDiseños = async () => {
     try {
-      const response = await axios.get(`${endpoint}/diseños`);
-      setDiseños(response.data);
+      // const response = await axios.get(`${endpoint}/diseños`);
+      await axios({
+        url: `${endpoint}/diseños`,
+        method: "GET",
+        headers: authHeader(),
+      }).then((response) => setDiseños(response.data));
     } catch (error) {
       alertaError("error");
     }
@@ -32,8 +38,12 @@ const ShowDiseños = () => {
 
   const deleteDiseño = async (id) => {
     try {
-      await axios.delete(`${endpoint}/diseño/${id}`);
-      getAllDiseños();
+      // await axios.delete(`${endpoint}/diseño/${id}`);
+      await axios({
+        url: `${endpoint}/diseño/${id}`,
+        method: "DELETE",
+        headers: authHeader(),
+      }).then(() => getAllDiseños());
     } catch (error) {
       alertaError("error");
     }
@@ -41,6 +51,7 @@ const ShowDiseños = () => {
 
   return (
     <div>
+      <Menu />
       {contextHolder}
       <div className="d-grip gap-2">
         <Link

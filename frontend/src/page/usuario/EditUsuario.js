@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useNavigate, useParams } from "react-router-dom";
 import "../../components/form.css";
+import Menu from '../../components/menu/Menu';
+import authHeader from "../../services/auth-header";
 
 const endpoint = "http://localhost:8000/api/user/";
 
@@ -16,31 +18,50 @@ const EditUsuario = () => {
 
   const update = async (e) => {
     e.preventDefault();
-    await axios.put(`${endpoint}${id}`, {
-      dni: dni,
-      name: btoa(name),
-      password: btoa(password),
-      // confirm_password: confirm_password,
-      email: email,
-      rol: rol,
-    });
-    navigate("/Show_usuarios");
+    // await axios.put(`${endpoint}${id}`, {
+    //   dni: dni,
+    //   name: btoa(name),
+    //   password: btoa(password),
+    //   // confirm_password: confirm_password,
+    //   email: email,
+    //   rol: rol,
+    // });
+    await axios({
+      url: `${endpoint}${id}`,
+      method: "PUT",
+      headers: authHeader(),
+      data: {
+        dni: dni,
+        name: btoa(name),
+        password: btoa(password),
+        // confirm_password: confirm_password,
+        email: email,
+        rol: rol,
+      }
+    }).then(() => navigate("/Show_usuarios"));
   };
 
   useEffect(() => {
     const getUsuarioById = async () => {
-      const response = await axios.get(`${endpoint}${id}`);
-      setDni(response.data.dni);
-      setName(response.data.name);
-      setPassword(response.data.password);
-      setEmail(response.data.email);
-      setRol(response.data.rol);
+      // const response = await axios.get(`${endpoint}${id}`);
+      await axios({
+        url: `${endpoint}${id}`,
+        method: "GET",
+        headers: authHeader(),   
+      }).then((response) => {
+        setDni(response.data.dni);
+        setName(response.data.name);
+        setPassword(response.data.password);
+        setEmail(response.data.email);
+        setRol(response.data.rol);
+      });
     };
     getUsuarioById();
     //eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   return (
     <div>
+      <Menu />
       <h3>Editar Usuario</h3>
       <form onSubmit={update}>
         <div className="mb-3">

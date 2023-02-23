@@ -3,6 +3,8 @@ import axios from "axios";
 import { notification } from "antd";
 import { useNavigate } from "react-router-dom";
 import "../../components/form.css";
+import Menu from '../../components/menu/Menu';
+import authHeader from "../../services/auth-header";
 
 const endpoint = "http://localhost:8000/api/diseño";
 const endpoint2 = "http://localhost:8000/api";
@@ -46,16 +48,29 @@ const CreateDiseño = () => {
       ) {
         setError(true);
       } else {
-        await axios.post(endpoint, {
-          nombre: nombre,
-          posicion: posicion,
-          tamaño: tamaño,
-          favorito: favorito,
-          id_user: id_user,
-          id_logo: id_logo,
-          id_articulo: id_articulo,
-        });
-        navigate("/show_diseños");
+        // await axios.post(endpoint, {
+        //   nombre: nombre,
+        //   posicion: posicion,
+        //   tamaño: tamaño,
+        //   favorito: favorito,
+        //   id_user: id_user,
+        //   id_logo: id_logo,
+        //   id_articulo: id_articulo,
+        // });
+        await axios({
+          url: `${endpoint}`,
+          method: "POST",
+          headers: authHeader(),
+          data: {
+            nombre: nombre,
+            posicion: posicion,
+            tamaño: tamaño,
+            favorito: favorito,
+            id_user: id_user,
+            id_logo: id_logo,
+            id_articulo: id_articulo,
+          }
+        }).then(() => navigate("/show_diseños"));
       }
     } catch (error) {
       alertaError("error");
@@ -68,12 +83,24 @@ const CreateDiseño = () => {
 
   const getAll = async () => {
     try {
-      const response = await axios.get(`${endpoint2}/users`);
-      const response2 = await axios.get(`${endpoint2}/logos`);
-      const response3 = await axios.get(`${endpoint2}/articulos`);
-      setUsuarios(response.data);
-      setLogos(response2.data);
-      setArticulos(response3.data);
+      // const response = await axios.get(`${endpoint2}/users`);
+      // const response2 = await axios.get(`${endpoint2}/logos`);
+      // const response3 = await axios.get(`${endpoint2}/articulos`);
+      await axios({
+        url: `${endpoint2}/users`,
+        method: "GET",
+        headers: authHeader(),
+      }).then((response) => setUsuarios(response.data));
+      await axios({
+        url: `${endpoint2}/logos`,
+        method: "GET",
+        headers: authHeader(),
+      }).then((response) => setLogos(response.data));
+      await axios({
+        url: `${endpoint2}/articulos`,
+        method: "GET",
+        headers: authHeader(),
+      }).then((response) => setArticulos(response.data));
     } catch (error) {
       alertaError("error");
     }
@@ -81,6 +108,7 @@ const CreateDiseño = () => {
 
   return (
     <div>
+      <Menu />
       {contextHolder}
       <h3>Crear Diseño</h3>
       <form onSubmit={store}>

@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import logo_pequeño from "../../components/logo_pequeño.png";
 import { Link } from "react-router-dom";
+import Menu from '../../components/menu/Menu';
+import authHeader from "../../services/auth-header";
 
 const endpoint = "http://localhost:8000/api";
 
@@ -13,16 +15,25 @@ const ShowUsuarios = () => {
   }, []);
 
   const getAllUsuarios = async () => {
-    const response = await axios.get(`${endpoint}/users`);
-    setUsuarios(response.data);
+    // const response = await axios.get(`${endpoint}/users`);
+    await axios({
+      url: `${endpoint}/users`,
+      method: "GET",
+      headers: authHeader(),
+    }).then((response) => setUsuarios(response.data));
   };
 
   const deleteUsuario = async (id) => {
-    await axios.delete(`${endpoint}/user/${id}`);
-    getAllUsuarios();
+    // await axios.delete(`${endpoint}/user/${id}`);
+    await axios({
+      url: `${endpoint}/user/${id}`,
+      method: "DELETE",
+      headers: authHeader(),
+    }).then(() => getAllUsuarios());
   };
   return (
     <div>
+      <Menu />
       <div className="d-grip gap-2">
         <Link
           to="/create_usuario"

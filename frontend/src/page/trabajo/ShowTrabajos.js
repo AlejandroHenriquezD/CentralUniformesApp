@@ -3,6 +3,8 @@ import axios from "axios";
 import { notification } from "antd";
 import logo_pequeño from "../../components/logo_pequeño.png";
 import { Link } from "react-router-dom";
+import Menu from '../../components/menu/Menu';
+import authHeader from "../../services/auth-header";
 
 const endpoint = "http://localhost:8000/api";
 
@@ -23,8 +25,12 @@ const ShowTrabajos = () => {
 
   const getAllTrabajos = async () => {
     try {
-      const response = await axios.get(`${endpoint}/trabajos`);
-      setTrabajos(response.data);
+      // const response = await axios.get(`${endpoint}/trabajos`);
+      await axios({
+        url: `${endpoint}/trabajos`,
+        method: "GET",
+        headers: authHeader(),
+      }).then((response) => setTrabajos(response.data));
     } catch (error) {
       alertaError("error");
     }
@@ -32,8 +38,12 @@ const ShowTrabajos = () => {
 
   const deleteTrabajo = async (id) => {
     try {
-      await axios.delete(`${endpoint}/trabajo/${id}`);
-      getAllTrabajos();
+      // await axios.delete(`${endpoint}/trabajo/${id}`);
+      await axios({
+        url: `${endpoint}/trabajo/${id}`,
+        method: "DELETE",
+        headers: authHeader(),
+      }).then(() => getAllTrabajos());
     } catch (error) {
       alertaError("error");
     }
@@ -41,6 +51,7 @@ const ShowTrabajos = () => {
 
   return (
     <div className="back">
+      <Menu />
       {contextHolder}
       <div className="d-grip gap-2">
         <Link

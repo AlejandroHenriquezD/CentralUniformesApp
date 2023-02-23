@@ -3,6 +3,8 @@ import axios from "axios";
 import { notification } from "antd";
 import { useNavigate } from "react-router-dom";
 import "../../components/form.css";
+import Menu from '../../components/menu/Menu';
+import authHeader from "../../services/auth-header";
 
 const endpoint = "http://localhost:8000/api/pedido";
 const endpoint2 = "http://localhost:8000/api";
@@ -40,14 +42,25 @@ const CreatePedido = () => {
       ) {
         setError(true);
       } else {
-        await axios.post(endpoint, {
-          observaciones: observaciones,
-          unidades: unidades,
-          id_cliente: id_cliente,
-          id_trabajo: id_trabajo,
-          id_diseño: id_diseño,
-        });
-        navigate("/show_pedidos");
+        // await axios.post(endpoint, {
+        //   observaciones: observaciones,
+        //   unidades: unidades,
+        //   id_cliente: id_cliente,
+        //   id_trabajo: id_trabajo,
+        //   id_diseño: id_diseño,
+        // });
+        await axios({
+          url: `${endpoint}`,
+          method: "POST",
+          headers: authHeader(),
+          data: {
+            observaciones: observaciones,
+            unidades: unidades,
+            id_cliente: id_cliente,
+            id_trabajo: id_trabajo,
+            id_diseño: id_diseño,
+          }
+        }).then(() => navigate("/show_pedidos"));
       }
     } catch (error) {
       alertaError("error");
@@ -60,12 +73,24 @@ const CreatePedido = () => {
 
   const getAll = async () => {
     try {
-      const response = await axios.get(`${endpoint2}/clients`);
-      const response3 = await axios.get(`${endpoint2}/trabajos`);
-      const response4 = await axios.get(`${endpoint2}/diseños`);
-      setId_Clientes(response.data);
-      setId_Trabajos(response3.data);
-      setId_Diseños(response4.data);
+      // const response = await axios.get(`${endpoint2}/clients`);
+      // const response3 = await axios.get(`${endpoint2}/trabajos`);
+      // const response4 = await axios.get(`${endpoint2}/diseños`);
+      await axios({
+        url: `${endpoint2}/clients`,
+        method: "GET",
+        headers: authHeader(),
+      }).then((response) => setId_Clientes(response.data));
+      await axios({
+        url: `${endpoint2}/trabajos`,
+        method: "GET",
+        headers: authHeader(),
+      }).then((response) => setId_Trabajos(response.data));
+      await axios({
+        url: `${endpoint2}/diseños`,
+        method: "GET",
+        headers: authHeader(),
+      }).then((response) => setId_Diseños(response.data));
     } catch (error) {
       alertaError("error");
     }
@@ -73,6 +98,7 @@ const CreatePedido = () => {
 
   return (
     <div>
+      <Menu />
       {contextHolder}
       <h3>Crear Pedido</h3>
       <form onSubmit={store}>

@@ -3,6 +3,8 @@ import axios from "axios";
 import { notification } from "antd";
 import logo_pequeño from "../../components/logo_pequeño.png";
 import { Link } from "react-router-dom";
+import Menu from '../../components/menu/Menu';
+import authHeader from "../../services/auth-header";
 
 const endpoint = "http://localhost:8000/api";
 
@@ -23,8 +25,13 @@ const ShowArticulos = () => {
 
   const getAllArticulos = async () => {
     try {
-      const response = await axios.get(`${endpoint}/articulos`);
-      setArticulos(response.data);
+      // const response = await axios.get(`${endpoint}/articulos`);
+      await axios({
+        url: `${endpoint}/articulos`,
+        method: "GET",
+        headers: authHeader(),
+      }).then((response) => setArticulos(response.data));
+      
     } catch (error) {
       alertaError("error");
     }
@@ -32,15 +39,20 @@ const ShowArticulos = () => {
 
   const deleteArticulo = async (id) => {
     try {
-      await axios.delete(`${endpoint}/articulo/${id}`);
-      getAllArticulos();
+      // await axios.delete(`${endpoint}/articulo/${id}`);
+      await axios({
+        url: `${endpoint}/articulo/${id}`,
+        method: "DELETE",
+        headers: authHeader(),
+      }).then(() => getAllArticulos());
     } catch (error) {
       alertaError("error");
     }
   };
 
-  return (
+  return (   
     <div className="back">
+      <Menu />
       {contextHolder}
       <div className="d-grip gap-2">
         <Link

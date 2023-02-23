@@ -3,6 +3,8 @@ import axios from "axios";
 import { notification } from "antd";
 import { useNavigate, useParams } from "react-router-dom";
 import "../../components/form.css";
+import Menu from '../../components/menu/Menu';
+import authHeader from "../../services/auth-header";
 
 const endpoint = "http://localhost:8000/api/articulo/";
 
@@ -39,16 +41,28 @@ const EditArticulo = () => {
       ) {
         setError(true);
       } else {
-        await axios.put(`${endpoint}${id}`, {
-          nombre: nombre,
-          descripcion: descripcion,
-          // img: img,
-          precio: precio,
-          color: color,
-          talla: talla,
-          stock: stock,
-        });
-        navigate("/show_articulos");
+        // await axios.put(`${endpoint}${id}`, {
+        //   nombre: nombre,
+        //   descripcion: descripcion,
+        //   // img: img,
+        //   precio: precio,
+        //   color: color,
+        //   talla: talla,
+        //   stock: stock,
+        // });
+        await axios({
+          url: `${endpoint}${id}`,
+          method: "PUT",
+          headers: authHeader(),
+          data: {
+            nombre: nombre,
+            descripcion: descripcion,
+            precio: precio,
+            color: color,
+            talla: talla,
+            stock: stock,
+          }
+        }).then(() => navigate("/show_articulos"));
       }
     } catch (error) {
       alertaError("error");
@@ -57,14 +71,19 @@ const EditArticulo = () => {
 
   useEffect(() => {
     const getArticuloById = async () => {
-      const response = await axios.get(`${endpoint}${id}`);
-      setNombre(response.data.nombre);
-      setDescripcion(response.data.descripcion);
-      // setImg(response.data.img);
-      setPrecio(response.data.precio);
-      setColor(response.data.color);
-      setTalla(response.data.talla);
-      setStock(response.data.stock);
+      // const response = await axios.get(`${endpoint}${id}`);
+      await axios({
+        url: `${endpoint}${id}`,
+        method: "GET",
+        headers: authHeader(),
+      }).then((response) => {
+        setNombre(response.data.nombre);
+        setDescripcion(response.data.descripcion);
+        setPrecio(response.data.precio);
+        setColor(response.data.color);
+        setTalla(response.data.talla);
+        setStock(response.data.stock);
+      });
     };
     try {
       getArticuloById();
@@ -76,6 +95,7 @@ const EditArticulo = () => {
 
   return (
     <div>
+      <Menu />
       {contextHolder}
       <h3>Editar Artículo</h3>
       <form onSubmit={update}>

@@ -3,6 +3,8 @@ import axios from "axios";
 import { notification } from "antd";
 import { useNavigate } from "react-router-dom";
 import "../../components/form.css";
+import Menu from '../../components/menu/Menu';
+import authHeader from "../../services/auth-header";
 
 const endpoint = "http://localhost:8000/api/articulo";
 
@@ -46,13 +48,19 @@ const CreateArticulo = () => {
     fData.append("descripcion", descripcion);
     fData.append("img", document.getElementById("imgForm").files[0]);
     console.log(document.getElementById("imgForm").files[0]);
-    axios.post(endpoint, fData);
+    // axios.post(endpoint, fData);
 
-    navigate("/show_articulos");
+    axios({
+      url: `${endpoint}`,
+      method: "POST",
+      headers: authHeader(),
+      data: fData,
+    }).then(() => navigate("/show_articulos"));
   };
 
   return (
     <div>
+      <Menu />
       {contextHolder}
       <h3>Crear Artículo</h3>
       <form onSubmit={store}>
