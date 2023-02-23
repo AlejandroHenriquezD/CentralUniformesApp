@@ -19,28 +19,28 @@ class ArticuloController extends Controller
     public function indexPdf()
     {
         $articulos = Articulo::all();
-        $data = ['articulos'=>$articulos];
-        return response()->json($data,200, []);
+        $data = ['articulos' => $articulos];
+        return response()->json($data, 200, []);
     }
 
     public function usuariosPdf()
     {
         $usuarios = User::all();
-        $data = ['usuarios'=>$usuarios];
-        return response()->json($data,200, []);
+        $data = ['usuarios' => $usuarios];
+        return response()->json($data, 200, []);
     }
 
     public function chart()
     {
         $articulos = Articulo::all();
         $array = [];
-        foreach($articulos as $k => $v) {
-            $array[] =$v['stock'];
+        foreach ($articulos as $k => $v) {
+            $array[] = $v['stock'];
         }
         $array[] = 0;
 
 
-        return response()->json($array,200);
+        return response()->json($array, 200);
 
         // $articulos = DB::table('articulos')->get();
         // $pdf = PDF::loadview('articulos',['articulos'=> $articulos]);
@@ -56,6 +56,7 @@ class ArticuloController extends Controller
     public function store(Request $request)
     {
         $articulo = new Articulo();
+
         $articulo->nombre = $request->nombre;
         $articulo->talla = $request->talla;
         $articulo->color = $request->color;
@@ -77,7 +78,6 @@ class ArticuloController extends Controller
         $design = new Diseño();
         $design->nombre = $articulo->nombre;
         $design->id_articulo = $articulo->id;
-        $design->img = $articulo->img;
         $design->id_logo = 1;
         $design->id_user = 1;
 
@@ -99,7 +99,15 @@ class ArticuloController extends Controller
         $articulo->precio = $request->precio;
         $articulo->stock = $request->stock;
         $articulo->descripcion = $request->descripcion;
-        $articulo->img = $request->img;
+        // $articulo->img = $request->img;
+
+        // if ($request->hasFile('img')) {
+        //     $file = $request->file('img');
+        //     $destinationPath = 'images/logosTable/';
+        //     $filename = time() . '-' . $file->getClientOriginalName();
+        //     $uploadSuccess = $request->file('img')->move($destinationPath, $filename);
+        //     $articulo->img = $destinationPath . $filename;
+        // }
 
         $articulo->save();
         return $articulo;

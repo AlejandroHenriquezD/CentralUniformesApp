@@ -10,7 +10,6 @@ class Diseño extends Model
     use HasFactory;
     protected $fillable = [
         'nombre',
-        'img',
         'posicion',
         'tamaño',
         'favorito',

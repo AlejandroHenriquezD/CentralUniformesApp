@@ -1,12 +1,16 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import { notification } from "antd";
 import { useNavigate } from "react-router-dom";
 import "../../components/form.css";
+import Menu from '../../components/menu/Menu';
+import authHeader from "../../services/auth-header";
 
 const endpoint = "http://localhost:8000/api/cliente";
 const endpoint2 = "http://localhost:8000/api";
 
 const CreateCliente = () => {
+  const [api, contextHolder] = notification.useNotification();
   const [provincia, setProvincia] = useState("");
   const [codigo_postal, setCodigo_postal] = useState("");
   const [municipio, setMunicipio] = useState("");
@@ -14,35 +18,81 @@ const CreateCliente = () => {
   const [telefono, setTelefono] = useState("");
   const [observaciones, setObservaciones] = useState("");
   const [id_user, setId_User] = useState("");
+  const [error, setError] = useState(false);
   const navigate = useNavigate();
 
   const [clientes, setClientes] = useState([]);
+
+  const alertaError = (type) => {
+    api[type]({
+      message: "ERROR",
+      description: "Error al acceder a la base de datos",
+    });
+  };
 
   useEffect(() => {
     getAll();
   }, []);
 
   const getAll = async () => {
-    const response = await axios.get(`${endpoint2}/clients`);
-    setClientes(response.data);
+    try {
+      // const response = await axios.get(`${endpoint2}/clients`);
+      await axios({
+        url: `${endpoint2}/clients`,
+        method: "GET",
+        headers: authHeader(),
+      }).then((response) => setClientes(response.data));
+    } catch (error) {
+      alertaError("error");
+    }
   };
 
   const store = async (e) => {
-    e.preventDefault();
-    await axios.post(endpoint, {
-      provincia: provincia,
-      codigo_postal: codigo_postal,
-      municipio: municipio,
-      direccion: direccion,
-      telefono: telefono,
-      observaciones: observaciones,
-      id_user: id_user,
-    });
-    navigate("/show_clientes");
+    try {
+      e.preventDefault();
+      if (
+        provincia.length === 0 ||
+        codigo_postal.length === 0 ||
+        municipio.length === 0 ||
+        direccion.length === 0 ||
+        telefono.length === 0 ||
+        id_user.length === 0
+      ) {
+        setError(true);
+      } else {
+        // await axios.post(endpoint, {
+        //   provincia: provincia,
+        //   codigo_postal: codigo_postal,
+        //   municipio: municipio,
+        //   direccion: direccion,
+        //   telefono: telefono,
+        //   observaciones: observaciones,
+        //   id_user: id_user,
+        // });
+        await axios({
+          url: `${endpoint}`,
+          method: "POST",
+          headers: authHeader(),
+          data: {
+            provincia: provincia,
+            codigo_postal: codigo_postal,
+            municipio: municipio,
+            direccion: direccion,
+            telefono: telefono,
+            observaciones: observaciones,
+            id_user: id_user,
+          }
+        }).then(() => navigate("/show_clientes"));
+      }
+    } catch (error) {
+      alertaError("error");
+    }
   };
 
   return (
     <div>
+      {contextHolder}
+      <Menu />
       <h3>Crear Cliente</h3>
       <form onSubmit={store}>
         <div className="mb-3">
@@ -53,16 +103,28 @@ const CreateCliente = () => {
             type="text"
             className="form"
           />
+          {error && provincia.length === 0 ? (
+            <label className="label">La provincia es obligatoria.</label>
+          ) : (
+            ""
+          )}
         </div>
         <div className="mb-3">
           <label className="form-label">Código postal</label>
           <input
             value={codigo_postal}
             onChange={(e) => setCodigo_postal(e.target.value)}
-            type="text"
+            type="number"
             className="form"
+            max={99999}
+            min={10000}
           />
-        </div>{" "}
+          {error && codigo_postal.length === 0 ? (
+            <label className="label">El código postal es obligatorio.</label>
+          ) : (
+            ""
+          )}
+        </div>
         <div className="mb-3">
           <label className="form-label">Municipio</label>
           <input
@@ -71,7 +133,12 @@ const CreateCliente = () => {
             type="text"
             className="form"
           />
-        </div>{" "}
+          {error && municipio.length === 0 ? (
+            <label className="label">El municipio es obligatorio.</label>
+          ) : (
+            ""
+          )}
+        </div>
         <div className="mb-3">
           <label className="form-label">Dirección</label>
           <input
@@ -80,16 +147,28 @@ const CreateCliente = () => {
             type="text"
             className="form"
           />
-        </div>{" "}
+          {error && direccion.length === 0 ? (
+            <label className="label">La dirección es obligatoria.</label>
+          ) : (
+            ""
+          )}
+        </div>
         <div className="mb-3">
           <label className="form-label">Teléfono</label>
           <input
             value={telefono}
             onChange={(e) => setTelefono(e.target.value)}
-            type="text"
+            type="number"
             className="form"
+            min={100000000}
+            max={999999999}
           />
-        </div>{" "}
+          {error && telefono.length === 0 ? (
+            <label className="label">El teléfono es obligatorio.</label>
+          ) : (
+            ""
+          )}
+        </div>
         <div className="mb-3">
           <label className="form-label">Observaciones</label>
           <input
@@ -98,7 +177,7 @@ const CreateCliente = () => {
             type="text"
             className="form"
           />
-        </div>{" "}
+        </div>
         <div className="mb-3">
           <label className="form-label">Usuario</label>
           <select
@@ -113,6 +192,11 @@ const CreateCliente = () => {
               <option value={`${cliente.id}`}>{cliente.name}</option>
             ))}
           </select>
+          {error && id_user.length === 0 ? (
+            <label className="label">El cliente es obligatorio.</label>
+          ) : (
+            ""
+          )}
         </div>
         <button type="submit" className="btn btn-danger">
           Crear

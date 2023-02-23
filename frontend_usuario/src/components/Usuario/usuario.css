@@ -1,0 +1,64 @@
+#userContent {
+  display: flex;
+  height: 80vh;
+  background-color: rgba(218, 218, 218, 1);
+  flex-direction: column;
+}
+
+#userTitle {
+  margin-top: 4%;
+  margin-bottom: 4%;
+}
+
+.userData {
+  width: 80%;
+  text-align: start;
+  align-self: center;
+  margin-left: 10%;
+}
+
+.userData p {
+  margin-top: 0%;
+  margin-bottom: 0%;
+}
+
+.userDataLabel {
+  font-weight: 700;
+  font-size: large;
+}
+
+.userDataContent {
+  font-size: xx-large;
+}
+
+#userButtonContainer {
+  flex-direction: column;
+  display: flex;
+  width: 100%;
+  height: 30%;
+  align-items: center;
+  justify-content: center;
+}
+
+.userLongButton {
+  background-color: rgba(14, 28, 46, 1);
+  color:rgb(255, 255, 255);
+  width: 100%;
+  height: 2.5em;
+  border-radius: 10px;
+  border: 0px;
+  width: 25%;
+  margin-bottom: 2em;
+  cursor: pointer;
+}
+
+.userRedLongButton {
+  background-color: rgba(225, 37, 26, 1);
+  color:rgb(255, 255, 255);
+  width: 100%;
+  height: 2.5em;
+  border-radius: 10px;
+  border: 0px;
+  width: 25%;
+  cursor: pointer;
+}

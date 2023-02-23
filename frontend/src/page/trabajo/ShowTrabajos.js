@@ -1,29 +1,58 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import { notification } from "antd";
 import logo_pequeño from "../../components/logo_pequeño.png";
 import { Link } from "react-router-dom";
+import Menu from '../../components/menu/Menu';
+import authHeader from "../../services/auth-header";
 
 const endpoint = "http://localhost:8000/api";
 
 const ShowTrabajos = () => {
+  const [api, contextHolder] = notification.useNotification();
   const [trabajos, setTrabajos] = useState([]);
+
+  const alertaError = (type) => {
+    api[type]({
+      message: "ERROR",
+      description: "Error al acceder a la base de datos",
+    });
+  };
 
   useEffect(() => {
     getAllTrabajos();
   }, []);
 
   const getAllTrabajos = async () => {
-    const response = await axios.get(`${endpoint}/trabajos`);
-    setTrabajos(response.data);
+    try {
+      // const response = await axios.get(`${endpoint}/trabajos`);
+      await axios({
+        url: `${endpoint}/trabajos`,
+        method: "GET",
+        headers: authHeader(),
+      }).then((response) => setTrabajos(response.data));
+    } catch (error) {
+      alertaError("error");
+    }
   };
 
   const deleteTrabajo = async (id) => {
-    await axios.delete(`${endpoint}/trabajo/${id}`);
-    getAllTrabajos();
+    try {
+      // await axios.delete(`${endpoint}/trabajo/${id}`);
+      await axios({
+        url: `${endpoint}/trabajo/${id}`,
+        method: "DELETE",
+        headers: authHeader(),
+      }).then(() => getAllTrabajos());
+    } catch (error) {
+      alertaError("error");
+    }
   };
 
   return (
     <div className="back">
+      <Menu />
+      {contextHolder}
       <div className="d-grip gap-2">
         <Link
           to="/create_trabajo"

@@ -1,28 +1,58 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import { notification } from "antd";
 import logo_pequeño from "../../components/logo_pequeño.png";
 import { Link } from "react-router-dom";
+import Menu from '../../components/menu/Menu';
+import authHeader from "../../services/auth-header";
 
 const endpoint = "http://localhost:8000/api";
 
 const ShowDiseños = () => {
+  const [api, contextHolder] = notification.useNotification();
   const [diseños, setDiseños] = useState([]);
+
+  const alertaError = (type) => {
+    api[type]({
+      message: "ERROR",
+      description: "Error al acceder a la base de datos",
+    });
+  };
+
   useEffect(() => {
     getAllDiseños();
   }, []);
 
   const getAllDiseños = async () => {
-    const response = await axios.get(`${endpoint}/diseños`);
-    setDiseños(response.data);
+    try {
+      // const response = await axios.get(`${endpoint}/diseños`);
+      await axios({
+        url: `${endpoint}/diseños`,
+        method: "GET",
+        headers: authHeader(),
+      }).then((response) => setDiseños(response.data));
+    } catch (error) {
+      alertaError("error");
+    }
   };
 
   const deleteDiseño = async (id) => {
-    await axios.delete(`${endpoint}/diseño/${id}`);
-    getAllDiseños();
+    try {
+      // await axios.delete(`${endpoint}/diseño/${id}`);
+      await axios({
+        url: `${endpoint}/diseño/${id}`,
+        method: "DELETE",
+        headers: authHeader(),
+      }).then(() => getAllDiseños());
+    } catch (error) {
+      alertaError("error");
+    }
   };
 
   return (
     <div>
+      <Menu />
+      {contextHolder}
       <div className="d-grip gap-2">
         <Link
           to="/create_diseño"
@@ -37,7 +67,6 @@ const ShowDiseños = () => {
         <thead className="bg-success text-white">
           <tr>
             <td>Nombre</td>
-            <td>Imagen</td>
             <td>Posición</td>
             <td>Tamaño</td>
             <td>Favorito</td>
@@ -51,13 +80,6 @@ const ShowDiseños = () => {
           {diseños.map((diseño) => (
             <tr key={diseño.id}>
               <td> {diseño.nombre}</td>
-              <td>
-                <img
-                  className="img"
-                  src={"http://localhost:8000/" + diseño.img}
-                  alt={diseño.nombre}
-                />
-              </td>
               <td>{diseño.posicion}</td>
               <td>{diseño.tamaño}</td>
               <td>{diseño.favorito}</td>

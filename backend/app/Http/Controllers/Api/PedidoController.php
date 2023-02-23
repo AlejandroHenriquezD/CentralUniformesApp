@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 
 class PedidoController extends Controller
 {
-    
+
     public function index()
     {
         $pedidos = Pedido::all();

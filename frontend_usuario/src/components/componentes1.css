@@ -1,0 +1,68 @@
+#itemsContent {
+  height: 80vh;
+  overflow: scroll;
+  background-color: rgba(218, 218, 218, 1);
+}
+
+.item {
+  position: relative;
+  height: 50vh;
+  margin: 1em 1em 1em 1em;
+  border: 2px solid rgba(218, 218, 218, 1);
+  overflow: hidden;
+}
+
+.item:hover {
+  border: 2px solid rgba(225, 37, 26, 1);
+  cursor: pointer;
+}
+
+.itemImgContainer {
+  display: flex;
+  height: 75%;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.itemImgContainer img {
+  max-height: 100%;
+  max-width: 100%;
+}
+
+.itemPlusContainer {
+  display: flex;
+  height: 75%;
+  align-items: center;
+  justify-content: center;
+}
+
+.itemPlusContainer img {
+  width: 50%;
+}
+
+.itemData {
+  text-align: start;
+  border-top: 2px solid rgba(111, 183, 76, 1);
+}
+
+.itemData h3 {
+  margin-left: 1em;
+}
+
+.itemData h4 {
+  margin-left: 1em;
+}
+
+#logoForm {
+  position: absolute;
+  height: 99%;
+  width: 99%;
+  top: 0%;
+}
+
+#uploadLogo {
+  width: 99%;
+  height: 99%;
+  opacity: 0;
+}

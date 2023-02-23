@@ -1,48 +1,37 @@
 import "./Login.css";
 import { useNavigate } from "react-router-dom";
 import React, { useState } from "react";
-import RenderCondicional from "./RenderCondicional";
-import axios from "axios";
-
-const endpoint = "http://localhost:8000/api/login";
+import AuthService from "../../services/auth.service";
 
 const Login = () => {
-  const [error, setError] = useState("");
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [show, setShow] = useState(false);
+  const [message, setMessage] = useState("");
 
   const navigate = useNavigate();
-
-  const login = async (e) => {
-    e.preventDefault();
-    // eslint-disable-next-line
-    if (email.length == 0 || password.length == 0) {
-      setError(true);
-    } else {
-      await axios.post(endpoint, {
-        email: email,
-        password: password,
-      });
-      navigate("/inicio");
-    }
-  };
 
   const navigateToRegister = () => {
     navigate("/register");
   };
 
-  // var rootStyle = {
-  //   backgroundColor: "#7A7777",
-  //   color: "white",
-  //   position: "absolute",
-  //   padding: "3%",
-  //   top: 0,
-  //   left: 0,
-  //   right: 0,
-  //   bottom: 0,
-  // };
+  function changeLoginContent() {
+    if (show === false) {
+      setShow(true);
+    } else {
+      setShow(false);
+    }
+  }
 
+  const handleLogin = (e) => {
+    e.preventDefault();
+    AuthService.login(email, btoa(password)).then(
+      (response) => {
+        navigate("/inicio");
+      }
+    );
+  };
   return (
     <div id="loginBackground">
       <div id="loginPage">
@@ -53,85 +42,53 @@ const Login = () => {
             <div id="logo">
               <img src="/img/cu_logo.png" />
             </div>
-            {/* {show ? (
+            {show ? (
               <div className="loginButtons">
-                <div></div>
+                <form>
+                  <div className="formGroup">
+                    <label htmlFor="email">Correo electrónico</label>
+                    <input
+                      name="email"
+                      className="loginInput"
+                      type="text"
+                      onChange={(e) => setEmail(e.target.value)}
+                    />
+                  </div>
+                  <div className="formGroup">
+                    <label htmlFor="contraseña">Contraseña</label>
+                    <input
+                      name="contraseña"
+                      className="loginInput"
+                      type="password"
+                      onChange={(e) => setPassword(e.target.value)}
+                    />
+                  </div>
+                </form>
+                <div id="hiddenButtons">
+                  <button className="loginButton" onClick={changeLoginContent}>
+                    Volver
+                  </button>
+                  <button className="loginButton" onClick={handleLogin}>Iniciar sesión</button>
+                </div>
               </div>
             ) : (
               <div className="loginButtons">
-                <div className="loginButton">
-                  <p>Iniciar sesión</p>
-                </div>
-                <div className="loginButton">
-                  <p>Registrarse</p>
-                </div>
+                <button className="loginButton" onClick={changeLoginContent}>
+                  Iniciar sesión
+                </button>
+                <button className="loginButton" onClick={navigateToRegister}>
+                  Registrarse
+                </button>
               </div>
-            )} */}
-            <RenderCondicional/>
+            )}
           </div>
           <div className="halfCanvas">
             <img id="imagenLogin" src="/img/imagen_login_1.jpg" />
-            <div id="redFilter" />
+            <div className="redFilter" />
           </div>
         </div>
       </div>
     </div>
-    // <div style={rootStyle}>
-    //   <h1 className="tittle">Incio de Sesion</h1>
-    //   <h5 class="subtittle">
-    //     <i>Central de Uniformes S.L.</i>
-    //   </h5>
-
-    //   <form class="form" onSubmit={login}>
-    //     <label className="form-label">Email</label>
-    //     <div className="mb-3">
-    //       <input
-    //         value={email}
-    //         onChange={(e) => setEmail(e.target.value)}
-    //         class="input1"
-    //         type="text"
-    //       />
-    //       {error && email.length <= 0 ? (
-    //         <div className="lab">
-    //           <label>
-    //             <b>Email no puede estar vacio</b>
-    //           </label>
-    //         </div>
-    //       ) : (
-    //         ""
-    //       )}
-    //     </div>
-
-    //     <label className="form-label">Contraseña</label>
-    //     <div className="mb-3">
-    //       <input
-    //         value={password}
-    //         onChange={(e) => setPassword(e.target.value)}
-    //         class="input1"
-    //         type="password"
-    //       />
-    //     </div>
-    //     {error && password.length <= 0 ? (
-    //       <div className="lab">
-    //         <label>
-    //           <b>Contraseña no puede estar vacia</b>
-    //         </label>
-    //       </div>
-    //     ) : (
-    //       ""
-    //     )}
-
-    //     <button type="submit" class="but">
-    //       Iniciar Sesión
-    //     </button>
-
-    //     <h6>¿Todavía no tienes una cuenta?</h6>
-
-    //     <button onClick={navigateToRegister} class="but">
-    //       Registrate
-    //     </button>
-    //   </form>
-    // </div>
   );
 };
 

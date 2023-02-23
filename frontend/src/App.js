@@ -29,12 +29,14 @@ import ShowUsuarios from "./page/usuario/ShowUsuarios";
 import CreateUsuario from "./page/usuario/CreateUsuario";
 import EditUsuario from "./page/usuario/EditUsuario";
 
+import Login from "./page/Login/Login";
+
 function App() {
   return (
     <div className="App">
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<ShowClientes />} />
+          <Route path="/" element={<Login />} />
 
           <Route path="/show_articulos" element={<ShowArticulos />} />
           <Route path="/create_articulo" element={<CreateArticulo />} />

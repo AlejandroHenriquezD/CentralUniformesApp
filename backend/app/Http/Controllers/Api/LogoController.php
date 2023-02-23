@@ -14,16 +14,21 @@ class LogoController extends Controller
         return $logos;
     }
 
-    public function showByUserId($id) {
-        $logos = Logo::where('id_user',$id)->get();
+    public function showByUserId($id)
+    {
+        $logos = Logo::where('id_user', $id)->get();
         return $logos;
     }
-    
+
     public function store(Request $request)
     {
         $logo = new Logo();
 
-        if( $request->hasFile('img') ) {
+        $logo->nombre = $request->img;
+        $logo->img = $request->img;
+        $logo->id_user = $request->id_user;
+
+        if ($request->hasFile('img')) {
             $file = $request->file('img');
             $destinationPath = 'images/logosTable/';
             $filename = time() . '-' . $file->getClientOriginalName();
@@ -41,16 +46,16 @@ class LogoController extends Controller
         //     'user_id' => 'required',
         //     'img' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         // ]);
-  
+
         // $input = $request->all();
-  
+
         // if ($img = $request->file('img')) {
         //     $destinationPath = 'images/imagesTable/';
         //     $filename = date('YmdHis') . "." . $img->getClientOriginalExtension();
         //     $img->move($destinationPath, $filename);
         //     $input['img'] = "$filename";
         // }
-    
+
         // image::create($input);
     }
 
@@ -82,7 +87,7 @@ class LogoController extends Controller
         // $logo = image::find($id);
         // $logo->name = $request->name;
         // $logo->user_id = $request->user_id;
-  
+
         // if ($request->hasfile('img')) {
         //     $destinationPath = 'images/imagesTable/'.$logo->img;
         //     if(File::exists($destinationPath))

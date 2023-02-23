@@ -12,7 +12,7 @@ class UserController extends Controller
     public function empleadosonly()
     {
         $users = DB::table('users')
-            ->where('rol', '=', "Empleado")
+            ->where('rol', '!=', "Cliente")
             ->get();
         return $users;
     }
@@ -54,9 +54,13 @@ class UserController extends Controller
     {
         $user = User::findOrFail($request->id);
         $user->dni = $request->dni;
-        $user->name = $request->name;
+        $user->name = base64_decode($request->name);
         $user->email = $request->email;
-        $user->password = bcrypt($user['password']);
+
+        if ($request->password == null) {
+            $user->password = bcrypt(base64_decode($request->password));
+        }
+
         $user->rol = $request->rol;
 
         $user->save();

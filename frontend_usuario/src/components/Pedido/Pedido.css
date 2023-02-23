@@ -1,0 +1,38 @@
+#unidades {
+    display: flex;
+    height: 2.5em;
+    width: 100%;
+}
+
+#unidades input {
+    height: 2.2em;
+    margin-top: 2em;
+    width: 60%;
+    border-radius: 10px;
+    border-bottom: 1px solid rgba(14, 28, 46, 1);
+    background-color: rgba(241, 232, 223, 1);
+    text-align: end;
+}
+
+#tipoTrabajo {
+    margin-top: 1.5em;
+}
+
+#tipoTrabajoDropdown {
+    width: 100%;
+    border-radius: 10px;
+    border: 0px;
+    overflow: hidden;
+}
+
+#tipoTrabajoDropdown button{
+    font-family: 'Noto Sans', sans-serif;
+    text-align: center;
+    border-top: 1px solid rgba(14, 28, 46, 1);
+    height: 2.5em;
+    color: rgba(14, 28, 46, 1);
+    border-radius: 0%;
+    background-color: rgba(241, 232, 223, 1);
+    margin-top: 0px;
+    width: 100%;
+  }

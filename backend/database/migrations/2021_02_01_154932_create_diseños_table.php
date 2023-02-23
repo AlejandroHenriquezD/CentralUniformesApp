@@ -16,7 +16,6 @@ return new class extends Migration
         Schema::create('diseños', function (Blueprint $table) {
             $table->id();
             $table->string('nombre');
-            $table->string('img');
             $table->string('posicion')->nullable();
             $table->string('tamaño')->nullable();
             $table->string('favorito')->nullable();

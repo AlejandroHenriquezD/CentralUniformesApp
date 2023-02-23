@@ -1,48 +1,41 @@
-#articuloContent {
-  display: flex;
-  height: 80vh;
-  background-color: rgba(218, 218, 218, 1);
-}
-
-.halfArticuloContent {
-  display: flex;
-  height: 100%;
-  width: 50%;
-  align-items: center;
-  justify-content: center;
-}
-
-#articuloImgCanvas {
-  height: 90%;
-  width: 90%;
-  border: 2px solid rgba(111, 183, 76, 1);
-}
-
-#articuloImgCanvas img {
-  height: 100%;
-  width: 100%;
-}
-
-#articuloDataCanvas {
-  height: 70%;
-  width: 50%;
-  color: rgba(14, 28, 46, 1);
-}
-
 #nameAndPrice {
   display: flex;
 }
 
-#nameAndPrice h1 {
+#articuloName {
   width: 75%;
   text-align: start;
 }
 
-#nameAndPrice h2 {
+#articuloDescription {
+  text-align: start;
+  height: 40%;
+}
+
+#articuloPrice {
   width: 25%;
+  font-weight: 400;
   text-align: end;
 }
 
-#articuloDescription {
-  text-align: start;
+#articuloDescription h3 {
+  margin-bottom: 0%;
+}
+
+#articuloDescription h4 {
+  margin-top: 0%;
+}
+
+.otherArticulo {
+  display: flex;
+}
+
+.otherArticulo h3{
+  margin-top: 0%;
+  margin-bottom: 0%;
+}
+
+.otherArticuloData {
+  font-weight: 400;
+  margin-left: 0.5em;
 }

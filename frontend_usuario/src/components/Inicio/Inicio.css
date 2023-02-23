@@ -36,7 +36,7 @@
 .leftBlueSquare {
     position: absolute;
     background-color: rgba(14, 28, 46, 0.7);
-    transform: rotate(33deg);
+    transform: rotate(34deg);
     height: 55em;
     width: 55em;
     bottom: -35em;
@@ -48,7 +48,7 @@
     position: absolute;
     color:rgba(255, 255, 255, 1);
     width: 20em;
-    top: 12em;
+    bottom: 20%;
     right: 2em;
     text-align: end;
 }
@@ -57,27 +57,7 @@
     position: absolute;
     color:rgba(255, 255, 255, 1);
     width: 20em;
-    top: 12em;
+    bottom: 20%;
     left: 2em;
     text-align: start;
 }
-
-/* .img {
-    width: 70%;
-    margin-top: 25%;
-}
-
-.buto {
-    border: 2px solid #FA6660;
-    border-radius: 25px;
-    padding: 2%;
-    background-color: #FA6660;
-    color: white;
-    font-family: Verdana;
-    box-shadow: 5px 5px 10px black;
-    margin-top: 5%;
-}
-
-.sli {
-    margin-top: 20%;
-} */

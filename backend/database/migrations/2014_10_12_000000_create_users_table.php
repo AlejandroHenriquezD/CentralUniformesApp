@@ -30,7 +30,7 @@ return new class extends Migration
         ->insert([
             "dni" => "54349876S",
             "name" => "Administrador",
-            "password" => "admin",
+            "password" => bcrypt('admin'),
             "email" => "admin@gmail.com",
             "rol" => "Encargado",
         ]);

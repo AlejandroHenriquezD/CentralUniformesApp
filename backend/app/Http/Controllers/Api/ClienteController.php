@@ -15,6 +15,11 @@ class ClienteController extends Controller
         return $clientes;
     }
 
+    public function showByUserId($id) {
+        $cliente = Cliente::where('id_user',$id)->get();
+        return $cliente;
+    }
+
 
     public function store(Request $request)
     {
@@ -30,7 +35,7 @@ class ClienteController extends Controller
         $cliente->save();
     }
 
-    
+
     public function show($id)
     {
         $cliente = Cliente::find($id);
@@ -53,7 +58,7 @@ class ClienteController extends Controller
         return $cliente;
     }
 
-    
+
     public function destroy($id)
     {
         $cliente = Cliente::destroy($id);

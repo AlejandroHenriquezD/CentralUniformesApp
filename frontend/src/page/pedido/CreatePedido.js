@@ -1,17 +1,22 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import { notification } from "antd";
 import { useNavigate } from "react-router-dom";
 import "../../components/form.css";
+import Menu from '../../components/menu/Menu';
+import authHeader from "../../services/auth-header";
 
 const endpoint = "http://localhost:8000/api/pedido";
 const endpoint2 = "http://localhost:8000/api";
 
 const CreatePedido = () => {
+  const [api, contextHolder] = notification.useNotification();
   const [observaciones, setObservaciones] = useState("");
   const [unidades, setUnidades] = useState(0);
   const [id_cliente, setId_Cliente] = useState(0);
   const [id_trabajo, setId_Trabajo] = useState(0);
   const [id_diseño, setId_Diseño] = useState(0);
+  const [error, setError] = useState(false);
   const navigate = useNavigate();
 
   //Foreign key
@@ -19,16 +24,47 @@ const CreatePedido = () => {
   const [trabajos, setId_Trabajos] = useState([]);
   const [diseños, setId_Diseños] = useState([]);
 
-  const store = async (e) => {
-    e.preventDefault();
-    await axios.post(endpoint, {
-      observaciones: observaciones,
-      unidades: unidades,
-      id_cliente: id_cliente,
-      id_trabajo: id_trabajo,
-      id_diseño: id_diseño,
+  const alertaError = (type) => {
+    api[type]({
+      message: "ERROR",
+      description: "Error al acceder a la base de datos",
     });
-    navigate("/show_pedidos");
+  };
+
+  const store = async (e) => {
+    try {
+      e.preventDefault();
+      if (
+        unidades.length === 0 ||
+        id_cliente.length === 0 ||
+        id_trabajo.length === 0 ||
+        id_diseño.length === 0
+      ) {
+        setError(true);
+      } else {
+        // await axios.post(endpoint, {
+        //   observaciones: observaciones,
+        //   unidades: unidades,
+        //   id_cliente: id_cliente,
+        //   id_trabajo: id_trabajo,
+        //   id_diseño: id_diseño,
+        // });
+        await axios({
+          url: `${endpoint}`,
+          method: "POST",
+          headers: authHeader(),
+          data: {
+            observaciones: observaciones,
+            unidades: unidades,
+            id_cliente: id_cliente,
+            id_trabajo: id_trabajo,
+            id_diseño: id_diseño,
+          }
+        }).then(() => navigate("/show_pedidos"));
+      }
+    } catch (error) {
+      alertaError("error");
+    }
   };
 
   useEffect(() => {
@@ -36,16 +72,34 @@ const CreatePedido = () => {
   }, []);
 
   const getAll = async () => {
-    const response = await axios.get(`${endpoint2}/clients`);
-    const response3 = await axios.get(`${endpoint2}/trabajos`);
-    const response4 = await axios.get(`${endpoint2}/diseños`);
-    setId_Clientes(response.data);
-    setId_Trabajos(response3.data);
-    setId_Diseños(response4.data);
+    try {
+      // const response = await axios.get(`${endpoint2}/clients`);
+      // const response3 = await axios.get(`${endpoint2}/trabajos`);
+      // const response4 = await axios.get(`${endpoint2}/diseños`);
+      await axios({
+        url: `${endpoint2}/clients`,
+        method: "GET",
+        headers: authHeader(),
+      }).then((response) => setId_Clientes(response.data));
+      await axios({
+        url: `${endpoint2}/trabajos`,
+        method: "GET",
+        headers: authHeader(),
+      }).then((response) => setId_Trabajos(response.data));
+      await axios({
+        url: `${endpoint2}/diseños`,
+        method: "GET",
+        headers: authHeader(),
+      }).then((response) => setId_Diseños(response.data));
+    } catch (error) {
+      alertaError("error");
+    }
   };
 
   return (
     <div>
+      <Menu />
+      {contextHolder}
       <h3>Crear Pedido</h3>
       <form onSubmit={store}>
         <div className="mb-3">
@@ -64,7 +118,13 @@ const CreatePedido = () => {
             onChange={(e) => setUnidades(e.target.value)}
             type="number"
             className="form"
+            min={1}
           />
+          {error && unidades.length === 0 ? (
+            <label className="label">Las unidades son obligatorias.</label>
+          ) : (
+            ""
+          )}
         </div>
         <div className="mb-3">
           <label className="form-label">Cliente</label>
@@ -80,6 +140,11 @@ const CreatePedido = () => {
               <option value={`${cliente.id}`}>{cliente.name}</option>
             ))}
           </select>
+          {error && id_cliente.length === 0 ? (
+            <label className="label">El cliente es obligatorio.</label>
+          ) : (
+            ""
+          )}
         </div>
         <div className="mb-3">
           <label className="form-label">Trabajo</label>
@@ -95,6 +160,11 @@ const CreatePedido = () => {
               <option value={`${trabajo.id}`}>{trabajo.nombre}</option>
             ))}
           </select>
+          {error && id_trabajo.length === 0 ? (
+            <label className="label">El trabajo es obligatorio.</label>
+          ) : (
+            ""
+          )}
         </div>
         <div className="mb-3">
           <label className="form-label">Diseño</label>
@@ -110,6 +180,11 @@ const CreatePedido = () => {
               <option value={`${diseño.id}`}>{diseño.nombre}</option>
             ))}
           </select>
+          {error && id_diseño.length === 0 ? (
+            <label className="label">El diseño es obligatorio.</label>
+          ) : (
+            ""
+          )}
         </div>
         <button type="submit" className="btn btn-danger">
           Crear
