@@ -3,6 +3,8 @@
 namespace Tests\Feature;
 
 use Tests\TestCase;
+use Laravel\Sanctum\Sanctum;
+use App\Models\User;
 
 class TestTrabajo extends TestCase
 {
@@ -13,34 +15,38 @@ class TestTrabajo extends TestCase
      */
     public function testVerTrabajos()
     {
-        $this->get('http://localhost:8000/api/trabajos')
+        Sanctum::actingAs(
+            User::factory()->create()
+        );
+        $this->json('GET', '/api/trabajos')
             ->assertStatus(200);
     }
     public function testCrearTrabajos()
     {
+        Sanctum::actingAs(
+            User::factory()->create()
+        );
         $response = $this->withHeaders([
             'X-Header' => 'Value',
-        ])->post('http://localhost:8000/api/trabajo', ['nombre' => 'test', 'descripcion' => 'test']);
+        ])->json('POST', '/api/trabajo', ['nombre' => 'test', 'descripcion' => 'test']);
 
         $response->assertStatus(200);
     }
     public function testVerUnTrabajo()
     {
-        $response = $this->get('http://localhost:8000/api/trabajo/0');
+        Sanctum::actingAs(
+            User::factory()->create()
+        );
+        $response = $this->json('GET', '/api/trabajo/0', ['id' => 0]);
 
         $response->assertStatus(200);
     }
-    // public function testModificarTrabajos()
-    // {
-    //     $response = $this->withHeaders([
-    //         'X-Header' => 'Value',
-    //     ])->put('http://localhost:8000/api/trabajo/1', ['nombre' => 'test', 'descripcion' => 'test']);
-
-    //     $response->assertStatus(200);
-    // }
     public function testEliminarTrabajos()
     {
-        $response = $this->delete('http://localhost:8000/api/trabajo/0');
+        Sanctum::actingAs(
+            User::factory()->create()
+        );
+        $response = $this->json('DELETE', '/api/trabajo/0');
 
         $response->assertStatus(200);
     }
