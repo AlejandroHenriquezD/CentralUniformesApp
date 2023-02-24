@@ -10,8 +10,10 @@ const Menu = () => {
       <a href="/show_diseños">Diseños</a>
       <a href="/show_articulos">Artículos</a>
       <a href="/show_trabajos">Trabajos</a>
-      <a href="http://localhost:5488/templates/rkJTnK2ce">Informe</a>
-      <a href="http://localhost:3000/hnd/ayuda.html">Help</a>
+      <a href="http://localhost:5488/templates/rkJTnK2ce">Listado Articulos</a>
+      <a href="http://localhost:5488/templates/HhKisw2yn">Listado Usuarios</a>
+      <a href="http://localhost:5488/templates/WlgmnzH4d">Gráfico</a>
+      <a href="https://localhost/hnd/ayuda.html">Help</a>
     </div>
   );
 };

@@ -17,6 +17,7 @@ const Diseños = () => {
 
   const [diseños, setDiseños] = useState([]);
   const [diseñosBase, setDiseñosBase] = useState([]);
+  const [rol, setRol] = useState([]);
 
   const querystring = window.location.search;
   let params = new URLSearchParams(querystring);
@@ -25,6 +26,7 @@ const Diseños = () => {
   useEffect(() => {
     getEmpleados();
     getDiseñosByIdUser(userId);
+    getUser();
   }, []);
 
   const getDiseñosByIdUser = async (id) => {
@@ -71,6 +73,15 @@ const Diseños = () => {
     return getThisArticulo(idArticulo).precio;
   }
 
+  const getUser = async () => {
+    const response = await axios({
+      url: `${endpoint}/user/${userId}`,
+      method: "GET",
+      headers: authHeader(),
+    })
+    setRol(response.data.rol);
+  };
+
   const navigateToArticulos = () => {
     navigate("/articulos");
   };
@@ -98,7 +109,10 @@ const Diseños = () => {
                 </div>
               </Col>
             ))}
+            {rol == "cliente" ? (
+              <>
             {diseños.map((diseño) => (
+              
               <Col span={6}>
                 <div className="item" onClick={() => navigateToPedido(diseño.id, diseño.id_articulo)}>
                   <div className="itemImgContainer">
@@ -111,34 +125,39 @@ const Diseños = () => {
                 </div>
               </Col>
             ))}
+            </>
+            ) : null }
           </Row>
-        ) : (
-          <Row justify="start">
-            {diseños.map((diseño) => (
-              <Col span={6}>
-                <div className="item">
-                  <div className="itemImgContainer">
-                    <img src={getThisImgArticulo(diseño.id_articulo)} />
-                  </div>
-                  <div className="itemData">
-                    <h4>{diseño.nombre}</h4>
-                    <h3>{getThisPrecioArticulo(diseño.id_articulo)}€</h3>
-                  </div>
-                </div>
-              </Col>
-            ))}
-            <Col span={6}>
-              <div className="item" onClick={navigateToArticulos}>
-                <div className="itemPlusContainer">
-                  <img src="/img/plus.png" />
-                </div>
-                <div className="itemData">
-                  <h4>Crear diseño</h4>
-                </div>
-              </div>
-            </Col>
-          </Row>
-        )}
+        ) : 
+        // (
+        //   <Row justify="start">
+        //     {diseños.map((diseño) => (
+        //       <Col span={6}>
+        //         <div className="item">
+        //           <div className="itemImgContainer">
+        //             <img src={getThisImgArticulo(diseño.id_articulo)} />
+        //           </div>
+        //           <div className="itemData">
+        //             <h4>{diseño.nombre}</h4>
+        //             <h3>{getThisPrecioArticulo(diseño.id_articulo)}€</h3>
+        //           </div>
+        //         </div>
+        //       </Col>
+        //     ))}
+        //     <Col span={6}>
+        //       <div className="item" onClick={navigateToArticulos}>
+        //         <div className="itemPlusContainer">
+        //           <img src="/img/plus.png" />
+        //         </div>
+        //         <div className="itemData">
+        //           <h4>Crear diseño</h4>
+        //         </div>
+        //       </div>
+        //     </Col>
+        //   </Row>
+        // ) 
+        null
+      }
         <Footer />
       </div>
     </div>

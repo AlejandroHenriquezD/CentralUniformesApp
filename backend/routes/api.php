@@ -11,6 +11,14 @@ use App\Http\Controllers\Api\UserController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
+
+
+Route::controller(ArticuloController::class)->group(function () {
+    Route::get("json", 'indexPdf',);  //Reports
+    Route::get("chart", 'chart');
+    Route::get("reportUser", 'usuariosPdf');
+});
+
 Route::group(['middleware' => ["auth:sanctum"]], function () {
     //rutas
     Route::get('user-profile', [AuthController::class, 'userProfile']);
@@ -33,9 +41,7 @@ Route::group(['middleware' => ["auth:sanctum"]], function () {
         Route::put('/articulo/{id}', 'update');
         Route::delete('/articulo/{id}', 'destroy');
     
-        Route::get("json", 'indexPdf');  //Reports
-        Route::get("chart", 'chart');
-        Route::get("reportUser", 'usuariosPdf');
+
     });
     
     Route::controller(ClienteController::class)->group(function () {
